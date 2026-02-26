@@ -72,7 +72,7 @@ jobs:
           echo "dist_tag=$DIST_TAG" >> "$GITHUB_OUTPUT"
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Synchronize package versions
         run: node scripts/release/sync-package-versions.mjs ${{ steps.release.outputs.version }}
