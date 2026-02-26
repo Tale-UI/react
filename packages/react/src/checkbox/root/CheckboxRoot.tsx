@@ -1,17 +1,17 @@
 'use client';
 import * as React from 'react';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
-import { visuallyHidden, visuallyHiddenInput } from '@base-ui/utils/visuallyHidden';
+import { EMPTY_OBJECT } from '@tale-ui/utils/empty';
+import { useControlled } from '@tale-ui/utils/useControlled';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useMergedRefs } from '@tale-ui/utils/useMergedRefs';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
+import { visuallyHidden, visuallyHiddenInput } from '@tale-ui/utils/visuallyHidden';
 import { NOOP } from '../../utils/noop';
 import { useStateAttributesMapping } from '../utils/useStateAttributesMapping';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { useBaseUiId } from '../../utils/useBaseUiId';
-import type { BaseUIComponentProps, NonNativeButtonProps } from '../../utils/types';
+import { useTaleUiId } from '../../utils/useTaleUiId';
+import type { TaleUIComponentProps, NonNativeButtonProps } from '../../utils/types';
 import { mergeProps } from '../../merge-props';
 import { useButton } from '../../use-button/useButton';
 import type { FieldRoot } from '../../field/root/FieldRoot';
@@ -24,9 +24,9 @@ import { useAriaLabelledBy } from '../../labelable-provider/useAriaLabelledBy';
 import { useCheckboxGroupContext } from '../../checkbox-group/CheckboxGroupContext';
 import { CheckboxRootContext } from './CheckboxRootContext';
 import {
-  BaseUIChangeEventDetails,
+  TaleUIChangeEventDetails,
   createChangeEventDetails,
-} from '../../utils/createBaseUIEventDetails';
+} from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { useValueChanged } from '../../utils/useValueChanged';
 
@@ -36,7 +36,7 @@ export const PARENT_CHECKBOX = 'data-parent';
  * Represents the checkbox itself.
  * Renders a `<span>` element and a hidden `<input>` beside.
  *
- * Documentation: [Base UI Checkbox](https://base-ui.com/react/components/checkbox)
+ * Documentation: [Tale UI Checkbox](https://base-ui.com/react/components/checkbox)
  */
 export const CheckboxRoot = React.forwardRef(function CheckboxRoot(
   componentProps: CheckboxRoot.Props,
@@ -89,9 +89,9 @@ export const CheckboxRoot = React.forwardRef(function CheckboxRoot(
   const name = fieldName ?? nameProp;
   const value = valueProp ?? name;
 
-  const id = useBaseUiId();
+  const id = useTaleUiId();
 
-  const parentId = useBaseUiId();
+  const parentId = useTaleUiId();
   let inputId = controlId;
   if (isGroupedWithParent) {
     inputId = parent ? parentId : `${parentContext.id}-${value}`;
@@ -388,7 +388,7 @@ export interface CheckboxRootState extends FieldRoot.State {
 export interface CheckboxRootProps
   extends
     NonNativeButtonProps,
-    Omit<BaseUIComponentProps<'span', CheckboxRoot.State>, 'onChange' | 'value'> {
+    Omit<TaleUIComponentProps<'span', CheckboxRoot.State>, 'onChange' | 'value'> {
   /**
    * The id of the input element.
    */
@@ -462,7 +462,7 @@ export interface CheckboxRootProps
 
 export type CheckboxRootChangeEventReason = typeof REASONS.none;
 export type CheckboxRootChangeEventDetails =
-  BaseUIChangeEventDetails<CheckboxRoot.ChangeEventReason>;
+  TaleUIChangeEventDetails<CheckboxRoot.ChangeEventReason>;
 
 export namespace CheckboxRoot {
   export type State = CheckboxRootState;

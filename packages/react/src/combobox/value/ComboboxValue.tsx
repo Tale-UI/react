@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { useStore } from '@base-ui/utils/store';
+import { useStore } from '@tale-ui/utils/store';
 import { useComboboxRootContext } from '../root/ComboboxRootContext';
 import { resolveMultipleLabels, resolveSelectedLabel } from '../../utils/resolveValueLabel';
 import { selectors } from '../store';
@@ -9,7 +9,7 @@ import { selectors } from '../store';
  * The current value of the combobox.
  * Doesn't render its own HTML element.
  *
- * Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
+ * Documentation: [Tale UI Combobox](https://base-ui.com/react/components/combobox)
  */
 export function ComboboxValue(props: ComboboxValue.Props): React.ReactElement {
   const { children: childrenProp, placeholder } = props;

@@ -2,8 +2,8 @@
 import * as React from 'react';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { useBaseUiId } from '../../utils/useBaseUiId';
-import type { BaseUIComponentProps } from '../../utils/types';
+import { useTaleUiId } from '../../utils/useTaleUiId';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useCompositeListItem } from '../../composite/list/useCompositeListItem';
 import { useMenuPositionerContext } from '../positioner/MenuPositionerContext';
 import { useMenuItemCommonProps } from '../item/useMenuItemCommonProps';
@@ -12,7 +12,7 @@ import { useMenuItemCommonProps } from '../item/useMenuItemCommonProps';
  * A link in the menu that can be used to navigate to a different page or section.
  * Renders an `<a>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Tale UI Menu](https://base-ui.com/react/components/menu)
  */
 export const MenuLinkItem = React.forwardRef(function MenuLinkItem(
   componentProps: MenuLinkItem.Props,
@@ -33,7 +33,7 @@ export const MenuLinkItem = React.forwardRef(function MenuLinkItem(
   const menuPositionerContext = useMenuPositionerContext(true);
   const nodeId = menuPositionerContext?.nodeId;
 
-  const id = useBaseUiId(idProp);
+  const id = useTaleUiId(idProp);
 
   const { store } = useMenuRootContext();
   const highlighted = store.useState('isActive', listItem.index);
@@ -69,7 +69,7 @@ export interface MenuLinkItemState {
   highlighted: boolean;
 }
 
-export interface MenuLinkItemProps extends BaseUIComponentProps<'a', MenuLinkItem.State> {
+export interface MenuLinkItemProps extends TaleUIComponentProps<'a', MenuLinkItem.State> {
   /**
    * Overrides the text label to use when the item is matched during keyboard text navigation.
    */

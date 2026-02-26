@@ -39,7 +39,7 @@ export function isOutsideMenuEvent({ currentTarget, relatedTarget }: Targets, pa
     !nodeChildrenContains &&
     !(
       contains(floatingElement, relatedTarget) &&
-      relatedTarget?.hasAttribute('data-base-ui-focus-guard')
+      relatedTarget?.hasAttribute('data-tale-ui-focus-guard')
     )
   );
 }

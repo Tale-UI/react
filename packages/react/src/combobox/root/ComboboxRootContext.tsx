@@ -26,7 +26,7 @@ export function useComboboxRootContext() {
   const context = React.useContext(ComboboxRootContext) as ComboboxStore | undefined;
   if (!context) {
     throw new Error(
-      'Base UI: ComboboxRootContext is missing. Combobox parts must be placed within <Combobox.Root>.',
+      'Tale UI: ComboboxRootContext is missing. Combobox parts must be placed within <Combobox.Root>.',
     );
   }
   return context;
@@ -36,7 +36,7 @@ export function useComboboxFloatingContext() {
   const context = React.useContext(ComboboxFloatingContext);
   if (!context) {
     throw new Error(
-      'Base UI: ComboboxFloatingContext is missing. Combobox parts must be placed within <Combobox.Root>.',
+      'Tale UI: ComboboxFloatingContext is missing. Combobox parts must be placed within <Combobox.Root>.',
     );
   }
   return context;
@@ -46,7 +46,7 @@ export function useComboboxDerivedItemsContext() {
   const context = React.useContext(ComboboxDerivedItemsContext);
   if (!context) {
     throw new Error(
-      'Base UI: ComboboxItemsContext is missing. Combobox parts must be placed within <Combobox.Root>.',
+      'Tale UI: ComboboxItemsContext is missing. Combobox parts must be placed within <Combobox.Root>.',
     );
   }
   return context;

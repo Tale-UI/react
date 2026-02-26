@@ -101,7 +101,7 @@ export function useSliderRootContext() {
   const context = React.useContext(SliderRootContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: SliderRootContext is missing. Slider parts must be placed within <Slider.Root>.',
+      'Tale UI: SliderRootContext is missing. Slider parts must be placed within <Slider.Root>.',
     );
   }
   return context;

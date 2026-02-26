@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { InteractionType, useEnhancedClickHandler } from '@base-ui/utils/useEnhancedClickHandler';
-import { isIOS } from '@base-ui/utils/detectBrowser';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { InteractionType, useEnhancedClickHandler } from '@tale-ui/utils/useEnhancedClickHandler';
+import { isIOS } from '@tale-ui/utils/detectBrowser';
 
 /**
  * Determines the interaction type (keyboard, mouse, touch, etc.) that opened the component.

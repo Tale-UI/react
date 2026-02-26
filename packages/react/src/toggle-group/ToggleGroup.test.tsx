@@ -1,9 +1,9 @@
 import { expect } from 'vitest';
 import { spy } from 'sinon';
 import { act, screen } from '@mui/internal-test-utils';
-import { DirectionProvider, type TextDirection } from '@base-ui/react/direction-provider';
-import { ToggleGroup } from '@base-ui/react/toggle-group';
-import { Toggle } from '@base-ui/react/toggle';
+import { DirectionProvider, type TextDirection } from '@tale-ui/react/direction-provider';
+import { ToggleGroup } from '@tale-ui/react/toggle-group';
+import { Toggle } from '@tale-ui/react/toggle';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
 describe('<ToggleGroup />', () => {
@@ -107,7 +107,7 @@ describe('<ToggleGroup />', () => {
       );
 
       expect(console.error).toHaveBeenCalledExactlyOnceWith(
-        'Base UI: A `<Toggle>` component rendered in a `<ToggleGroup>` has no explicit `value` prop. This will cause issues between the Toggle Group and Toggle values. Provide the `<Toggle>` with a `value` prop matching the `<ToggleGroup>` values prop type.',
+        'Tale UI: A `<Toggle>` component rendered in a `<ToggleGroup>` has no explicit `value` prop. This will cause issues between the Toggle Group and Toggle values. Provide the `<Toggle>` with a `value` prop matching the `<ToggleGroup>` values prop type.',
       );
     });
   });

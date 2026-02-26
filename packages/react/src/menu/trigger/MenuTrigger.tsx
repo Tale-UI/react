@@ -2,12 +2,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { FocusableElement } from 'tabbable';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { fastComponentRef } from '@base-ui/utils/fastHooks';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
+import { ownerDocument } from '@tale-ui/utils/owner';
+import { fastComponentRef } from '@tale-ui/utils/fastHooks';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { EMPTY_OBJECT } from '@tale-ui/utils/empty';
 import {
   safePolygon,
   useClick,
@@ -29,14 +29,14 @@ import {
 import { useMenuRootContext } from '../root/MenuRootContext';
 import { pressableTriggerOpenStateMapping } from '../../utils/popupStateMapping';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { BaseUIComponentProps, NativeButtonProps } from '../../utils/types';
+import { TaleUIComponentProps, NativeButtonProps } from '../../utils/types';
 import { useButton } from '../../use-button/useButton';
 import { getPseudoElementBounds } from '../../utils/getPseudoElementBounds';
 import { CompositeItem } from '../../composite/item/CompositeItem';
 import { useCompositeRootContext } from '../../composite/root/CompositeRootContext';
 import { findRootOwnerId } from '../utils/findRootOwnerId';
 import { useTriggerDataForwarding } from '../../utils/popups';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { REASONS } from '../../utils/reasons';
 import { useMixedToggleClickHandler } from '../../utils/useMixedToggleClickHandler';
 import { MenuHandle } from '../store/MenuHandle';
@@ -45,7 +45,7 @@ import { useMenubarContext } from '../../menubar/MenubarContext';
 import { MenuParent } from '../root/MenuRoot';
 import { PATIENT_CLICK_THRESHOLD } from '../../utils/constants';
 import { FocusGuard } from '../../utils/FocusGuard';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 
 const BOUNDARY_OFFSET = 2;
 
@@ -53,7 +53,7 @@ const BOUNDARY_OFFSET = 2;
  * A button that opens the menu.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Tale UI Menu](https://base-ui.com/react/components/menu)
  */
 export const MenuTrigger = fastComponentRef(function MenuTrigger(
   componentProps: MenuTrigger.Props,
@@ -77,11 +77,11 @@ export const MenuTrigger = fastComponentRef(function MenuTrigger(
   const store = handle?.store ?? rootContext?.store;
   if (!store) {
     throw new Error(
-      'Base UI: <Menu.Trigger> must be either used within a <Menu.Root> component or provided with a handle.',
+      'Tale UI: <Menu.Trigger> must be either used within a <Menu.Root> component or provided with a handle.',
     );
   }
 
-  const thisTriggerId = useBaseUiId(idProp);
+  const thisTriggerId = useTaleUiId(idProp);
   const isTriggerActive = store.useState('isTriggerActive', thisTriggerId);
   const floatingRootContext = store.useState('floatingRootContext');
   const isOpenedByThisTrigger = store.useState('isOpenedByTrigger', thisTriggerId);
@@ -359,7 +359,7 @@ export interface MenuTrigger {
 }
 
 export interface MenuTriggerProps<Payload = unknown>
-  extends NativeButtonProps, BaseUIComponentProps<'button', MenuTrigger.State> {
+  extends NativeButtonProps, TaleUIComponentProps<'button', MenuTrigger.State> {
   children?: React.ReactNode;
   /**
    * Whether the component should ignore user interaction.

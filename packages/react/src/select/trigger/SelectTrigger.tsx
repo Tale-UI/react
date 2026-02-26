@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
-import { useStore } from '@base-ui/utils/store';
+import { ownerDocument } from '@tale-ui/utils/owner';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useMergedRefs } from '@tale-ui/utils/useMergedRefs';
+import { useValueAsRef } from '@tale-ui/utils/useValueAsRef';
+import { useStore } from '@tale-ui/utils/store';
 import { useSelectRootContext } from '../root/SelectRootContext';
-import { BaseUIComponentProps, HTMLProps, NativeButtonProps } from '../../utils/types';
+import { TaleUIComponentProps, HTMLProps, NativeButtonProps } from '../../utils/types';
 import { useFieldRootContext } from '../../field/root/FieldRootContext';
 import { useLabelableContext } from '../../labelable-provider/LabelableContext';
 import { pressableTriggerOpenStateMapping } from '../../utils/popupStateMapping';
@@ -20,7 +20,7 @@ import { contains, getFloatingFocusElement } from '../../floating-ui-react/utils
 import { mergeProps } from '../../merge-props';
 import { useButton } from '../../use-button';
 import type { FieldRoot } from '../../field/root/FieldRoot';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { useLabelableId } from '../../labelable-provider/useLabelableId';
 
@@ -38,7 +38,7 @@ const stateAttributesMapping: StateAttributesMapping<SelectTrigger.State> = {
  * A button that opens the select popup.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Tale UI Select](https://base-ui.com/react/components/select)
  */
 export const SelectTrigger = React.forwardRef(function SelectTrigger(
   componentProps: SelectTrigger.Props,
@@ -304,7 +304,7 @@ export interface SelectTriggerState extends FieldRoot.State {
 }
 
 export interface SelectTriggerProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', SelectTrigger.State> {
+  extends NativeButtonProps, TaleUIComponentProps<'button', SelectTrigger.State> {
   children?: React.ReactNode;
   /** Whether the component should ignore user interaction. */
   disabled?: boolean | undefined;

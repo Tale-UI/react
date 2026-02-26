@@ -2,13 +2,13 @@
 import type * as React from 'react';
 import { DialogTrigger } from '../../dialog/trigger/DialogTrigger';
 import type { DialogHandle as DrawerHandle } from '../../dialog/store/DialogHandle';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../utils/types';
+import type { TaleUIComponentProps, NativeButtonProps } from '../../utils/types';
 
 /**
  * A button that opens the drawer.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Tale UI Drawer](https://base-ui.com/react/components/drawer)
  */
 export const DrawerTrigger = DialogTrigger as DrawerTrigger;
 
@@ -19,7 +19,7 @@ export interface DrawerTrigger {
 }
 
 export interface DrawerTriggerProps<Payload = unknown>
-  extends NativeButtonProps, BaseUIComponentProps<'button', DrawerTrigger.State> {
+  extends NativeButtonProps, TaleUIComponentProps<'button', DrawerTrigger.State> {
   /**
    * A handle to associate the trigger with a drawer.
    * Can be created with the Drawer.createHandle() method.

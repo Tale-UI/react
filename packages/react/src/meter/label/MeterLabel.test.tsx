@@ -1,4 +1,4 @@
-import { Meter } from '@base-ui/react/meter';
+import { Meter } from '@tale-ui/react/meter';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Meter.Label />', () => {

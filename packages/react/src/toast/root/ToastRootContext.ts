@@ -23,7 +23,7 @@ export function useToastRootContext(): ToastRootContext {
   const context = React.useContext(ToastRootContext);
   if (!context) {
     throw new Error(
-      'Base UI: ToastRootContext is missing. Toast parts must be used within <Toast.Root>.',
+      'Tale UI: ToastRootContext is missing. Toast parts must be used within <Toast.Root>.',
     );
   }
   return context as ToastRootContext;

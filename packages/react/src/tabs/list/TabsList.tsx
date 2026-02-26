@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 import type { TabsRoot } from '../root/TabsRoot';
 import { CompositeRoot } from '../../composite/root/CompositeRoot';
 import { tabsStateAttributesMapping } from '../root/stateAttributesMapping';
@@ -15,7 +15,7 @@ import { EMPTY_ARRAY } from '../../utils/constants';
  * Groups the individual tab buttons.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
+ * Documentation: [Tale UI Tabs](https://base-ui.com/react/components/tabs)
  */
 export const TabsList = React.forwardRef(function TabsList(
   componentProps: TabsList.Props,
@@ -194,7 +194,7 @@ function useActivationDirectionDetector(
 
 export interface TabsListState extends TabsRoot.State {}
 
-export interface TabsListProps extends BaseUIComponentProps<'div', TabsList.State> {
+export interface TabsListProps extends TaleUIComponentProps<'div', TabsList.State> {
   /**
    * Whether to automatically change the active tab on arrow key focus.
    * Otherwise, tabs will be activated using <kbd>Enter</kbd> or <kbd>Space</kbd> key press.

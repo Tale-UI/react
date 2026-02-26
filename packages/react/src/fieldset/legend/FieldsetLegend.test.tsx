@@ -1,5 +1,5 @@
 import { createRenderer, screen, waitFor } from '@mui/internal-test-utils';
-import { Fieldset } from '@base-ui/react/fieldset';
+import { Fieldset } from '@tale-ui/react/fieldset';
 import { expect } from 'chai';
 import { describeConformance, isJSDOM } from '#test-utils';
 

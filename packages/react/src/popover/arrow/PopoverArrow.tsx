@@ -3,7 +3,7 @@ import * as React from 'react';
 import { usePopoverPositionerContext } from '../positioner/PopoverPositionerContext';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
 import type { Align, Side } from '../../utils/useAnchorPositioning';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import { useRenderElement } from '../../utils/useRenderElement';
 
@@ -11,7 +11,7 @@ import { useRenderElement } from '../../utils/useRenderElement';
  * Displays an element positioned against the popover anchor.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Tale UI Popover](https://base-ui.com/react/components/popover)
  */
 export const PopoverArrow = React.forwardRef(function PopoverArrow(
   componentProps: PopoverArrow.Props,
@@ -50,7 +50,7 @@ export interface PopoverArrowState {
   uncentered: boolean;
 }
 
-export interface PopoverArrowProps extends BaseUIComponentProps<'div', PopoverArrow.State> {}
+export interface PopoverArrowProps extends TaleUIComponentProps<'div', PopoverArrow.State> {}
 
 export namespace PopoverArrow {
   export type State = PopoverArrowState;

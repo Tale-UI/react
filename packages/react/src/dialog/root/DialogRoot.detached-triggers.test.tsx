@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { expect } from 'chai';
 import { act, screen, waitFor } from '@mui/internal-test-utils';
-import { Dialog } from '@base-ui/react/dialog';
+import { Dialog } from '@tale-ui/react/dialog';
 import { createRenderer, isJSDOM } from '#test-utils';
 
 describe('<Dialog.Root />', () => {
   const { render } = createRenderer();
 
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
   });
 
   describe.skipIf(isJSDOM)('multiple triggers within Root', () => {

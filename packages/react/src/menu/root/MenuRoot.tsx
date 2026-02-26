@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useId } from '@base-ui/utils/useId';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useOnFirstRender } from '@base-ui/utils/useOnFirstRender';
-import { useScrollLock } from '@base-ui/utils/useScrollLock';
-import { EMPTY_ARRAY } from '@base-ui/utils/empty';
-import { fastComponent } from '@base-ui/utils/fastHooks';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useId } from '@tale-ui/utils/useId';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useOnFirstRender } from '@tale-ui/utils/useOnFirstRender';
+import { useScrollLock } from '@tale-ui/utils/useScrollLock';
+import { EMPTY_ARRAY } from '@tale-ui/utils/empty';
+import { fastComponent } from '@tale-ui/utils/fastHooks';
 import {
   FloatingEvents,
   FloatingTree,
@@ -28,8 +28,8 @@ import { useOpenInteractionType } from '../../utils/useOpenInteractionType';
 import type { FloatingUIOpenChangeDetails } from '../../utils/types';
 import {
   createChangeEventDetails,
-  type BaseUIChangeEventDetails,
-} from '../../utils/createBaseUIEventDetails';
+  type TaleUIChangeEventDetails,
+} from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import {
   ContextMenuRootContext,
@@ -49,7 +49,7 @@ import { useMenuSubmenuRootContext } from '../submenu-root/MenuSubmenuRootContex
  * Groups all parts of the menu.
  * Doesn’t render its own HTML element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Tale UI Menu](https://base-ui.com/react/components/menu)
  */
 export const MenuRoot = fastComponent(function MenuRoot<Payload>(props: MenuRoot.Props<Payload>) {
   const {
@@ -180,7 +180,7 @@ export const MenuRoot = fastComponent(function MenuRoot<Payload>(props: MenuRoot
   if (process.env.NODE_ENV !== 'production') {
     if (parent.type !== undefined && modalProp !== undefined) {
       console.warn(
-        'Base UI: The `modal` prop is not supported on nested menus. It will be ignored.',
+        'Tale UI: The `modal` prop is not supported on nested menus. It will be ignored.',
       );
     }
   }
@@ -678,7 +678,7 @@ export type MenuRootChangeEventReason =
   | typeof REASONS.imperativeAction
   | typeof REASONS.none;
 
-export type MenuRootChangeEventDetails = BaseUIChangeEventDetails<MenuRoot.ChangeEventReason> & {
+export type MenuRootChangeEventDetails = TaleUIChangeEventDetails<MenuRoot.ChangeEventReason> & {
   preventUnmountOnClose(): void;
 };
 

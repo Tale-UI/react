@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
-import { useOnFirstRender } from '@base-ui/utils/useOnFirstRender';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
+import { useOnFirstRender } from '@tale-ui/utils/useOnFirstRender';
 import { useDialogRoot } from './useDialogRoot';
 import { DialogRootContext, useDialogRootContext } from './DialogRootContext';
-import type { BaseUIChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import type { TaleUIChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { DialogStore } from '../store/DialogStore';
 import { DialogHandle } from '../store/DialogHandle';
@@ -14,7 +14,7 @@ import { type PayloadChildRenderFunction } from '../../utils/popups';
  * Groups all parts of the dialog.
  * Doesn’t render its own HTML element.
  *
- * Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+ * Documentation: [Tale UI Dialog](https://base-ui.com/react/components/dialog)
  */
 export function DialogRoot<Payload>(props: DialogRoot.Props<Payload>) {
   const {
@@ -165,7 +165,7 @@ export type DialogRootChangeEventReason =
   | typeof REASONS.none;
 
 export type DialogRootChangeEventDetails =
-  BaseUIChangeEventDetails<DialogRoot.ChangeEventReason> & {
+  TaleUIChangeEventDetails<DialogRoot.ChangeEventReason> & {
     preventUnmountOnClose(): void;
   };
 

@@ -1,19 +1,19 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useBaseUiId } from '../utils/useBaseUiId';
+import { useControlled } from '@tale-ui/utils/useControlled';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useTaleUiId } from '../utils/useTaleUiId';
 import { useRenderElement } from '../utils/useRenderElement';
 import { CheckboxGroupContext } from './CheckboxGroupContext';
 import type { FieldRoot } from '../field/root/FieldRoot';
 import { useFieldRootContext } from '../field/root/FieldRootContext';
 import { useLabelableContext } from '../labelable-provider/LabelableContext';
-import type { BaseUIComponentProps } from '../utils/types';
+import type { TaleUIComponentProps } from '../utils/types';
 import { fieldValidityMapping } from '../field/utils/constants';
 import { useField } from '../field/useField';
 import { PARENT_CHECKBOX } from '../checkbox/root/CheckboxRoot';
 import { useCheckboxGroupParent } from './useCheckboxGroupParent';
-import type { BaseUIChangeEventDetails } from '../utils/createBaseUIEventDetails';
+import type { TaleUIChangeEventDetails } from '../utils/createTaleUIEventDetails';
 import { REASONS } from '../utils/reasons';
 import { useFormContext } from '../form/FormContext';
 import { useValueChanged } from '../utils/useValueChanged';
@@ -23,7 +23,7 @@ import { EMPTY_ARRAY } from '../utils/constants';
 /**
  * Provides a shared state to a series of checkboxes.
  *
- * Documentation: [Base UI Checkbox Group](https://base-ui.com/react/components/checkbox-group)
+ * Documentation: [Tale UI Checkbox Group](https://base-ui.com/react/components/checkbox-group)
  */
 export const CheckboxGroup = React.forwardRef(function CheckboxGroup(
   componentProps: CheckboxGroup.Props,
@@ -81,7 +81,7 @@ export const CheckboxGroup = React.forwardRef(function CheckboxGroup(
     onValueChange,
   });
 
-  const id = useBaseUiId(idProp);
+  const id = useTaleUiId(idProp);
 
   const controlRef = React.useRef<HTMLButtonElement>(null);
 
@@ -167,7 +167,7 @@ export interface CheckboxGroupState extends FieldRoot.State {
   disabled: boolean;
 }
 
-export interface CheckboxGroupProps extends BaseUIComponentProps<'div', CheckboxGroup.State> {
+export interface CheckboxGroupProps extends TaleUIComponentProps<'div', CheckboxGroup.State> {
   /**
    * Names of the checkboxes in the group that should be ticked.
    *
@@ -200,7 +200,7 @@ export interface CheckboxGroupProps extends BaseUIComponentProps<'div', Checkbox
 
 export type CheckboxGroupChangeEventReason = typeof REASONS.none;
 export type CheckboxGroupChangeEventDetails =
-  BaseUIChangeEventDetails<CheckboxGroup.ChangeEventReason>;
+  TaleUIChangeEventDetails<CheckboxGroup.ChangeEventReason>;
 
 export namespace CheckboxGroup {
   export type State = CheckboxGroupState;

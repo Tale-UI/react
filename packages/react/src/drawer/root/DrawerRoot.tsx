@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { ownerWindow } from '@base-ui/utils/owner';
-import { isAndroid } from '@base-ui/utils/detectBrowser';
-import { useId } from '@base-ui/utils/useId';
+import { useControlled } from '@tale-ui/utils/useControlled';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { ownerWindow } from '@tale-ui/utils/owner';
+import { isAndroid } from '@tale-ui/utils/detectBrowser';
+import { useId } from '@tale-ui/utils/useId';
 import {
   DrawerRootContext,
   type DrawerNestedSwipeProgressStore,
@@ -15,8 +15,8 @@ import {
 import { Dialog } from '../../dialog';
 import {
   createChangeEventDetails,
-  type BaseUIChangeEventDetails,
-} from '../../utils/createBaseUIEventDetails';
+  type TaleUIChangeEventDetails,
+} from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
 import { useDrawerProviderContext } from '../provider/DrawerProviderContext';
@@ -27,7 +27,7 @@ import type { PayloadChildRenderFunction } from '../../utils/popups';
  * Groups all parts of the drawer.
  * Doesn't render its own HTML element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Tale UI Drawer](https://base-ui.com/react/components/drawer)
  */
 export function DrawerRoot<Payload = unknown>(props: DrawerRoot.Props<Payload>) {
   const {
@@ -365,14 +365,14 @@ export type DrawerRootChangeEventReason =
   | typeof REASONS.none;
 
 export type DrawerRootChangeEventDetails =
-  BaseUIChangeEventDetails<DrawerRoot.ChangeEventReason> & {
+  TaleUIChangeEventDetails<DrawerRoot.ChangeEventReason> & {
     preventUnmountOnClose(): void;
   };
 
 export type DrawerRootSnapPointChangeEventReason = DrawerRootChangeEventReason;
 
 export type DrawerRootSnapPointChangeEventDetails =
-  BaseUIChangeEventDetails<DrawerRootSnapPointChangeEventReason>;
+  TaleUIChangeEventDetails<DrawerRootSnapPointChangeEventReason>;
 
 export namespace DrawerRoot {
   export type Props<Payload = unknown> = DrawerRootProps<Payload>;

@@ -1,4 +1,4 @@
-import { Radio } from '@base-ui/react/radio';
+import { Radio } from '@tale-ui/react/radio';
 
 const value = 'a';
 

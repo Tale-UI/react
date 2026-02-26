@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Select } from '@base-ui/react/select';
-import { Popover } from '@base-ui/react/popover';
+import { Select } from '@tale-ui/react/select';
+import { Popover } from '@tale-ui/react/popover';
 import {
   act,
   fireEvent,
@@ -13,12 +13,12 @@ import {
 import { createRenderer, isJSDOM, popupConformanceTests, wait } from '#test-utils';
 import { expect } from 'vitest';
 import { spy } from 'sinon';
-import { Field } from '@base-ui/react/field';
-import { Form } from '@base-ui/react/form';
+import { Field } from '@tale-ui/react/field';
+import { Form } from '@tale-ui/react/form';
 
 describe('<Select.Root />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
   });
 
   const { render } = createRenderer();
@@ -528,7 +528,7 @@ describe('<Select.Root />', () => {
     });
   });
 
-  describe('BaseUIChangeEventDetails', () => {
+  describe('TaleUIChangeEventDetails', () => {
     it('onOpenChange cancel() prevents opening while uncontrolled', async () => {
       await render(
         <Select.Root
@@ -856,7 +856,7 @@ describe('<Select.Root />', () => {
     });
 
     it('is called on close when the exit animation finishes', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
       const onOpenChangeComplete = spy();
 
@@ -943,7 +943,7 @@ describe('<Select.Root />', () => {
     });
 
     it('is called on open when the enter animation finishes', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
       const onOpenChangeComplete = spy();
 

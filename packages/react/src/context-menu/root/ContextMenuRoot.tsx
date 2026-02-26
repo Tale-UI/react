@@ -1,17 +1,17 @@
 'use client';
 import * as React from 'react';
-import { useId } from '@base-ui/utils/useId';
+import { useId } from '@tale-ui/utils/useId';
 import { ContextMenuRootContext } from './ContextMenuRootContext';
 import { Menu } from '../../menu';
 import { MenuRootContext } from '../../menu/root/MenuRootContext';
-import type { BaseUIChangeEventDetails } from '../../types';
+import type { TaleUIChangeEventDetails } from '../../types';
 import type { MenuRoot } from '../../menu/root/MenuRoot';
 
 /**
  * A component that creates a context menu activated by right clicking or long pressing.
  * Doesn’t render its own HTML element.
  *
- * Documentation: [Base UI Context Menu](https://base-ui.com/react/components/context-menu)
+ * Documentation: [Tale UI Context Menu](https://base-ui.com/react/components/context-menu)
  */
 export function ContextMenuRoot(props: ContextMenuRoot.Props) {
   const [anchor, setAnchor] = React.useState<ContextMenuRootContext['anchor']>({
@@ -68,7 +68,7 @@ export interface ContextMenuRootProps extends Omit<
 
 export type ContextMenuRootChangeEventReason = MenuRoot.ChangeEventReason;
 export type ContextMenuRootChangeEventDetails =
-  BaseUIChangeEventDetails<ContextMenuRoot.ChangeEventReason>;
+  TaleUIChangeEventDetails<ContextMenuRoot.ChangeEventReason>;
 
 export namespace ContextMenuRoot {
   export type State = ContextMenuRootState;

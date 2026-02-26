@@ -1,26 +1,26 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { error } from '@base-ui/utils/error';
-import { useBaseUiId } from '../utils/useBaseUiId';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useControlled } from '@tale-ui/utils/useControlled';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { error } from '@tale-ui/utils/error';
+import { useTaleUiId } from '../utils/useTaleUiId';
 import { useRenderElement } from '../utils/useRenderElement';
-import type { BaseUIComponentProps, NativeButtonProps } from '../utils/types';
+import type { TaleUIComponentProps, NativeButtonProps } from '../utils/types';
 import { useToggleGroupContext } from '../toggle-group/ToggleGroupContext';
 import { useButton } from '../use-button/useButton';
 import { CompositeItem } from '../composite/item/CompositeItem';
 import {
-  type BaseUIChangeEventDetails,
+  type TaleUIChangeEventDetails,
   createChangeEventDetails,
-} from '../utils/createBaseUIEventDetails';
+} from '../utils/createTaleUIEventDetails';
 import { REASONS } from '../utils/reasons';
 
 /**
  * A two-state button that can be on or off.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Toggle](https://base-ui.com/react/components/toggle)
+ * Documentation: [Tale UI Toggle](https://base-ui.com/react/components/toggle)
  */
 export const Toggle = React.forwardRef(function Toggle<Value extends string>(
   componentProps: Toggle.Props<Value>,
@@ -41,7 +41,7 @@ export const Toggle = React.forwardRef(function Toggle<Value extends string>(
   } = componentProps;
 
   // `|| undefined` handles cases, where value is falsy (i.e. "")
-  const value = useBaseUiId(valueProp || undefined);
+  const value = useTaleUiId(valueProp || undefined);
   const groupContext = useToggleGroupContext();
   const groupValue = groupContext?.value ?? [];
 
@@ -148,7 +148,7 @@ export interface ToggleState {
 }
 
 export interface ToggleProps<Value extends string>
-  extends NativeButtonProps, BaseUIComponentProps<'button', Toggle.State> {
+  extends NativeButtonProps, TaleUIComponentProps<'button', Toggle.State> {
   /**
    * Whether the toggle button is currently pressed.
    * This is the controlled counterpart of `defaultPressed`.
@@ -180,7 +180,7 @@ export interface ToggleProps<Value extends string>
 
 export type ToggleChangeEventReason = typeof REASONS.none;
 
-export type ToggleChangeEventDetails = BaseUIChangeEventDetails<Toggle.ChangeEventReason>;
+export type ToggleChangeEventDetails = TaleUIChangeEventDetails<Toggle.ChangeEventReason>;
 
 export namespace Toggle {
   export type State = ToggleState;

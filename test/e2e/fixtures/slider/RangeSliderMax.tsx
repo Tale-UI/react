@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Slider } from '@base-ui/react/slider';
+import { Slider } from '@tale-ui/react/slider';
 
 export default function RangeSliderMax() {
   return (

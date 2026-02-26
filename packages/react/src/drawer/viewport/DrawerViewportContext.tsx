@@ -17,7 +17,7 @@ export function useDrawerViewportContext(optional?: boolean) {
 
   if (optional === false && context === null) {
     throw new Error(
-      'Base UI: DrawerViewportContext is missing. Drawer parts must be placed within <Drawer.Viewport>.',
+      'Tale UI: DrawerViewportContext is missing. Drawer parts must be placed within <Drawer.Viewport>.',
     );
   }
 

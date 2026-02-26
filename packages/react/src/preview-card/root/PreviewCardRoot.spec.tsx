@@ -1,5 +1,5 @@
 import { expectType } from '#test-utils';
-import { PreviewCard } from '@base-ui/react/preview-card';
+import { PreviewCard } from '@tale-ui/react/preview-card';
 
 const numberPayloadHandle = PreviewCard.createHandle<number>();
 

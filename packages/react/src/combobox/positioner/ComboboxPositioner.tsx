@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { useStore } from '@base-ui/utils/store';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { inertValue } from '@base-ui/utils/inertValue';
-import { useScrollLock } from '@base-ui/utils/useScrollLock';
+import { useStore } from '@tale-ui/utils/store';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { inertValue } from '@tale-ui/utils/inertValue';
+import { useScrollLock } from '@tale-ui/utils/useScrollLock';
 import {
   useComboboxFloatingContext,
   useComboboxRootContext,
@@ -12,7 +12,7 @@ import {
 } from '../root/ComboboxRootContext';
 import { ComboboxPositionerContext } from './ComboboxPositionerContext';
 import { type Side, type Align, useAnchorPositioning } from '../../utils/useAnchorPositioning';
-import type { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import type { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import { useComboboxPortalContext } from '../portal/ComboboxPortalContext';
 import { DROPDOWN_COLLISION_AVOIDANCE } from '../../utils/constants';
@@ -169,7 +169,7 @@ export interface ComboboxPositionerState {
 export interface ComboboxPositionerProps
   extends
     useAnchorPositioning.SharedParameters,
-    BaseUIComponentProps<'div', ComboboxPositioner.State> {}
+    TaleUIComponentProps<'div', ComboboxPositioner.State> {}
 
 export namespace ComboboxPositioner {
   export type State = ComboboxPositionerState;

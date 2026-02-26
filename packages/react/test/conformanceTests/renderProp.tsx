@@ -3,13 +3,13 @@ import { expect } from 'chai';
 import { randomStringValue, screen } from '@mui/internal-test-utils';
 import type {
   ConformantComponentProps,
-  BaseUiConformanceTestsOptions,
+  TaleUiConformanceTestsOptions,
 } from '../describeConformance';
 import { throwMissingPropError } from './utils';
 
 export function testRenderProp(
   element: React.ReactElement<ConformantComponentProps>,
-  getOptions: () => BaseUiConformanceTestsOptions,
+  getOptions: () => TaleUiConformanceTestsOptions,
 ) {
   const { render, testRenderPropWith: Element = 'div', button = false } = getOptions();
 
@@ -22,7 +22,7 @@ export function testRenderProp(
   const Wrapper = React.forwardRef<any, { children?: React.ReactNode }>(
     function Wrapper(props, forwardedRef) {
       return (
-        <div data-testid="base-ui-wrapper">
+        <div data-testid="tale-ui-wrapper">
           {/* @ts-expect-error complex type */}
           <Element ref={forwardedRef} {...props} data-testid="wrapped" />
         </div>
@@ -44,7 +44,7 @@ export function testRenderProp(
         }),
       );
 
-      expect(screen.queryByTestId('base-ui-wrapper')).not.to.equal(null);
+      expect(screen.queryByTestId('tale-ui-wrapper')).not.to.equal(null);
       expect(screen.queryByTestId('wrapped')).not.to.equal(null);
       expect(screen.queryByTestId('wrapped')).to.have.attribute('data-test-value', testValue);
     });
@@ -59,7 +59,7 @@ export function testRenderProp(
         }),
       );
 
-      expect(screen.queryByTestId('base-ui-wrapper')).not.to.equal(null);
+      expect(screen.queryByTestId('tale-ui-wrapper')).not.to.equal(null);
       expect(screen.queryByTestId('wrapped')).not.to.equal(null);
       expect(screen.queryByTestId('wrapped')).to.have.attribute('data-test-value', testValue);
     });
@@ -72,7 +72,7 @@ export function testRenderProp(
         }),
       );
 
-      expect(document.querySelector('[data-testid="base-ui-wrapper"]')).not.to.equal(null);
+      expect(document.querySelector('[data-testid="tale-ui-wrapper"]')).not.to.equal(null);
     });
 
     it('should pass the ref to the custom component', async () => {

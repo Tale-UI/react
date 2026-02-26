@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { BaseUIComponentProps } from '../../utils/types';
+import { TaleUIComponentProps } from '../../utils/types';
 import { valueToPercent } from '../../utils/valueToPercent';
 import type { MeterRoot } from '../root/MeterRoot';
 import { useMeterRootContext } from '../root/MeterRootContext';
@@ -10,7 +10,7 @@ import { useRenderElement } from '../../utils/useRenderElement';
  * Visualizes the position of the value along the range.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Meter](https://base-ui.com/react/components/meter)
+ * Documentation: [Tale UI Meter](https://base-ui.com/react/components/meter)
  */
 export const MeterIndicator = React.forwardRef(function MeterIndicator(
   componentProps: MeterIndicator.Props,
@@ -37,7 +37,7 @@ export const MeterIndicator = React.forwardRef(function MeterIndicator(
   });
 });
 
-export interface MeterIndicatorProps extends BaseUIComponentProps<'div', MeterRoot.State> {}
+export interface MeterIndicatorProps extends TaleUIComponentProps<'div', MeterRoot.State> {}
 
 export namespace MeterIndicator {
   export type Props = MeterIndicatorProps;

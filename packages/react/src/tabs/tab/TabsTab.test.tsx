@@ -1,4 +1,4 @@
-import { Tabs } from '@base-ui/react/tabs';
+import { Tabs } from '@tale-ui/react/tabs';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Tabs.Tab />', () => {

@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { useStore } from '@base-ui/utils/store';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { isAndroid, isFirefox } from '@base-ui/utils/detectBrowser';
-import { BaseUIComponentProps } from '../../utils/types';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useStore } from '@tale-ui/utils/store';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { isAndroid, isFirefox } from '@tale-ui/utils/detectBrowser';
+import { TaleUIComponentProps } from '../../utils/types';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { useRenderElement } from '../../utils/useRenderElement';
 import {
   useComboboxDerivedItemsContext,
@@ -19,7 +19,7 @@ import { useLabelableContext } from '../../labelable-provider/LabelableContext';
 import { useComboboxChipsContext } from '../chips/ComboboxChipsContext';
 import { stopEvent } from '../../floating-ui-react/utils';
 import { useComboboxPositionerContext } from '../positioner/ComboboxPositionerContext';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import type { Side } from '../../utils/useAnchorPositioning';
 import { useDirection } from '../../direction-provider/DirectionContext';
@@ -81,7 +81,7 @@ export const ComboboxInput = React.forwardRef(function ComboboxInput(
   const listEmpty = filteredItems.length === 0;
 
   const isInsidePopup = hasPositionerParent || inline;
-  const id = useBaseUiId(idProp ?? (!isInsidePopup ? rootId : undefined));
+  const id = useTaleUiId(idProp ?? (!isInsidePopup ? rootId : undefined));
 
   const [composingValue, setComposingValue] = React.useState<string | null>(null);
   const isComposingRef = React.useRef(false);
@@ -481,7 +481,7 @@ export interface ComboboxInputState extends FieldRoot.State {
   readOnly: boolean;
 }
 
-export interface ComboboxInputProps extends BaseUIComponentProps<'input', ComboboxInput.State> {
+export interface ComboboxInputProps extends TaleUIComponentProps<'input', ComboboxInput.State> {
   /**
    * Whether the component should ignore user interaction.
    * @default false

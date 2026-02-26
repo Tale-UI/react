@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
 import { FieldsetRootContext } from './FieldsetRootContext';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 
 /**
  * Groups a shared legend with related controls.
  * Renders a `<fieldset>` element.
  *
- * Documentation: [Base UI Fieldset](https://base-ui.com/react/components/fieldset)
+ * Documentation: [Tale UI Fieldset](https://base-ui.com/react/components/fieldset)
  */
 export const FieldsetRoot = React.forwardRef(function FieldsetRoot(
   componentProps: FieldsetRoot.Props,
@@ -52,7 +52,7 @@ export interface FieldsetRootState {
    */
   disabled: boolean;
 }
-export interface FieldsetRootProps extends BaseUIComponentProps<'fieldset', FieldsetRoot.State> {}
+export interface FieldsetRootProps extends TaleUIComponentProps<'fieldset', FieldsetRoot.State> {}
 
 export namespace FieldsetRoot {
   export type State = FieldsetRootState;

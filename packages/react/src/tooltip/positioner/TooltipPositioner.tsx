@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useTooltipRootContext } from '../root/TooltipRootContext';
 import { TooltipPositionerContext } from './TooltipPositionerContext';
 import { useAnchorPositioning, type Side, type Align } from '../../utils/useAnchorPositioning';
-import type { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import type { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import { useTooltipPortalContext } from '../portal/TooltipPortalContext';
 import { useRenderElement } from '../../utils/useRenderElement';
@@ -15,7 +15,7 @@ import { getDisabledMountTransitionStyles } from '../../utils/getDisabledMountTr
  * Positions the tooltip against the trigger.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+ * Documentation: [Tale UI Tooltip](https://base-ui.com/react/components/tooltip)
  */
 export const TooltipPositioner = React.forwardRef(function TooltipPositioner(
   componentProps: TooltipPositioner.Props,
@@ -145,7 +145,7 @@ export interface TooltipPositionerState {
 
 export interface TooltipPositionerProps
   extends
-    BaseUIComponentProps<'div', TooltipPositioner.State>,
+    TaleUIComponentProps<'div', TooltipPositioner.State>,
     Omit<useAnchorPositioning.SharedParameters, 'side'> {
   /**
    * Which side of the anchor element to align the popup against.

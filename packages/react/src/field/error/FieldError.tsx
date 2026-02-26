@@ -1,15 +1,15 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
 import { FieldRoot } from '../root/FieldRoot';
 import { useFieldRootContext } from '../root/FieldRootContext';
 import { useLabelableContext } from '../../labelable-provider/LabelableContext';
 import { fieldValidityMapping } from '../utils/constants';
 import { useFormContext } from '../../form/FormContext';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import type { StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { useOpenChangeComplete } from '../../utils/useOpenChangeComplete';
 import { transitionStatusMapping } from '../../utils/stateAttributesMapping';
 import { type TransitionStatus, useTransitionStatus } from '../../utils/useTransitionStatus';
@@ -23,7 +23,7 @@ const stateAttributesMapping: StateAttributesMapping<FieldError.State> = {
  * An error message displayed if the field control fails validation.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+ * Documentation: [Tale UI Field](https://base-ui.com/react/components/field)
  */
 export const FieldError = React.forwardRef(function FieldError(
   componentProps: FieldError.Props,
@@ -31,7 +31,7 @@ export const FieldError = React.forwardRef(function FieldError(
 ) {
   const { render, id: idProp, className, match, ...elementProps } = componentProps;
 
-  const id = useBaseUiId(idProp);
+  const id = useTaleUiId(idProp);
 
   const { validityData, state: fieldState, name } = useFieldRootContext(false);
   const { setMessageIds } = useLabelableContext();
@@ -131,7 +131,7 @@ export interface FieldErrorState extends FieldRoot.State {
   transitionStatus: TransitionStatus;
 }
 
-export interface FieldErrorProps extends BaseUIComponentProps<'div', FieldError.State> {
+export interface FieldErrorProps extends TaleUIComponentProps<'div', FieldError.State> {
   /**
    * Determines whether to show the error message according to the field’s
    * [ValidityState](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState).

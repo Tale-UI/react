@@ -2,7 +2,7 @@ import * as React from 'react';
 import { expect } from 'chai';
 import { spy } from 'sinon';
 import { act, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@tale-ui/react/menu';
 import { describeConformance, createRenderer, isJSDOM } from '#test-utils';
 
 describe('<Menu.Item />', () => {
@@ -44,8 +44,8 @@ describe('<Menu.Item />', () => {
     expect(onClick.callCount).to.equal(1);
   });
 
-  it('does not close the menu when onClick prevents Base UI handler', async () => {
-    const onClick = spy((event) => event.preventBaseUIHandler());
+  it('does not close the menu when onClick prevents Tale UI handler', async () => {
+    const onClick = spy((event) => event.preventTaleUIHandler());
     const { user } = await render(
       <Menu.Root>
         <Menu.Trigger>Open</Menu.Trigger>

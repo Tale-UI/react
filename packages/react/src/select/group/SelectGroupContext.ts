@@ -12,7 +12,7 @@ export function useSelectGroupContext() {
   const context = React.useContext(SelectGroupContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: SelectGroupContext is missing. SelectGroup parts must be placed within <Select.Group>.',
+      'Tale UI: SelectGroupContext is missing. SelectGroup parts must be placed within <Select.Group>.',
     );
   }
   return context;

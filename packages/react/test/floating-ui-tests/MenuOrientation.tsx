@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import c from 'clsx';
-import { useMergedRefsN } from '@base-ui/utils/useMergedRefs';
+import { useMergedRefsN } from '@tale-ui/utils/useMergedRefs';
 import { CompositeList } from '../../src/composite/list/CompositeList';
 import { useCompositeListItem } from '../../src/composite/list/useCompositeListItem';
 import { getEmptyRootContext } from '../../src/floating-ui-react/utils/getEmptyRootContext';

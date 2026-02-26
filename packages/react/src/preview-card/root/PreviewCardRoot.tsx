@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useOnFirstRender } from '@base-ui/utils/useOnFirstRender';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useOnFirstRender } from '@tale-ui/utils/useOnFirstRender';
 import { useDismiss, useInteractions, FloatingTree } from '../../floating-ui-react';
 import { PreviewCardRootContext, usePreviewCardRootContext } from './PreviewCardContext';
 import {
   createChangeEventDetails,
-  type BaseUIChangeEventDetails,
-} from '../../utils/createBaseUIEventDetails';
+  type TaleUIChangeEventDetails,
+} from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { PreviewCardStore } from '../store/PreviewCardStore';
 import {
@@ -106,7 +106,7 @@ function PreviewCardRootComponent<Payload>(props: PreviewCardRoot.Props<Payload>
  * Groups all parts of the preview card.
  * Doesn’t render its own HTML element.
  *
- * Documentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)
+ * Documentation: [Tale UI Preview Card](https://base-ui.com/react/components/preview-card)
  */
 export function PreviewCardRoot<Payload>(props: PreviewCardRoot.Props<Payload>) {
   if (usePreviewCardRootContext(true)) {
@@ -203,7 +203,7 @@ export type PreviewCardRootChangeEventReason =
   | typeof REASONS.none;
 
 export type PreviewCardRootChangeEventDetails =
-  BaseUIChangeEventDetails<PreviewCardRoot.ChangeEventReason> & {
+  TaleUIChangeEventDetails<PreviewCardRoot.ChangeEventReason> & {
     preventUnmountOnClose(): void;
   };
 

@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
 import { getWindow, isElement, isHTMLElement } from '@floating-ui/utils/dom';
-import { isMac, isSafari } from '@base-ui/utils/detectBrowser';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { ownerDocument } from '@base-ui/utils/owner';
+import { isMac, isSafari } from '@tale-ui/utils/detectBrowser';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
+import { ownerDocument } from '@tale-ui/utils/owner';
 import {
   activeElement,
   contains,
@@ -14,7 +14,7 @@ import {
 } from '../utils';
 
 import type { ElementProps, FloatingContext, FloatingRootContext } from '../types';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { createAttribute } from '../utils/createAttribute';
 import { FloatingUIOpenChangeDetails } from '../../utils/types';

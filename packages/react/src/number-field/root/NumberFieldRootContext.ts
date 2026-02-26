@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Timeout } from '@base-ui/utils/useTimeout';
+import { Timeout } from '@tale-ui/utils/useTimeout';
 import type { NumberFieldRoot } from './NumberFieldRoot';
 import { EventWithOptionalKeyState } from '../utils/types';
 import type { IncrementValueParameters } from '../utils/types';
@@ -55,7 +55,7 @@ export function useNumberFieldRootContext() {
   const context = React.useContext(NumberFieldRootContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: NumberFieldRootContext is missing. NumberField parts must be placed within <NumberField.Root>.',
+      'Tale UI: NumberFieldRootContext is missing. NumberField parts must be placed within <NumberField.Root>.',
     );
   }
 

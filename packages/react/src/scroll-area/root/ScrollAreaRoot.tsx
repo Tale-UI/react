@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import type { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
+import type { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 import { ScrollAreaRootContext } from './ScrollAreaRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { ScrollAreaRootCssVars } from './ScrollAreaRootCssVars';
@@ -10,7 +10,7 @@ import { SCROLL_TIMEOUT } from '../constants';
 import { getOffset } from '../utils/getOffset';
 import { ScrollAreaScrollbarDataAttributes } from '../scrollbar/ScrollAreaScrollbarDataAttributes';
 import { styleDisableScrollbar } from '../../utils/styles';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { scrollAreaStateAttributesMapping } from './stateAttributes';
 import { contains } from '../../floating-ui-react/utils';
 import { useCSPContext } from '../../csp-provider/CSPContext';
@@ -29,7 +29,7 @@ export type Coords = typeof DEFAULT_COORDS;
  * Groups all parts of the scroll area.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)
+ * Documentation: [Tale UI Scroll Area](https://base-ui.com/react/components/scroll-area)
  */
 export const ScrollAreaRoot = React.forwardRef(function ScrollAreaRoot(
   componentProps: ScrollAreaRoot.Props,
@@ -44,7 +44,7 @@ export const ScrollAreaRoot = React.forwardRef(function ScrollAreaRoot(
 
   const overflowEdgeThreshold = normalizeOverflowEdgeThreshold(overflowEdgeThresholdProp);
 
-  const rootId = useBaseUiId();
+  const rootId = useTaleUiId();
 
   const scrollYTimeout = useTimeout();
   const scrollXTimeout = useTimeout();
@@ -322,7 +322,7 @@ export interface ScrollAreaRootState {
   cornerHidden: boolean;
 }
 
-export interface ScrollAreaRootProps extends BaseUIComponentProps<'div', ScrollAreaRoot.State> {
+export interface ScrollAreaRootProps extends TaleUIComponentProps<'div', ScrollAreaRoot.State> {
   /**
    * The threshold in pixels that must be passed before the overflow edge attributes are applied.
    * Accepts a single number for all edges or an object to configure them individually.

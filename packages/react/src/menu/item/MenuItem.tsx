@@ -3,8 +3,8 @@ import * as React from 'react';
 import { REGULAR_ITEM, useMenuItem } from './useMenuItem';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { useBaseUiId } from '../../utils/useBaseUiId';
-import type { BaseUIComponentProps, NonNativeButtonProps } from '../../utils/types';
+import { useTaleUiId } from '../../utils/useTaleUiId';
+import type { TaleUIComponentProps, NonNativeButtonProps } from '../../utils/types';
 import { useCompositeListItem } from '../../composite/list/useCompositeListItem';
 import { useMenuPositionerContext } from '../positioner/MenuPositionerContext';
 
@@ -12,7 +12,7 @@ import { useMenuPositionerContext } from '../positioner/MenuPositionerContext';
  * An individual interactive item in the menu.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Tale UI Menu](https://base-ui.com/react/components/menu)
  */
 export const MenuItem = React.forwardRef(function MenuItem(
   componentProps: MenuItem.Props,
@@ -31,7 +31,7 @@ export const MenuItem = React.forwardRef(function MenuItem(
 
   const listItem = useCompositeListItem({ label });
   const menuPositionerContext = useMenuPositionerContext(true);
-  const id = useBaseUiId(idProp);
+  const id = useTaleUiId(idProp);
 
   const { store } = useMenuRootContext();
   const highlighted = store.useState('isActive', listItem.index);
@@ -72,11 +72,11 @@ export interface MenuItemState {
 }
 
 export interface MenuItemProps
-  extends NonNativeButtonProps, BaseUIComponentProps<'div', MenuItem.State> {
+  extends NonNativeButtonProps, TaleUIComponentProps<'div', MenuItem.State> {
   /**
    * The click handler for the menu item.
    */
-  onClick?: BaseUIComponentProps<'div', MenuItemState>['onClick'] | undefined;
+  onClick?: TaleUIComponentProps<'div', MenuItemState>['onClick'] | undefined;
   /**
    * Whether the component should ignore user interaction.
    * @default false

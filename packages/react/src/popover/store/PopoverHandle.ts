@@ -1,4 +1,4 @@
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { PopoverStore } from './PopoverStore';
 
@@ -25,7 +25,7 @@ export class PopoverHandle<Payload> {
       : undefined;
 
     if (triggerId && !triggerElement) {
-      throw new Error(`Base UI: PopoverHandle.open: No trigger found with id "${triggerId}".`);
+      throw new Error(`Tale UI: PopoverHandle.open: No trigger found with id "${triggerId}".`);
     }
 
     this.store.setOpen(

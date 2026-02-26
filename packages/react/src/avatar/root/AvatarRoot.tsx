@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { BaseUIComponentProps } from '../../utils/types';
+import { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { AvatarRootContext } from './AvatarRootContext';
 import { avatarStateAttributesMapping } from './stateAttributesMapping';
@@ -9,7 +9,7 @@ import { avatarStateAttributesMapping } from './stateAttributesMapping';
  * Displays a user's profile picture, initials, or fallback icon.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Avatar](https://base-ui.com/react/components/avatar)
+ * Documentation: [Tale UI Avatar](https://base-ui.com/react/components/avatar)
  */
 export const AvatarRoot = React.forwardRef(function AvatarRoot(
   componentProps: AvatarRoot.Props,
@@ -47,7 +47,7 @@ export interface AvatarRootState {
   imageLoadingStatus: ImageLoadingStatus;
 }
 
-export interface AvatarRootProps extends BaseUIComponentProps<'span', AvatarRoot.State> {}
+export interface AvatarRootProps extends TaleUIComponentProps<'span', AvatarRoot.State> {}
 
 export namespace AvatarRoot {
   export type State = AvatarRootState;

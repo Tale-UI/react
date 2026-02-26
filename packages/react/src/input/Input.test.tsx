@@ -1,4 +1,4 @@
-import { Input } from '@base-ui/react/input';
+import { Input } from '@tale-ui/react/input';
 import { createRenderer } from '@mui/internal-test-utils';
 import { describeConformance } from '../../test/describeConformance';
 

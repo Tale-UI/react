@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import { useAnimationFrame } from '@base-ui/utils/useAnimationFrame';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { useAnimationFrame } from '@tale-ui/utils/useAnimationFrame';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
 import { EMPTY_OBJECT } from '../../utils/constants';
 import type { ElementProps, FloatingContext, FloatingRootContext } from '../types';
 import { isClickLikeEvent, isMouseLikePointerType, isTypeableElement } from '../utils';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 
 export interface UseClickProps {

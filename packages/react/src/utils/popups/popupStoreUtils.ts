@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { ReactStore } from '@base-ui/utils/store';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { ReactStore } from '@tale-ui/utils/store';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
 import { useTransitionStatus } from '../useTransitionStatus';
 import { useOpenChangeComplete } from '../useOpenChangeComplete';
 import {

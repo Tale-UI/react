@@ -1,10 +1,10 @@
 import { expect } from 'chai';
 import { spy } from 'sinon';
 import { act, flushMicrotasks, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
-import { DirectionProvider, type TextDirection } from '@base-ui/react/direction-provider';
-import { Popover } from '@base-ui/react/popover';
-import { Dialog } from '@base-ui/react/dialog';
-import { Tabs } from '@base-ui/react/tabs';
+import { DirectionProvider, type TextDirection } from '@tale-ui/react/direction-provider';
+import { Popover } from '@tale-ui/react/popover';
+import { Dialog } from '@tale-ui/react/dialog';
+import { Tabs } from '@tale-ui/react/tabs';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
 describe('<Tabs.Root />', () => {

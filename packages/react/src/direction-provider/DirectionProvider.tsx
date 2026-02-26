@@ -3,9 +3,9 @@ import * as React from 'react';
 import { DirectionContext, type TextDirection } from './DirectionContext';
 
 /**
- * Enables RTL behavior for Base UI components.
+ * Enables RTL behavior for Tale UI components.
  *
- * Documentation: [Base UI Direction Provider](https://base-ui.com/react/utils/direction-provider)
+ * Documentation: [Tale UI Direction Provider](https://base-ui.com/react/utils/direction-provider)
  */
 export const DirectionProvider: React.FC<DirectionProvider.Props> = function DirectionProvider(
   props,

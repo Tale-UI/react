@@ -3,7 +3,7 @@ import * as React from 'react';
 import { FieldRoot } from '../root/FieldRoot';
 import { useFieldRootContext } from '../root/FieldRootContext';
 import { fieldValidityMapping } from '../utils/constants';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { FieldItemContext } from './FieldItemContext';
 import { LabelableProvider } from '../../labelable-provider';
@@ -13,7 +13,7 @@ import { useCheckboxGroupContext } from '../../checkbox-group/CheckboxGroupConte
  * Groups individual items in a checkbox group or radio group with a label and description.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+ * Documentation: [Tale UI Field](https://base-ui.com/react/components/field)
  */
 export const FieldItem = React.forwardRef(function FieldItem(
   componentProps: FieldItem.Props,
@@ -49,7 +49,7 @@ export const FieldItem = React.forwardRef(function FieldItem(
   );
 });
 
-export interface FieldItemProps extends BaseUIComponentProps<'div', FieldItem.State> {
+export interface FieldItemProps extends TaleUIComponentProps<'div', FieldItem.State> {
   /**
    * Whether the wrapped control should ignore user interaction.
    * The `disabled` prop on `<Field.Root>` takes precedence over this.

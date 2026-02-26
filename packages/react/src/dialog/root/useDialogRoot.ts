@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useScrollLock } from '@base-ui/utils/useScrollLock';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useScrollLock } from '@tale-ui/utils/useScrollLock';
 import {
   useDismiss,
   useInteractions,
@@ -10,7 +10,7 @@ import {
 } from '../../floating-ui-react';
 import { contains, getTarget } from '../../floating-ui-react/utils';
 import { useOpenInteractionType } from '../../utils/useOpenInteractionType';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { type DialogRoot } from './DialogRoot';
 import { DialogStore } from '../store/DialogStore';
@@ -104,7 +104,7 @@ export function useDialogRoot(params: useDialogRoot.Parameters): useDialogRoot.R
             ? store.context.internalBackdropRef.current === eventTarget ||
                 store.context.backdropRef.current === eventTarget ||
                 (contains(eventTarget, popupElement) &&
-                  !eventTarget?.hasAttribute('data-base-ui-portal'))
+                  !eventTarget?.hasAttribute('data-tale-ui-portal'))
             : true;
         }
         return true;

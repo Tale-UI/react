@@ -29,7 +29,7 @@ export function useDrawerProviderContext(optional?: boolean) {
   const context = React.useContext(DrawerProviderContext);
 
   if (optional === false && context === undefined) {
-    throw new Error('Base UI: DrawerProviderContext is missing. Use <Drawer.Provider>.');
+    throw new Error('Tale UI: DrawerProviderContext is missing. Use <Drawer.Provider>.');
   }
 
   return context;

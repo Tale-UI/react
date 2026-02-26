@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
-import { inertValue } from '@base-ui/utils/inertValue';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { inertValue } from '@tale-ui/utils/inertValue';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import type { StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import { transitionStatusMapping } from '../../utils/stateAttributesMapping';
 import { useOpenChangeComplete } from '../../utils/useOpenChangeComplete';
 import { type TransitionStatus, useTransitionStatus } from '../../utils/useTransitionStatus';
 import { useRenderElement } from '../../utils/useRenderElement';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useCompositeListItem } from '../../composite/list/useCompositeListItem';
 import { tabsStateAttributesMapping } from '../root/stateAttributesMapping';
 import { useTabsRootContext } from '../root/TabsRootContext';
@@ -25,7 +25,7 @@ const stateAttributesMapping: StateAttributesMapping<TabsPanel.State> = {
  * A panel displayed when the corresponding tab is active.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
+ * Documentation: [Tale UI Tabs](https://base-ui.com/react/components/tabs)
  */
 export const TabsPanel = React.forwardRef(function TabPanel(
   componentProps: TabsPanel.Props,
@@ -42,7 +42,7 @@ export const TabsPanel = React.forwardRef(function TabPanel(
     unregisterMountedTabPanel,
   } = useTabsRootContext();
 
-  const id = useBaseUiId();
+  const id = useTaleUiId();
 
   const metadata = React.useMemo(
     () => ({
@@ -132,7 +132,7 @@ export interface TabsPanelState extends TabsRoot.State {
   transitionStatus: TransitionStatus;
 }
 
-export interface TabsPanelProps extends BaseUIComponentProps<'div', TabsPanel.State> {
+export interface TabsPanelProps extends TaleUIComponentProps<'div', TabsPanel.State> {
   /**
    * The value of the TabPanel. It will be shown when the Tab with the corresponding value is active.
    */

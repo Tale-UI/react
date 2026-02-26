@@ -1,8 +1,8 @@
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@tale-ui/react/combobox';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { act, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 import { expect } from 'chai';
-import { Field } from '@base-ui/react/field';
+import { Field } from '@tale-ui/react/field';
 import { spy } from 'sinon';
 import { REASONS } from '../../utils/reasons';
 

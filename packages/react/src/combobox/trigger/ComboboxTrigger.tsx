@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { useStore } from '@base-ui/utils/store';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { BaseUIComponentProps, NativeButtonProps } from '../../utils/types';
+import { useStore } from '@tale-ui/utils/store';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
+import { ownerDocument } from '@tale-ui/utils/owner';
+import { TaleUIComponentProps, NativeButtonProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useButton } from '../../use-button';
 import {
@@ -20,7 +20,7 @@ import { useLabelableContext } from '../../labelable-provider/LabelableContext';
 import { stopEvent, contains, getTarget } from '../../floating-ui-react/utils';
 import { getPseudoElementBounds } from '../../utils/getPseudoElementBounds';
 import type { FieldRoot } from '../../field/root/FieldRoot';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { useClick, useTypeahead } from '../../floating-ui-react';
 import type { Side } from '../../utils/useAnchorPositioning';
@@ -295,7 +295,7 @@ export interface ComboboxTriggerState extends FieldRoot.State {
 }
 
 export interface ComboboxTriggerProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', ComboboxTrigger.State> {
+  extends NativeButtonProps, TaleUIComponentProps<'button', ComboboxTrigger.State> {
   /**
    * Whether the component should ignore user interaction.
    * @default false

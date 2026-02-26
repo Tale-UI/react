@@ -1,15 +1,15 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { visuallyHidden, visuallyHiddenInput } from '@base-ui/utils/visuallyHidden';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
+import { useControlled } from '@tale-ui/utils/useControlled';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useMergedRefs } from '@tale-ui/utils/useMergedRefs';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { visuallyHidden, visuallyHiddenInput } from '@tale-ui/utils/visuallyHidden';
+import { EMPTY_OBJECT } from '@tale-ui/utils/empty';
 import { useRenderElement } from '../../utils/useRenderElement';
-import type { BaseUIComponentProps, NonNativeButtonProps } from '../../utils/types';
+import type { TaleUIComponentProps, NonNativeButtonProps } from '../../utils/types';
 import { mergeProps } from '../../merge-props';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { useButton } from '../../use-button';
 import { SwitchRootContext } from './SwitchRootContext';
 import { stateAttributesMapping } from '../stateAttributesMapping';
@@ -20,16 +20,16 @@ import { useFormContext } from '../../form/FormContext';
 import { useLabelableContext } from '../../labelable-provider/LabelableContext';
 import { useAriaLabelledBy } from '../../labelable-provider/useAriaLabelledBy';
 import { useLabelableId } from '../../labelable-provider/useLabelableId';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
-import type { BaseUIChangeEventDetails } from '../../types';
+import type { TaleUIChangeEventDetails } from '../../types';
 import { useValueChanged } from '../../utils/useValueChanged';
 
 /**
  * Represents the switch itself.
  * Renders a `<span>` element and a hidden `<input>` beside.
  *
- * Documentation: [Base UI Switch](https://base-ui.com/react/components/switch)
+ * Documentation: [Tale UI Switch](https://base-ui.com/react/components/switch)
  */
 export const SwitchRoot = React.forwardRef(function SwitchRoot(
   componentProps: SwitchRoot.Props,
@@ -80,7 +80,7 @@ export const SwitchRoot = React.forwardRef(function SwitchRoot(
 
   const switchRef = React.useRef<HTMLButtonElement | null>(null);
 
-  const id = useBaseUiId();
+  const id = useTaleUiId();
 
   const controlId = useLabelableId({
     id: idProp,
@@ -282,7 +282,7 @@ export interface SwitchRootState extends FieldRoot.State {
 }
 
 export interface SwitchRootProps
-  extends NonNativeButtonProps, Omit<BaseUIComponentProps<'span', SwitchRoot.State>, 'onChange'> {
+  extends NonNativeButtonProps, Omit<TaleUIComponentProps<'span', SwitchRoot.State>, 'onChange'> {
   /**
    * The id of the switch element.
    */
@@ -342,7 +342,7 @@ export interface SwitchRootProps
 }
 
 export type SwitchRootChangeEventReason = typeof REASONS.none;
-export type SwitchRootChangeEventDetails = BaseUIChangeEventDetails<SwitchRoot.ChangeEventReason>;
+export type SwitchRootChangeEventDetails = TaleUIChangeEventDetails<SwitchRoot.ChangeEventReason>;
 
 export namespace SwitchRoot {
   export type State = SwitchRootState;

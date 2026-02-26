@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useBaseUiId } from '../utils/useBaseUiId';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useTaleUiId } from '../utils/useTaleUiId';
 
 /**
  * @internal
@@ -15,7 +15,7 @@ export function useAriaLabelledBy(
 ) {
   const [fallbackAriaLabelledBy, setFallbackAriaLabelledBy] = React.useState<string | undefined>();
 
-  const generatedLabelId = useBaseUiId(labelSourceId ? `${labelSourceId}-label` : undefined);
+  const generatedLabelId = useTaleUiId(labelSourceId ? `${labelSourceId}-label` : undefined);
   const ariaLabelledBy = explicitAriaLabelledBy ?? labelId ?? fallbackAriaLabelledBy;
 
   // Fallback for <span> controls labelled by wrapping/sibling native <label>.

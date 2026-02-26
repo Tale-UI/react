@@ -4,7 +4,7 @@ import { usePreviewCardRootContext } from '../root/PreviewCardContext';
 import { PreviewCardPositionerContext } from './PreviewCardPositionerContext';
 import { FloatingNode, useFloatingNodeId } from '../../floating-ui-react';
 import { type Side, type Align, useAnchorPositioning } from '../../utils/useAnchorPositioning';
-import type { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import type { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import { usePreviewCardPortalContext } from '../portal/PreviewCardPortalContext';
 import { POPUP_COLLISION_AVOIDANCE } from '../../utils/constants';
@@ -16,7 +16,7 @@ import { getDisabledMountTransitionStyles } from '../../utils/getDisabledMountTr
  * Positions the popup against the trigger.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)
+ * Documentation: [Tale UI Preview Card](https://base-ui.com/react/components/preview-card)
  */
 export const PreviewCardPositioner = React.forwardRef(function PreviewCardPositioner(
   componentProps: PreviewCardPositioner.Props,
@@ -141,7 +141,7 @@ export interface PreviewCardPositionerState {
 export interface PreviewCardPositionerProps
   extends
     useAnchorPositioning.SharedParameters,
-    BaseUIComponentProps<'div', PreviewCardPositioner.State> {}
+    TaleUIComponentProps<'div', PreviewCardPositioner.State> {}
 
 export namespace PreviewCardPositioner {
   export type State = PreviewCardPositionerState;

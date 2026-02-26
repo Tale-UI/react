@@ -1,6 +1,6 @@
 import { screen } from '@mui/internal-test-utils';
 import { expect } from 'chai';
-import { Progress } from '@base-ui/react/progress';
+import { Progress } from '@tale-ui/react/progress';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
 describe('<Progress.Indicator />', () => {

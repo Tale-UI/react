@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { warn } from '@base-ui/utils/warn';
-import { BaseUIComponentProps } from '../../utils/types';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { warn } from '@tale-ui/utils/warn';
+import { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useCollapsibleRootContext } from '../root/CollapsibleRootContext';
 import type { CollapsibleRoot } from '../root/CollapsibleRoot';
@@ -16,7 +16,7 @@ import type { TransitionStatus } from '../../utils/useTransitionStatus';
  * A panel with the collapsible contents.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Collapsible](https://base-ui.com/react/components/collapsible)
+ * Documentation: [Tale UI Collapsible](https://base-ui.com/react/components/collapsible)
  */
 export const CollapsiblePanel = React.forwardRef(function CollapsiblePanel(
   componentProps: CollapsiblePanel.Props,
@@ -160,7 +160,7 @@ export interface CollapsiblePanelState extends CollapsibleRoot.State {
   transitionStatus: TransitionStatus;
 }
 
-export interface CollapsiblePanelProps extends BaseUIComponentProps<'div', CollapsiblePanel.State> {
+export interface CollapsiblePanelProps extends TaleUIComponentProps<'div', CollapsiblePanel.State> {
   /**
    * Allows the browser’s built-in page search to find and expand the panel contents.
    *

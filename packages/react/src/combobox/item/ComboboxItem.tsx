@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { useStore } from '@base-ui/utils/store';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useStore } from '@tale-ui/utils/store';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
 import {
   useComboboxRootContext,
   useComboboxDerivedItemsContext,
@@ -11,7 +11,7 @@ import {
   useCompositeListItem,
   IndexGuessBehavior,
 } from '../../composite/list/useCompositeListItem';
-import type { BaseUIComponentProps, HTMLProps, NonNativeButtonProps } from '../../utils/types';
+import type { TaleUIComponentProps, HTMLProps, NonNativeButtonProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { ComboboxItemContext } from './ComboboxItemContext';
 import { selectors } from '../store';
@@ -224,13 +224,13 @@ export interface ComboboxItemState {
 }
 
 export interface ComboboxItemProps
-  extends NonNativeButtonProps, Omit<BaseUIComponentProps<'div', ComboboxItem.State>, 'id'> {
+  extends NonNativeButtonProps, Omit<TaleUIComponentProps<'div', ComboboxItem.State>, 'id'> {
   children?: React.ReactNode;
   /**
    * An optional click handler for the item when selected.
    * It fires when clicking the item with the pointer, as well as when pressing `Enter` with the keyboard if the item is highlighted when the `Input` or `List` element has focus.
    */
-  onClick?: BaseUIComponentProps<'div', ComboboxItemState>['onClick'] | undefined;
+  onClick?: TaleUIComponentProps<'div', ComboboxItemState>['onClick'] | undefined;
   /**
    * The index of the item in the list. Improves performance when specified by avoiding the need to calculate the index automatically from the DOM.
    */

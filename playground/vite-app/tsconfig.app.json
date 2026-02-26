@@ -10,10 +10,10 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@base-ui/react": ["../../packages/react/src/index.ts"],
-      "@base-ui/react/*": ["../../packages/react/src/*"],
-      "@base-ui/utils": ["../../packages/utils/src/index.ts"],
-      "@base-ui/utils/*": ["../../packages/utils/src/*"],
+      "@tale-ui/react": ["../../packages/react/src/index.ts"],
+      "@tale-ui/react/*": ["../../packages/react/src/*"],
+      "@tale-ui/utils": ["../../packages/utils/src/index.ts"],
+      "@tale-ui/utils/*": ["../../packages/utils/src/*"],
       "docs/*": ["../../docs/*"]
     },
 

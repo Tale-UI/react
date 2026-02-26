@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { useForcedRerendering } from '@base-ui/utils/useForcedRerendering';
-import { useOnMount } from '@base-ui/utils/useOnMount';
+import { useForcedRerendering } from '@tale-ui/utils/useForcedRerendering';
+import { useOnMount } from '@tale-ui/utils/useOnMount';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { getCssDimensions } from '../../utils/getCssDimensions';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import type { TabsRoot } from '../root/TabsRoot';
 import { useTabsRootContext } from '../root/TabsRootContext';
 import { tabsStateAttributesMapping } from '../root/stateAttributesMapping';
@@ -24,7 +24,7 @@ const stateAttributesMapping = {
  * A visual indicator that can be styled to match the position of the currently active tab.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
+ * Documentation: [Tale UI Tabs](https://base-ui.com/react/components/tabs)
  */
 export const TabsIndicator = React.forwardRef(function TabIndicator(
   componentProps: TabsIndicator.Props,
@@ -191,7 +191,7 @@ export interface TabsIndicatorState extends TabsRoot.State {
   orientation: TabsRoot.Orientation;
 }
 
-export interface TabsIndicatorProps extends BaseUIComponentProps<'span', TabsIndicator.State> {
+export interface TabsIndicatorProps extends TaleUIComponentProps<'span', TabsIndicator.State> {
   /**
    * Whether to render itself before React hydrates.
    * This minimizes the time that the indicator isn’t visible after server-side rendering.

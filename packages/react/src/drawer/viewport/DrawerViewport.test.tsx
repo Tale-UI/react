@@ -1,5 +1,5 @@
-import { DrawerPreview as Drawer } from '@base-ui/react/drawer';
-import { Slider } from '@base-ui/react/slider';
+import { DrawerPreview as Drawer } from '@tale-ui/react/drawer';
+import { Slider } from '@tale-ui/react/slider';
 import { fireEvent, flushMicrotasks, screen } from '@mui/internal-test-utils';
 import { beforeAll, describe, expect, it, vi } from 'vitest';
 import { createRenderer } from '#test-utils';

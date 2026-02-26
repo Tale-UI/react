@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { DrawerPreview as Drawer } from '@base-ui/react/drawer';
+import { DrawerPreview as Drawer } from '@tale-ui/react/drawer';
 import { act, fireEvent, flushMicrotasks, screen } from '@mui/internal-test-utils';
 import { beforeAll, describe, expect, it, vi } from 'vitest';
 import { createRenderer, isJSDOM } from '#test-utils';
 import { REASONS } from '../../utils/reasons';
 import { useDrawerRootContext } from './DrawerRootContext';
 
-vi.mock('@base-ui/utils/detectBrowser', async () => {
-  const actual = await vi.importActual<typeof import('@base-ui/utils/detectBrowser')>(
-    '@base-ui/utils/detectBrowser',
+vi.mock('@tale-ui/utils/detectBrowser', async () => {
+  const actual = await vi.importActual<typeof import('@tale-ui/utils/detectBrowser')>(
+    '@tale-ui/utils/detectBrowser',
   );
   return { ...actual, isAndroid: true };
 });

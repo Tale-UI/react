@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { createRenderer, fireEvent, screen } from '@mui/internal-test-utils';
-import { CheckboxGroup } from '@base-ui/react/checkbox-group';
-import { Checkbox } from '@base-ui/react/checkbox';
+import { CheckboxGroup } from '@tale-ui/react/checkbox-group';
+import { Checkbox } from '@tale-ui/react/checkbox';
 import { expect } from 'chai';
 import { spy } from 'sinon';
 

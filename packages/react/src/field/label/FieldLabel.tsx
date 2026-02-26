@@ -1,25 +1,25 @@
 'use client';
 import * as React from 'react';
-import { error } from '@base-ui/utils/error';
-import { SafeReact } from '@base-ui/utils/safeReact';
+import { error } from '@tale-ui/utils/error';
+import { SafeReact } from '@tale-ui/utils/safeReact';
 import { isHTMLElement } from '@floating-ui/utils/dom';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { ownerDocument } from '@tale-ui/utils/owner';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
 import { getTarget } from '../../floating-ui-react/utils';
 import { FieldRoot } from '../root/FieldRoot';
 import { useFieldRootContext } from '../root/FieldRootContext';
 import { useLabelableContext } from '../../labelable-provider/LabelableContext';
 import { fieldValidityMapping } from '../utils/constants';
-import { useBaseUiId } from '../../utils/useBaseUiId';
-import type { BaseUIComponentProps } from '../../utils/types';
+import { useTaleUiId } from '../../utils/useTaleUiId';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 
 /**
  * An accessible label that is automatically associated with the field control.
  * Renders a `<label>` element.
  *
- * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+ * Documentation: [Tale UI Field](https://base-ui.com/react/components/field)
  */
 export const FieldLabel = React.forwardRef(function FieldLabel(
   componentProps: FieldLabel.Props,
@@ -31,7 +31,7 @@ export const FieldLabel = React.forwardRef(function FieldLabel(
 
   const { controlId, setLabelId, labelId: contextLabelId } = useLabelableContext();
 
-  const generatedLabelId = useBaseUiId(idProp);
+  const generatedLabelId = useTaleUiId(idProp);
   const labelId = idProp ?? contextLabelId ?? generatedLabelId;
 
   const labelRef = React.useRef<HTMLElement | null>(null);
@@ -84,7 +84,7 @@ export const FieldLabel = React.forwardRef(function FieldLabel(
         const ownerStackMessage = SafeReact.captureOwnerStack?.() || '';
         const message =
           '<Field.Label> expected a non-<label> element because the `nativeLabel` prop is false. ' +
-          'Rendering a <label> assumes native label behavior while Base UI treats it as ' +
+          'Rendering a <label> assumes native label behavior while Tale UI treats it as ' +
           'non-native, which can cause unexpected pointer behavior. Use a non-<label> in the ' +
           '`render` prop, or set `nativeLabel` to `true`.';
         error(`${message}${ownerStackMessage}`);
@@ -126,7 +126,7 @@ export const FieldLabel = React.forwardRef(function FieldLabel(
 
 export type FieldLabelState = FieldRoot.State;
 
-export interface FieldLabelProps extends BaseUIComponentProps<'label', FieldLabel.State> {
+export interface FieldLabelProps extends TaleUIComponentProps<'label', FieldLabel.State> {
   /**
    * Whether the component renders a native `<label>` element when replacing it via the `render` prop.
    * Set to `false` if the rendered element is not a label (e.g. `<div>`).

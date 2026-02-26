@@ -1,4 +1,4 @@
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
+import { NavigationMenu } from '@tale-ui/react/navigation-menu';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { screen, flushMicrotasks, waitFor, act } from '@mui/internal-test-utils';
 import userEvent from '@testing-library/user-event';
@@ -35,7 +35,7 @@ describe('<NavigationMenu.Trigger />', () => {
           <NavigationMenu.Item>
             <NavigationMenu.Trigger>Handbook</NavigationMenu.Trigger>
             <NavigationMenu.Content>
-              <NavigationMenu.Link href="#">Styling Base UI components</NavigationMenu.Link>
+              <NavigationMenu.Link href="#">Styling Tale UI components</NavigationMenu.Link>
             </NavigationMenu.Content>
             <NavigationMenu.Content>
               <NavigationMenu.Link href="#">Second Link</NavigationMenu.Link>
@@ -89,7 +89,7 @@ describe('<NavigationMenu.Trigger />', () => {
       parseInt(getComputedStyle(positioner).getPropertyValue('--positioner-height'), 10),
     ).to.be.approximately(36, 1);
 
-    const handbookLink = screen.getByRole('link', { name: 'Styling Base UI components' });
+    const handbookLink = screen.getByRole('link', { name: 'Styling Tale UI components' });
     await waitFor(() => {
       expect(handbookLink).toHaveFocus();
     });
@@ -121,7 +121,7 @@ describe('<NavigationMenu.Trigger />', () => {
           <NavigationMenu.Item>
             <NavigationMenu.Trigger>withContent</NavigationMenu.Trigger>
             <NavigationMenu.Content>
-              <NavigationMenu.Link href="#">Styling Base UI components</NavigationMenu.Link>
+              <NavigationMenu.Link href="#">Styling Tale UI components</NavigationMenu.Link>
             </NavigationMenu.Content>
           </NavigationMenu.Item>
         </NavigationMenu.List>
@@ -145,7 +145,7 @@ describe('<NavigationMenu.Trigger />', () => {
     ]);
 
     await waitFor(() => {
-      const handbookLink = screen.getByRole('link', { name: 'Styling Base UI components' });
+      const handbookLink = screen.getByRole('link', { name: 'Styling Tale UI components' });
 
       expect(handbookLink).toBeVisible();
     });

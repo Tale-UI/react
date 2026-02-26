@@ -2,16 +2,16 @@
 import * as React from 'react';
 import { useDialogRootContext } from '../root/DialogRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../utils/types';
+import type { TaleUIComponentProps, NativeButtonProps } from '../../utils/types';
 import { useButton } from '../../use-button';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 
 /**
  * A button that closes the dialog.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+ * Documentation: [Tale UI Dialog](https://base-ui.com/react/components/dialog)
  */
 export const DialogClose = React.forwardRef(function DialogClose(
   componentProps: DialogClose.Props,
@@ -49,7 +49,7 @@ export const DialogClose = React.forwardRef(function DialogClose(
 });
 
 export interface DialogCloseProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', DialogClose.State> {}
+  extends NativeButtonProps, TaleUIComponentProps<'button', DialogClose.State> {}
 
 export interface DialogCloseState {
   /**

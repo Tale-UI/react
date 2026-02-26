@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useComboboxItemContext } from '../item/ComboboxItemContext';
 import { type TransitionStatus, useTransitionStatus } from '../../utils/useTransitionStatus';
 import { useOpenChangeComplete } from '../../utils/useOpenChangeComplete';
@@ -77,7 +77,7 @@ const Inner = React.memo(
   ),
 );
 
-export interface ComboboxItemIndicatorProps extends BaseUIComponentProps<
+export interface ComboboxItemIndicatorProps extends TaleUIComponentProps<
   'span',
   ComboboxItemIndicator.State
 > {

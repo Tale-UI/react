@@ -4,14 +4,14 @@ import { useMenuPositionerContext } from '../positioner/MenuPositionerContext';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
 import type { Side, Align } from '../../utils/useAnchorPositioning';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 
 /**
  * Displays an element positioned against the menu anchor.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Tale UI Menu](https://base-ui.com/react/components/menu)
  */
 export const MenuArrow = React.forwardRef(function MenuArrow(
   componentProps: MenuArrow.Props,
@@ -52,7 +52,7 @@ export interface MenuArrowState {
   uncentered: boolean;
 }
 
-export interface MenuArrowProps extends BaseUIComponentProps<'div', MenuArrow.State> {}
+export interface MenuArrowProps extends TaleUIComponentProps<'div', MenuArrow.State> {}
 
 export namespace MenuArrow {
   export type State = MenuArrowState;

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { createSelector, ReactStore } from '@base-ui/utils/store';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { createSelector, ReactStore } from '@tale-ui/utils/store';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
 import {
   createInitialPopupStoreState,
   PopupStoreContext,

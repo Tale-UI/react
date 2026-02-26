@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useOnMount } from '@base-ui/utils/useOnMount';
-import type { BaseUIComponentProps } from '../../utils/types';
+import { useOnMount } from '@tale-ui/utils/useOnMount';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { valueToPercent } from '../../utils/valueToPercent';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useSliderRootContext } from '../root/SliderRootContext';
@@ -80,7 +80,7 @@ function getCenteredStyles(
  * Visualizes the current value of the slider.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
+ * Documentation: [Tale UI Slider](https://base-ui.com/react/components/slider)
  */
 export const SliderIndicator = React.forwardRef(function SliderIndicator(
   componentProps: SliderIndicator.Props,
@@ -118,7 +118,7 @@ export const SliderIndicator = React.forwardRef(function SliderIndicator(
     ref: forwardedRef,
     props: [
       {
-        ['data-base-ui-slider-indicator' as string]: renderBeforeHydration ? '' : undefined,
+        ['data-tale-ui-slider-indicator' as string]: renderBeforeHydration ? '' : undefined,
         style,
         suppressHydrationWarning: renderBeforeHydration || undefined,
       },
@@ -130,7 +130,7 @@ export const SliderIndicator = React.forwardRef(function SliderIndicator(
   return element;
 });
 
-export interface SliderIndicatorProps extends BaseUIComponentProps<'div', SliderRoot.State> {}
+export interface SliderIndicatorProps extends TaleUIComponentProps<'div', SliderRoot.State> {}
 
 export namespace SliderIndicator {
   export type Props = SliderIndicatorProps;

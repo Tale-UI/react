@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { BaseUIComponentProps } from '../../utils/types';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useMergedRefs } from '@tale-ui/utils/useMergedRefs';
+import { TaleUIComponentProps } from '../../utils/types';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { useCollapsibleRoot } from '../../collapsible/root/useCollapsibleRoot';
 import type { CollapsibleRoot } from '../../collapsible/root/CollapsibleRoot';
 import { CollapsibleRootContext } from '../../collapsible/root/CollapsibleRootContext';
@@ -13,14 +13,14 @@ import { useAccordionRootContext } from '../root/AccordionRootContext';
 import { AccordionItemContext } from './AccordionItemContext';
 import { accordionStateAttributesMapping } from './stateAttributesMapping';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { type BaseUIChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { type TaleUIChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 
 /**
  * Groups an accordion header with the corresponding panel.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordion)
+ * Documentation: [Tale UI Accordion](https://base-ui.com/react/components/accordion)
  */
 export const AccordionItem = React.forwardRef(function AccordionItem(
   componentProps: AccordionItem.Props,
@@ -45,7 +45,7 @@ export const AccordionItem = React.forwardRef(function AccordionItem(
     value: openValues,
   } = useAccordionRootContext();
 
-  const fallbackValue = useBaseUiId();
+  const fallbackValue = useTaleUiId();
 
   const value = valueProp ?? fallbackValue;
 
@@ -112,7 +112,7 @@ export const AccordionItem = React.forwardRef(function AccordionItem(
     [disabled, index, isOpen, rootState],
   );
 
-  const [triggerId, setTriggerId] = React.useState<string | undefined>(useBaseUiId());
+  const [triggerId, setTriggerId] = React.useState<string | undefined>(useTaleUiId());
 
   const accordionItemContext: AccordionItemContext = React.useMemo(
     () => ({
@@ -147,7 +147,7 @@ export interface AccordionItemState extends AccordionRoot.State {
 
 export interface AccordionItemProps
   extends
-    BaseUIComponentProps<'div', AccordionItem.State>,
+    TaleUIComponentProps<'div', AccordionItem.State>,
     Partial<Pick<useCollapsibleRoot.Parameters, 'disabled'>> {
   /**
    * A unique value that identifies this accordion item.
@@ -174,7 +174,7 @@ export interface AccordionItemProps
 export type AccordionItemChangeEventReason = typeof REASONS.triggerPress | typeof REASONS.none;
 
 export type AccordionItemChangeEventDetails =
-  BaseUIChangeEventDetails<AccordionItem.ChangeEventReason>;
+  TaleUIChangeEventDetails<AccordionItem.ChangeEventReason>;
 
 export namespace AccordionItem {
   export type State = AccordionItemState;

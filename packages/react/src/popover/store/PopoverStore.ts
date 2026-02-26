@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { ReactStore, createSelector } from '@base-ui/utils/store';
-import { Timeout } from '@base-ui/utils/useTimeout';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
-import { useOnMount } from '@base-ui/utils/useOnMount';
-import { type InteractionType } from '@base-ui/utils/useEnhancedClickHandler';
+import { ReactStore, createSelector } from '@tale-ui/utils/store';
+import { Timeout } from '@tale-ui/utils/useTimeout';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
+import { useOnMount } from '@tale-ui/utils/useOnMount';
+import { type InteractionType } from '@tale-ui/utils/useEnhancedClickHandler';
 import { FloatingUIOpenChangeDetails } from '../../utils/types';
 import { PopoverRoot } from './../root/PopoverRoot';
 import { REASONS } from '../../utils/reasons';

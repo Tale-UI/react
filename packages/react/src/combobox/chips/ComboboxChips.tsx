@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useStore } from '@base-ui/utils/store';
+import { useStore } from '@tale-ui/utils/store';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { BaseUIComponentProps } from '../../utils/types';
+import { TaleUIComponentProps } from '../../utils/types';
 import { ComboboxChipsContext } from './ComboboxChipsContext';
 import { CompositeList } from '../../composite/list/CompositeList';
 import { useComboboxRootContext } from '../root/ComboboxRootContext';
@@ -59,7 +59,7 @@ export const ComboboxChips = React.forwardRef(function ComboboxChips(
 
 export interface ComboboxChipsState {}
 
-export interface ComboboxChipsProps extends BaseUIComponentProps<'div', ComboboxChips.State> {}
+export interface ComboboxChipsProps extends TaleUIComponentProps<'div', ComboboxChips.State> {}
 
 export namespace ComboboxChips {
   export type State = ComboboxChipsState;

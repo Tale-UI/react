@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useStore } from '@base-ui/utils/store';
+import { useStore } from '@tale-ui/utils/store';
 import { useSelectPositionerContext } from '../positioner/SelectPositionerContext';
 import { useSelectRootContext } from '../root/SelectRootContext';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import type { Align, Side } from '../../utils/useAnchorPositioning';
 import type { StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import { popupStateMapping as baseMapping } from '../../utils/popupStateMapping';
@@ -20,7 +20,7 @@ const stateAttributesMapping: StateAttributesMapping<SelectArrow.State> = {
  * Displays an element positioned against the select popup anchor.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Tale UI Select](https://base-ui.com/react/components/select)
  */
 export const SelectArrow = React.forwardRef(function SelectArrow(
   componentProps: SelectArrow.Props,
@@ -65,7 +65,7 @@ export interface SelectArrowState {
   uncentered: boolean;
 }
 
-export interface SelectArrowProps extends BaseUIComponentProps<'div', SelectArrow.State> {}
+export interface SelectArrowProps extends TaleUIComponentProps<'div', SelectArrow.State> {}
 
 export namespace SelectArrow {
   export type State = SelectArrowState;

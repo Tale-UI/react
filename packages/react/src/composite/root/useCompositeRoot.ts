@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { isElementDisabled } from '@base-ui/utils/isElementDisabled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
+import { isElementDisabled } from '@tale-ui/utils/isElementDisabled';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useMergedRefs } from '@tale-ui/utils/useMergedRefs';
 import type { TextDirection } from '../../direction-provider/DirectionContext';
 import {
   ALL_KEYS,

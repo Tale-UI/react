@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import { ownerDocument, ownerWindow } from '@base-ui/utils/owner';
-import { visuallyHidden } from '@base-ui/utils/visuallyHidden';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { ownerDocument, ownerWindow } from '@tale-ui/utils/owner';
+import { visuallyHidden } from '@tale-ui/utils/visuallyHidden';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
 import { activeElement, contains, getTarget } from '../../floating-ui-react/utils';
 import { FocusGuard } from '../../utils/FocusGuard';
-import type { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import type { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 import { useToastProviderContext } from '../provider/ToastProviderContext';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { isFocusVisible } from '../utils/focusVisible';
@@ -15,7 +15,7 @@ import { ToastViewportCssVars } from './ToastViewportCssVars';
  * A container viewport for toasts.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+ * Documentation: [Tale UI Toast](https://base-ui.com/react/components/toast)
  */
 export const ToastViewport = React.forwardRef(function ToastViewport(
   componentProps: ToastViewport.Props,
@@ -295,7 +295,7 @@ export interface ToastViewportState {
   expanded: boolean;
 }
 
-export interface ToastViewportProps extends BaseUIComponentProps<'div', ToastViewport.State> {}
+export interface ToastViewportProps extends TaleUIComponentProps<'div', ToastViewport.State> {}
 
 export namespace ToastViewport {
   export type State = ToastViewportState;

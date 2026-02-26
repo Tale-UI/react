@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { MeterRootContext } from './MeterRootContext';
-import { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 import { formatNumberValue } from '../../utils/formatNumber';
 import { useRenderElement } from '../../utils/useRenderElement';
 
@@ -9,7 +9,7 @@ import { useRenderElement } from '../../utils/useRenderElement';
  * Groups all parts of the meter and provides the value for screen readers.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Meter](https://base-ui.com/react/components/meter)
+ * Documentation: [Tale UI Meter](https://base-ui.com/react/components/meter)
  */
 export const MeterRoot = React.forwardRef(function MeterRoot(
   componentProps: MeterRoot.Props,
@@ -65,7 +65,7 @@ export const MeterRoot = React.forwardRef(function MeterRoot(
   return <MeterRootContext.Provider value={contextValue}>{element}</MeterRootContext.Provider>;
 });
 export interface MeterRootState {}
-export interface MeterRootProps extends BaseUIComponentProps<'div', MeterRoot.State> {
+export interface MeterRootProps extends TaleUIComponentProps<'div', MeterRoot.State> {
   /**
    * A string value that provides a user-friendly name for `aria-valuenow`, the current value of the meter.
    */

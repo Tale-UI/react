@@ -2,13 +2,13 @@
 import * as React from 'react';
 import { useButton } from '../use-button/useButton';
 import { useRenderElement } from '../utils/useRenderElement';
-import type { BaseUIComponentProps, NativeButtonProps } from '../utils/types';
+import type { TaleUIComponentProps, NativeButtonProps } from '../utils/types';
 
 /**
  * A button component that can be used to trigger actions.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Button](https://base-ui.com/react/components/button)
+ * Documentation: [Tale UI Button](https://base-ui.com/react/components/button)
  */
 export const Button = React.forwardRef(function Button(
   componentProps: Button.Props,
@@ -48,7 +48,7 @@ export interface ButtonState {
 }
 
 export interface ButtonProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', ButtonState> {
+  extends NativeButtonProps, TaleUIComponentProps<'button', ButtonState> {
   /**
    * Whether the button should be focusable when disabled.
    * @default false

@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useScrollAreaRootContext } from '../root/ScrollAreaRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
 
@@ -8,7 +8,7 @@ import { useRenderElement } from '../../utils/useRenderElement';
  * A small rectangular area that appears at the intersection of horizontal and vertical scrollbars.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)
+ * Documentation: [Tale UI Scroll Area](https://base-ui.com/react/components/scroll-area)
  */
 export const ScrollAreaCorner = React.forwardRef(function ScrollAreaCorner(
   componentProps: ScrollAreaCorner.Props,
@@ -43,7 +43,7 @@ export const ScrollAreaCorner = React.forwardRef(function ScrollAreaCorner(
 
 export interface ScrollAreaCornerState {}
 
-export interface ScrollAreaCornerProps extends BaseUIComponentProps<
+export interface ScrollAreaCornerProps extends TaleUIComponentProps<
   'div',
   ScrollAreaCorner.State
 > {}

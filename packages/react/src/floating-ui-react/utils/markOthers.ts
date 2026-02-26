@@ -1,7 +1,7 @@
 // Modified to add conditional `aria-hidden` support:
 // https://github.com/theKashey/aria-hidden/blob/9220c8f4a4fd35f63bee5510a9f41a37264382d4/src/index.ts
 import { getNodeName } from '@floating-ui/utils/dom';
-import { ownerDocument } from '@base-ui/utils/owner';
+import { ownerDocument } from '@tale-ui/utils/owner';
 
 type Undo = () => void;
 
@@ -54,7 +54,7 @@ function applyAttributeToOthers(
   ariaHidden: boolean,
   inert: boolean,
 ): Undo {
-  const markerName = 'data-base-ui-inert';
+  const markerName = 'data-tale-ui-inert';
   // eslint-disable-next-line no-nested-ternary
   const controlAttribute = inert ? 'inert' : ariaHidden ? 'aria-hidden' : null;
   const avoidElements = correctElements(body, uncorrectedAvoidElements);

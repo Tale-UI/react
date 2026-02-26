@@ -1,4 +1,4 @@
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@tale-ui/react/combobox';
 import { fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
 import { spy } from 'sinon';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
@@ -101,8 +101,8 @@ describe('<Combobox.Item />', () => {
       expect(handleClick.callCount).to.equal(1);
     });
 
-    it('does not select the item when onClick prevents Base UI handler', async () => {
-      const handleClick = spy((event) => event.preventBaseUIHandler());
+    it('does not select the item when onClick prevents Tale UI handler', async () => {
+      const handleClick = spy((event) => event.preventTaleUIHandler());
       const { user } = await render(
         <Combobox.Root defaultOpen>
           <Combobox.Input data-testid="input" />

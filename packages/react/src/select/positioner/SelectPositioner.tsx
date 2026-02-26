@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import { inertValue } from '@base-ui/utils/inertValue';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useScrollLock } from '@base-ui/utils/useScrollLock';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useStore } from '@base-ui/utils/store';
+import { inertValue } from '@tale-ui/utils/inertValue';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useScrollLock } from '@tale-ui/utils/useScrollLock';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useStore } from '@tale-ui/utils/store';
 import { useSelectRootContext, useSelectFloatingContext } from '../root/SelectRootContext';
 import { CompositeList } from '../../composite/list/CompositeList';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import { useAnchorPositioning, type Align, type Side } from '../../utils/useAnchorPositioning';
 import { SelectPositionerContext } from './SelectPositionerContext';
@@ -17,7 +17,7 @@ import { DROPDOWN_COLLISION_AVOIDANCE } from '../../utils/constants';
 import { getDisabledMountTransitionStyles } from '../../utils/getDisabledMountTransitionStyles';
 import { clearStyles } from '../popup/utils';
 import { selectors } from '../store';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { findItemIndex, selectedValueIncludes } from '../../utils/itemEquality';
 
@@ -27,7 +27,7 @@ const FIXED: React.CSSProperties = { position: 'fixed' };
  * Positions the select popup.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Tale UI Select](https://base-ui.com/react/components/select)
  */
 export const SelectPositioner = React.forwardRef(function SelectPositioner(
   componentProps: SelectPositioner.Props,
@@ -264,7 +264,7 @@ export interface SelectPositionerState {
 export interface SelectPositionerProps
   extends
     useAnchorPositioning.SharedParameters,
-    BaseUIComponentProps<'div', SelectPositioner.State> {
+    TaleUIComponentProps<'div', SelectPositioner.State> {
   /**
    * Whether the positioner overlaps the trigger so the selected item's text is aligned with the trigger's value text. This only applies to mouse input and is automatically disabled if there is not enough space.
    * @default true

@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { InteractionType } from '@base-ui/utils/useEnhancedClickHandler';
+import { InteractionType } from '@tale-ui/utils/useEnhancedClickHandler';
 import { FloatingFocusManager } from '../../floating-ui-react';
 import { useDialogRootContext } from '../root/DialogRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { type BaseUIComponentProps } from '../../utils/types';
+import { type TaleUIComponentProps } from '../../utils/types';
 import { type TransitionStatus } from '../../utils/useTransitionStatus';
 import { type StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import { popupStateMapping as baseMapping } from '../../utils/popupStateMapping';
@@ -27,7 +27,7 @@ const stateAttributesMapping: StateAttributesMapping<DialogPopup.State> = {
  * A container for the dialog contents.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+ * Documentation: [Tale UI Dialog](https://base-ui.com/react/components/dialog)
  */
 export const DialogPopup = React.forwardRef(function DialogPopup(
   componentProps: DialogPopup.Props,
@@ -125,7 +125,7 @@ export const DialogPopup = React.forwardRef(function DialogPopup(
   );
 });
 
-export interface DialogPopupProps extends BaseUIComponentProps<'div', DialogPopup.State> {
+export interface DialogPopupProps extends TaleUIComponentProps<'div', DialogPopup.State> {
   /**
    * Determines the element to focus when the dialog is opened.
    *

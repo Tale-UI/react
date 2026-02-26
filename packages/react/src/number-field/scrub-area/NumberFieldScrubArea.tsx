@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { ownerWindow, ownerDocument } from '@base-ui/utils/owner';
-import { isFirefox, isWebKit } from '@base-ui/utils/detectBrowser';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import type { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import { ownerWindow, ownerDocument } from '@tale-ui/utils/owner';
+import { isFirefox, isWebKit } from '@tale-ui/utils/detectBrowser';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
+import type { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 import { useNumberFieldRootContext } from '../root/NumberFieldRootContext';
 import type { NumberFieldRoot } from '../root/NumberFieldRoot';
 import { stateAttributesMapping } from '../utils/stateAttributesMapping';
@@ -14,14 +14,14 @@ import { useRenderElement } from '../../utils/useRenderElement';
 import { getViewportRect } from '../utils/getViewportRect';
 import { subscribeToVisualViewportResize } from '../utils/subscribeToVisualViewportResize';
 import { DEFAULT_STEP } from '../utils/constants';
-import { createGenericEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createGenericEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 
 /**
  * An interactive area where the user can click and drag to change the field value.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)
+ * Documentation: [Tale UI Number Field](https://base-ui.com/react/components/number-field)
  */
 export const NumberFieldScrubArea = React.forwardRef(function NumberFieldScrubArea(
   componentProps: NumberFieldScrubArea.Props,
@@ -341,7 +341,7 @@ export const NumberFieldScrubArea = React.forwardRef(function NumberFieldScrubAr
 
 export interface NumberFieldScrubAreaState extends NumberFieldRoot.State {}
 
-export interface NumberFieldScrubAreaProps extends BaseUIComponentProps<
+export interface NumberFieldScrubAreaProps extends TaleUIComponentProps<
   'span',
   NumberFieldScrubArea.State
 > {

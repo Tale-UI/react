@@ -1,19 +1,19 @@
 'use client';
 import * as React from 'react';
-import type { InteractionType } from '@base-ui/utils/useEnhancedClickHandler';
+import type { InteractionType } from '@tale-ui/utils/useEnhancedClickHandler';
 import { FloatingFocusManager, useHoverFloatingInteraction } from '../../floating-ui-react';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import type { MenuRoot } from '../root/MenuRoot';
 import { useMenuPositionerContext } from '../positioner/MenuPositionerContext';
 import { useRenderElement } from '../../utils/useRenderElement';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import type { StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import type { Side, Align } from '../../utils/useAnchorPositioning';
 import type { TransitionStatus } from '../../utils/useTransitionStatus';
 import { popupStateMapping as baseMapping } from '../../utils/popupStateMapping';
 import { transitionStatusMapping } from '../../utils/stateAttributesMapping';
 import { useOpenChangeComplete } from '../../utils/useOpenChangeComplete';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { useToolbarRootContext } from '../../toolbar/root/ToolbarRootContext';
 import { COMPOSITE_KEYS } from '../../composite/composite';
@@ -28,7 +28,7 @@ const stateAttributesMapping: StateAttributesMapping<MenuPopup.State> = {
  * A container for the menu items.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Tale UI Menu](https://base-ui.com/react/components/menu)
  */
 export const MenuPopup = React.forwardRef(function MenuPopup(
   componentProps: MenuPopup.Props,
@@ -147,7 +147,7 @@ export const MenuPopup = React.forwardRef(function MenuPopup(
   );
 });
 
-export interface MenuPopupProps extends BaseUIComponentProps<'div', MenuPopup.State> {
+export interface MenuPopupProps extends TaleUIComponentProps<'div', MenuPopup.State> {
   children?: React.ReactNode;
   /**
    * @ignore

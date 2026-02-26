@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { isSafari } from '@base-ui/utils/detectBrowser';
-import { visuallyHidden } from '@base-ui/utils/visuallyHidden';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { isSafari } from '@tale-ui/utils/detectBrowser';
+import { visuallyHidden } from '@tale-ui/utils/visuallyHidden';
 
 /**
  * @internal
@@ -35,7 +35,7 @@ export const FocusGuard = React.forwardRef(function FocusGuard(
       style={visuallyHidden}
       aria-hidden={role ? undefined : true}
       {...restProps}
-      data-base-ui-focus-guard=""
+      data-tale-ui-focus-guard=""
     />
   );
 });

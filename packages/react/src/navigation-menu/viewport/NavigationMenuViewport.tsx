@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useId } from '@base-ui/utils/useId';
-import { inertValue } from '@base-ui/utils/inertValue';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import type { BaseUIComponentProps } from '../../utils/types';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useId } from '@tale-ui/utils/useId';
+import { inertValue } from '@tale-ui/utils/inertValue';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useNavigationMenuRootContext } from '../root/NavigationMenuRootContext';
 import { FocusGuard } from '../../utils/FocusGuard';
@@ -70,7 +70,7 @@ function Guards({ children }: { children: React.ReactNode }) {
  * The clipping viewport of the navigation menu's current content.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Tale UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
  */
 
 export const NavigationMenuViewport = React.forwardRef(function NavigationMenuViewport(
@@ -155,7 +155,7 @@ export const NavigationMenuViewport = React.forwardRef(function NavigationMenuVi
 
 export interface NavigationMenuViewportState {}
 
-export interface NavigationMenuViewportProps extends BaseUIComponentProps<
+export interface NavigationMenuViewportProps extends TaleUIComponentProps<
   'div',
   NavigationMenuViewport.State
 > {}

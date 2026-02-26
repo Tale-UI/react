@@ -1,4 +1,4 @@
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { MenuStore } from './MenuStore';
 
 export class MenuHandle<Payload> {
@@ -24,7 +24,7 @@ export class MenuHandle<Payload> {
       : undefined;
 
     if (triggerId && !triggerElement) {
-      throw new Error(`Base UI: MenuHandle.open: No trigger found with id "${triggerId}".`);
+      throw new Error(`Tale UI: MenuHandle.open: No trigger found with id "${triggerId}".`);
     }
 
     this.store.setOpen(

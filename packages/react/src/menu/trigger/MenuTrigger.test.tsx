@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 import userEvent from '@testing-library/user-event';
 import { act, fireEvent, flushMicrotasks, screen } from '@mui/internal-test-utils';
-import { Menu } from '@base-ui/react/menu';
-import { Popover } from '@base-ui/react/popover';
+import { Menu } from '@tale-ui/react/menu';
+import { Popover } from '@tale-ui/react/popover';
 import { describeConformance, createRenderer } from '#test-utils';
 import { PATIENT_CLICK_THRESHOLD } from '../../utils/constants';
 
@@ -324,11 +324,11 @@ describe('<Menu.Trigger />', () => {
     });
   });
 
-  describe('preventBaseUIHandler', () => {
-    it('prevents opening the menu with a mouse when `preventBaseUIHandler` is called in onMouseDown', async () => {
+  describe('preventTaleUIHandler', () => {
+    it('prevents opening the menu with a mouse when `preventTaleUIHandler` is called in onMouseDown', async () => {
       await render(
         <Menu.Root>
-          <Menu.Trigger onMouseDown={(event) => event.preventBaseUIHandler()} />
+          <Menu.Trigger onMouseDown={(event) => event.preventTaleUIHandler()} />
           <Menu.Portal>
             <Menu.Positioner>
               <Menu.Popup />
@@ -343,10 +343,10 @@ describe('<Menu.Trigger />', () => {
       expect(screen.queryByRole('menu', { hidden: false })).to.equal(null);
     });
 
-    it('prevents opening the menu with keyboard when `preventBaseUIHandler` is called in onClick', async () => {
+    it('prevents opening the menu with keyboard when `preventTaleUIHandler` is called in onClick', async () => {
       await render(
         <Menu.Root>
-          <Menu.Trigger onClick={(event) => event.preventBaseUIHandler()} />
+          <Menu.Trigger onClick={(event) => event.preventTaleUIHandler()} />
           <Menu.Portal>
             <Menu.Positioner>
               <Menu.Popup />

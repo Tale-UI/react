@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
 import { usePopoverPositionerContext } from '../positioner/PopoverPositionerContext';
-import { BaseUIComponentProps } from '../../utils/types';
+import { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import { PopoverViewportCssVars } from './PopoverViewportCssVars';
@@ -23,7 +23,7 @@ const stateAttributesMapping: StateAttributesMapping<PopoverViewport.State> = {
  * and switching between them is animated.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Tale UI Popover](https://base-ui.com/react/components/popover)
  */
 export const PopoverViewport = React.forwardRef(function PopoverViewport(
   componentProps: PopoverViewport.Props,
@@ -57,7 +57,7 @@ export const PopoverViewport = React.forwardRef(function PopoverViewport(
 });
 
 export namespace PopoverViewport {
-  export interface Props extends BaseUIComponentProps<'div', State> {
+  export interface Props extends TaleUIComponentProps<'div', State> {
     /**
      * The content to render inside the transition container.
      */

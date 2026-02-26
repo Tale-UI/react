@@ -6,9 +6,9 @@ import {
   useHoverReferenceInteraction,
   useInteractions,
 } from '../../floating-ui-react';
-import { BaseUIComponentProps, NonNativeButtonProps } from '../../utils/types';
+import { TaleUIComponentProps, NonNativeButtonProps } from '../../utils/types';
 import { useMenuRootContext } from '../root/MenuRootContext';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { triggerOpenStateMapping } from '../../utils/popupStateMapping';
 import { useCompositeListItem } from '../../composite/list/useCompositeListItem';
 import { useMenuItem } from '../item/useMenuItem';
@@ -21,7 +21,7 @@ import { useMenuSubmenuRootContext } from '../submenu-root/MenuSubmenuRootContex
  * A menu item that opens a submenu.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Tale UI Menu](https://base-ui.com/react/components/menu)
  */
 export const MenuSubmenuTrigger = React.forwardRef(function SubmenuTriggerComponent(
   componentProps: MenuSubmenuTrigger.Props,
@@ -45,7 +45,7 @@ export const MenuSubmenuTrigger = React.forwardRef(function SubmenuTriggerCompon
 
   const { store } = useMenuRootContext();
 
-  const thisTriggerId = useBaseUiId(idProp);
+  const thisTriggerId = useTaleUiId(idProp);
   const open = store.useState('open');
   const floatingRootContext = store.useState('floatingRootContext');
   const floatingTreeRoot = store.useState('floatingTreeRoot');
@@ -79,7 +79,7 @@ export const MenuSubmenuTrigger = React.forwardRef(function SubmenuTriggerCompon
 
   const submenuRootContext = useMenuSubmenuRootContext();
   if (!submenuRootContext?.parentMenu) {
-    throw new Error('Base UI: <Menu.SubmenuTrigger> must be placed in <Menu.SubmenuRoot>.');
+    throw new Error('Tale UI: <Menu.SubmenuTrigger> must be placed in <Menu.SubmenuRoot>.');
   }
 
   store.useSyncedValue('closeDelay', closeDelay);
@@ -183,8 +183,8 @@ export interface MenuSubmenuTriggerState {
 }
 
 export interface MenuSubmenuTriggerProps
-  extends NonNativeButtonProps, BaseUIComponentProps<'div', MenuSubmenuTriggerState> {
-  onClick?: BaseUIComponentProps<'div', MenuSubmenuTriggerState>['onClick'] | undefined;
+  extends NonNativeButtonProps, TaleUIComponentProps<'div', MenuSubmenuTriggerState> {
+  onClick?: TaleUIComponentProps<'div', MenuSubmenuTriggerState>['onClick'] | undefined;
   /**
    * Overrides the text label to use when the item is matched during keyboard text navigation.
    */

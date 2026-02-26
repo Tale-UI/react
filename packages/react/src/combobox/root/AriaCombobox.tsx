@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useOnFirstRender } from '@base-ui/utils/useOnFirstRender';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { visuallyHidden, visuallyHiddenInput } from '@base-ui/utils/visuallyHidden';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
-import { Store, useStore } from '@base-ui/utils/store';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
+import { useControlled } from '@tale-ui/utils/useControlled';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useOnFirstRender } from '@tale-ui/utils/useOnFirstRender';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useMergedRefs } from '@tale-ui/utils/useMergedRefs';
+import { visuallyHidden, visuallyHiddenInput } from '@tale-ui/utils/visuallyHidden';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
+import { Store, useStore } from '@tale-ui/utils/store';
+import { useValueAsRef } from '@tale-ui/utils/useValueAsRef';
 import {
   ElementProps,
   useDismiss,
@@ -21,9 +21,9 @@ import { contains, getTarget } from '../../floating-ui-react/utils';
 import {
   createChangeEventDetails,
   createGenericEventDetails,
-  type BaseUIChangeEventDetails,
-  type BaseUIGenericEventDetails,
-} from '../../utils/createBaseUIEventDetails';
+  type TaleUIChangeEventDetails,
+  type TaleUIGenericEventDetails,
+} from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import {
   ComboboxFloatingContext,
@@ -1546,7 +1546,7 @@ export namespace AriaCombobox {
   }
 
   export type HighlightEventReason = 'keyboard' | 'pointer' | 'none';
-  export type HighlightEventDetails = BaseUIGenericEventDetails<
+  export type HighlightEventDetails = TaleUIGenericEventDetails<
     HighlightEventReason,
     { index: number }
   >;
@@ -1563,5 +1563,5 @@ export namespace AriaCombobox {
     | typeof REASONS.clearPress
     | typeof REASONS.chipRemovePress
     | typeof REASONS.none;
-  export type ChangeEventDetails = BaseUIChangeEventDetails<ChangeEventReason>;
+  export type ChangeEventDetails = TaleUIChangeEventDetails<ChangeEventReason>;
 }

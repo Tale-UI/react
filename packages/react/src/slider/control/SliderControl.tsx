@@ -1,18 +1,18 @@
 'use client';
 import * as React from 'react';
 import { isElement } from '@floating-ui/utils/dom';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { useAnimationFrame } from '@base-ui/utils/useAnimationFrame';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
+import { ownerDocument } from '@tale-ui/utils/owner';
+import { useAnimationFrame } from '@tale-ui/utils/useAnimationFrame';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useValueAsRef } from '@tale-ui/utils/useValueAsRef';
 import { activeElement, contains } from '../../floating-ui-react/utils';
 import type { Coords } from '../../floating-ui-react/types';
 import { clamp } from '../../utils/clamp';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import {
   createChangeEventDetails,
   createGenericEventDetails,
-} from '../../utils/createBaseUIEventDetails';
+} from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useDirection } from '../../direction-provider/DirectionContext';
@@ -79,7 +79,7 @@ function getFingerCoords(
  * The clickable, interactive part of the slider.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
+ * Documentation: [Tale UI Slider](https://base-ui.com/react/components/slider)
  */
 export const SliderControl = React.forwardRef(function SliderControl(
   componentProps: SliderControl.Props,
@@ -430,7 +430,7 @@ export const SliderControl = React.forwardRef(function SliderControl(
     ref: [forwardedRef, registerFieldControlRef, controlRef, setStylesRef],
     props: [
       {
-        ['data-base-ui-slider-control' as string]: renderBeforeHydration ? '' : undefined,
+        ['data-tale-ui-slider-control' as string]: renderBeforeHydration ? '' : undefined,
         onPointerDown(event) {
           const control = controlRef.current;
 
@@ -513,7 +513,7 @@ interface FingerState {
   didSwap: boolean;
 }
 
-export interface SliderControlProps extends BaseUIComponentProps<'div', SliderRoot.State> {}
+export interface SliderControlProps extends TaleUIComponentProps<'div', SliderRoot.State> {}
 
 export namespace SliderControl {
   export type State = SliderRoot.State;

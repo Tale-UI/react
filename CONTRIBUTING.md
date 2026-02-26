@@ -1,8 +1,8 @@
-# Contributing to Base UI
+# Contributing to Tale UI
 
-## Base UI vs. MUI organization
+## Tale UI vs. MUI organization
 
-Base UI is an open-source project of the MUI organization. The repositories are part of the same codebase.
+Tale UI is a fork of Base UI, an open-source project of the MUI organization. The repositories are part of the same codebase.
 `mui/base-ui` imports the code infrastructure from [`mui/material-ui`](https://github.com/mui/material-ui).
 You can find the "contributing" guide for the main repository in [mui/material-ui/CONTRIBUTING.md](https://github.com/mui/material-ui/blob/HEAD/CONTRIBUTING.md).
 

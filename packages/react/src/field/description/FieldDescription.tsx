@@ -1,19 +1,19 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
 import { FieldRoot } from '../root/FieldRoot';
 import { useFieldRootContext } from '../root/FieldRootContext';
 import { useLabelableContext } from '../../labelable-provider/LabelableContext';
 import { fieldValidityMapping } from '../utils/constants';
-import type { BaseUIComponentProps } from '../../utils/types';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import type { TaleUIComponentProps } from '../../utils/types';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { useRenderElement } from '../../utils/useRenderElement';
 
 /**
  * A paragraph with additional information about the field.
  * Renders a `<p>` element.
  *
- * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+ * Documentation: [Tale UI Field](https://base-ui.com/react/components/field)
  */
 export const FieldDescription = React.forwardRef(function FieldDescription(
   componentProps: FieldDescription.Props,
@@ -21,7 +21,7 @@ export const FieldDescription = React.forwardRef(function FieldDescription(
 ) {
   const { render, id: idProp, className, ...elementProps } = componentProps;
 
-  const id = useBaseUiId(idProp);
+  const id = useTaleUiId(idProp);
 
   const fieldRootContext = useFieldRootContext(false);
   const { setMessageIds } = useLabelableContext();
@@ -50,7 +50,7 @@ export const FieldDescription = React.forwardRef(function FieldDescription(
 
 export type FieldDescriptionState = FieldRoot.State;
 
-export interface FieldDescriptionProps extends BaseUIComponentProps<'p', FieldDescription.State> {}
+export interface FieldDescriptionProps extends TaleUIComponentProps<'p', FieldDescription.State> {}
 
 export namespace FieldDescription {
   export type State = FieldDescriptionState;

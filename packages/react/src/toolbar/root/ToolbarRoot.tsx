@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { BaseUIComponentProps, Orientation as BaseOrientation, HTMLProps } from '../../utils/types';
+import { TaleUIComponentProps, Orientation as BaseOrientation, HTMLProps } from '../../utils/types';
 import { CompositeRoot } from '../../composite/root/CompositeRoot';
 import type { CompositeMetadata } from '../../composite/list/CompositeList';
 import { ToolbarRootContext } from './ToolbarRootContext';
@@ -9,7 +9,7 @@ import { ToolbarRootContext } from './ToolbarRootContext';
  * A container for grouping a set of controls, such as buttons, toggle groups, or menus.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
+ * Documentation: [Tale UI Toolbar](https://base-ui.com/react/components/toolbar)
  */
 export const ToolbarRoot = React.forwardRef(function ToolbarRoot(
   componentProps: ToolbarRoot.Props,
@@ -82,7 +82,7 @@ export interface ToolbarRootState {
   orientation: ToolbarRoot.Orientation;
 }
 
-export interface ToolbarRootProps extends BaseUIComponentProps<'div', ToolbarRoot.State> {
+export interface ToolbarRootProps extends TaleUIComponentProps<'div', ToolbarRoot.State> {
   disabled?: boolean | undefined;
   /**
    * The orientation of the toolbar.

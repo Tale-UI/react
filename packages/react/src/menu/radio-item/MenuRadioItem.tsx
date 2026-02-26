@@ -1,24 +1,24 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { useBaseUiId } from '../../utils/useBaseUiId';
-import type { BaseUIComponentProps, NonNativeButtonProps } from '../../utils/types';
+import { useTaleUiId } from '../../utils/useTaleUiId';
+import type { TaleUIComponentProps, NonNativeButtonProps } from '../../utils/types';
 import { useMenuRadioGroupContext } from '../radio-group/MenuRadioGroupContext';
 import { MenuRadioItemContext } from './MenuRadioItemContext';
 import { itemMapping } from '../utils/stateAttributesMapping';
 import { useCompositeListItem } from '../../composite/list/useCompositeListItem';
 import { REGULAR_ITEM, useMenuItem } from '../item/useMenuItem';
 import { useMenuPositionerContext } from '../positioner/MenuPositionerContext';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 
 /**
  * A menu item that works like a radio button in a given group.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Tale UI Menu](https://base-ui.com/react/components/menu)
  */
 export const MenuRadioItem = React.forwardRef(function MenuRadioItem(
   componentProps: MenuRadioItem.Props,
@@ -38,7 +38,7 @@ export const MenuRadioItem = React.forwardRef(function MenuRadioItem(
 
   const listItem = useCompositeListItem({ label });
   const menuPositionerContext = useMenuPositionerContext(true);
-  const id = useBaseUiId(idProp);
+  const id = useTaleUiId(idProp);
 
   const { store } = useMenuRootContext();
   const highlighted = store.useState('isActive', listItem.index);
@@ -116,7 +116,7 @@ export type MenuRadioItemState = {
 };
 
 export interface MenuRadioItemProps
-  extends NonNativeButtonProps, BaseUIComponentProps<'div', MenuRadioItem.State> {
+  extends NonNativeButtonProps, TaleUIComponentProps<'div', MenuRadioItem.State> {
   /**
    * Value of the radio item.
    * This is the value that will be set in the MenuRadioGroup when the item is selected.
@@ -125,7 +125,7 @@ export interface MenuRadioItemProps
   /**
    * The click handler for the menu item.
    */
-  onClick?: BaseUIComponentProps<'div', MenuRadioItemState>['onClick'] | undefined;
+  onClick?: TaleUIComponentProps<'div', MenuRadioItemState>['onClick'] | undefined;
   /**
    * Whether the component should ignore user interaction.
    * @default false

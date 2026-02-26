@@ -1,16 +1,16 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { useStore } from '@base-ui/utils/store';
+import { useStore } from '@tale-ui/utils/store';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { BaseUIComponentProps } from '../../utils/types';
+import { TaleUIComponentProps } from '../../utils/types';
 import { useComboboxChipsContext } from '../chips/ComboboxChipsContext';
 import { useComboboxRootContext } from '../root/ComboboxRootContext';
 import { useCompositeListItem } from '../../composite/list/useCompositeListItem';
 import { ComboboxChipContext } from './ComboboxChipContext';
 import { stopEvent } from '../../floating-ui-react/utils';
 import { selectors } from '../store';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 
 /**
@@ -149,7 +149,7 @@ export interface ComboboxChipState {
   disabled: boolean;
 }
 
-export interface ComboboxChipProps extends BaseUIComponentProps<'div', ComboboxChip.State> {}
+export interface ComboboxChipProps extends TaleUIComponentProps<'div', ComboboxChip.State> {}
 
 export namespace ComboboxChip {
   export type State = ComboboxChipState;

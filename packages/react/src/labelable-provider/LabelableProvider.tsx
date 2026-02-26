@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
 import { mergeProps } from '../merge-props';
 import { HTMLProps } from '../utils/types';
-import { useBaseUiId } from '../utils/useBaseUiId';
+import { useTaleUiId } from '../utils/useTaleUiId';
 import { LabelableContext, useLabelableContext } from './LabelableContext';
 
 /**
@@ -13,7 +13,7 @@ import { LabelableContext, useLabelableContext } from './LabelableContext';
 export const LabelableProvider: React.FC<LabelableProvider.Props> = function LabelableProvider(
   props,
 ) {
-  const defaultId = useBaseUiId();
+  const defaultId = useTaleUiId();
   const initialControlId = props.controlId === undefined ? defaultId : props.controlId;
 
   const [controlId, setControlIdState] = React.useState<string | null | undefined>(

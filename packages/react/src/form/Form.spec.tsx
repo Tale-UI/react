@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { expectType } from '#test-utils';
-import { Form } from '@base-ui/react/form';
+import { Form } from '@tale-ui/react/form';
 
 interface Values {
   name: string;

@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
+import { useMergedRefs } from '@tale-ui/utils/useMergedRefs';
 import { getEmptyRootContext } from '../../src/floating-ui-react/utils/getEmptyRootContext';
 import {
   flip,

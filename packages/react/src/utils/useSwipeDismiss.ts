@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { ownerDocument } from '@base-ui/utils/owner';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { ownerDocument } from '@tale-ui/utils/owner';
 import { contains, getTarget } from '../floating-ui-react/utils';
 import { findScrollableTouchTarget, hasScrollableAncestor, type ScrollAxis } from './scrollable';
 import { clamp } from './clamp';

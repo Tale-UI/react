@@ -1,7 +1,7 @@
 'use client';
-import { useOnMount } from '@base-ui/utils/useOnMount';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
-import { Timeout } from '@base-ui/utils/useTimeout';
+import { useOnMount } from '@tale-ui/utils/useOnMount';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
+import { Timeout } from '@tale-ui/utils/useTimeout';
 
 import type { ContextData, FloatingRootContext, SafePolygonOptions } from '../types';
 import { createAttribute } from '../utils/createAttribute';

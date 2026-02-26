@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
-import { visuallyHidden, visuallyHiddenInput } from '@base-ui/utils/visuallyHidden';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
-import { useOnFirstRender } from '@base-ui/utils/useOnFirstRender';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
-import { useStore, Store } from '@base-ui/utils/store';
+import { visuallyHidden, visuallyHiddenInput } from '@tale-ui/utils/visuallyHidden';
+import { useMergedRefs } from '@tale-ui/utils/useMergedRefs';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
+import { useOnFirstRender } from '@tale-ui/utils/useOnFirstRender';
+import { useControlled } from '@tale-ui/utils/useControlled';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useValueAsRef } from '@tale-ui/utils/useValueAsRef';
+import { useStore, Store } from '@tale-ui/utils/store';
 import {
   useClick,
   useDismiss,
@@ -23,9 +23,9 @@ import { useLabelableId } from '../../labelable-provider/useLabelableId';
 import { useTransitionStatus } from '../../utils/useTransitionStatus';
 import { selectors, type State as StoreState } from '../store';
 import {
-  type BaseUIChangeEventDetails,
+  type TaleUIChangeEventDetails,
   createChangeEventDetails,
-} from '../../utils/createBaseUIEventDetails';
+} from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { useOpenChangeComplete } from '../../utils/useOpenChangeComplete';
 import { useFormContext } from '../../form/FormContext';
@@ -41,7 +41,7 @@ import { mergeProps } from '../../merge-props';
  * Groups all parts of the select.
  * Doesn’t render its own HTML element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Tale UI Select](https://base-ui.com/react/components/select)
  */
 export function SelectRoot<Value, Multiple extends boolean | undefined = false>(
   props: SelectRoot.Props<Value, Multiple>,
@@ -739,7 +739,7 @@ export type SelectRootChangeEventReason =
   | typeof REASONS.cancelOpen
   | typeof REASONS.none;
 
-export type SelectRootChangeEventDetails = BaseUIChangeEventDetails<SelectRootChangeEventReason>;
+export type SelectRootChangeEventDetails = TaleUIChangeEventDetails<SelectRootChangeEventReason>;
 
 export namespace SelectRoot {
   export type Props<Value, Multiple extends boolean | undefined = false> = SelectRootProps<

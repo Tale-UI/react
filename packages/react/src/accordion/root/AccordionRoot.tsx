@@ -1,18 +1,18 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { warn } from '@base-ui/utils/warn';
-import { BaseUIComponentProps, Orientation } from '../../utils/types';
+import { useControlled } from '@tale-ui/utils/useControlled';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { warn } from '@tale-ui/utils/warn';
+import { TaleUIComponentProps, Orientation } from '../../utils/types';
 import { CompositeList } from '../../composite/list/CompositeList';
 import { useDirection } from '../../direction-provider/DirectionContext';
 import { AccordionRootContext } from './AccordionRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
 import {
   createChangeEventDetails,
-  type BaseUIChangeEventDetails,
-} from '../../utils/createBaseUIEventDetails';
+  type TaleUIChangeEventDetails,
+} from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 
 const rootStateAttributesMapping = {
@@ -23,7 +23,7 @@ const rootStateAttributesMapping = {
  * Groups all parts of the accordion.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordion)
+ * Documentation: [Tale UI Accordion](https://base-ui.com/react/components/accordion)
  */
 export const AccordionRoot = React.forwardRef(function AccordionRoot<Value = any>(
   componentProps: AccordionRoot.Props<Value>,
@@ -175,7 +175,7 @@ export interface AccordionRootState<Value = any> {
   orientation: Orientation;
 }
 
-export interface AccordionRootProps<Value = any> extends BaseUIComponentProps<
+export interface AccordionRootProps<Value = any> extends TaleUIComponentProps<
   'div',
   AccordionRoot.State<Value>
 > {
@@ -239,7 +239,7 @@ export interface AccordionRootProps<Value = any> extends BaseUIComponentProps<
 export type AccordionRootChangeEventReason = typeof REASONS.triggerPress | typeof REASONS.none;
 
 export type AccordionRootChangeEventDetails =
-  BaseUIChangeEventDetails<AccordionRoot.ChangeEventReason>;
+  TaleUIChangeEventDetails<AccordionRoot.ChangeEventReason>;
 
 export namespace AccordionRoot {
   export type Value<TValue = any> = AccordionValue<TValue>;

@@ -2,10 +2,10 @@ import * as React from 'react';
 import { expect } from 'chai';
 import { spy } from 'sinon';
 import { act, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
-import { Switch } from '@base-ui/react/switch';
+import { Switch } from '@tale-ui/react/switch';
 import { describeConformance, createRenderer, isJSDOM } from '#test-utils';
-import { Field } from '@base-ui/react/field';
-import { Form } from '@base-ui/react/form';
+import { Field } from '@tale-ui/react/field';
+import { Form } from '@tale-ui/react/form';
 
 describe('<Switch.Root />', () => {
   const { render } = createRenderer();

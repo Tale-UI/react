@@ -2,14 +2,14 @@
 import * as React from 'react';
 import { useDialogRootContext } from '../root/DialogRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { useBaseUiId } from '../../utils/useBaseUiId';
-import { type BaseUIComponentProps } from '../../utils/types';
+import { useTaleUiId } from '../../utils/useTaleUiId';
+import { type TaleUIComponentProps } from '../../utils/types';
 
 /**
  * A heading that labels the dialog.
  * Renders an `<h2>` element.
  *
- * Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+ * Documentation: [Tale UI Dialog](https://base-ui.com/react/components/dialog)
  */
 export const DialogTitle = React.forwardRef(function DialogTitle(
   componentProps: DialogTitle.Props,
@@ -18,7 +18,7 @@ export const DialogTitle = React.forwardRef(function DialogTitle(
   const { render, className, id: idProp, ...elementProps } = componentProps;
   const { store } = useDialogRootContext();
 
-  const id = useBaseUiId(idProp);
+  const id = useTaleUiId(idProp);
 
   store.useSyncedValueWithCleanup('titleElementId', id);
 
@@ -28,7 +28,7 @@ export const DialogTitle = React.forwardRef(function DialogTitle(
   });
 });
 
-export interface DialogTitleProps extends BaseUIComponentProps<'h2', DialogTitle.State> {}
+export interface DialogTitleProps extends TaleUIComponentProps<'h2', DialogTitle.State> {}
 
 export interface DialogTitleState {}
 

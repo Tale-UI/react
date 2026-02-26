@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { spy } from 'sinon';
-import { Button } from '@base-ui/react/button';
+import { Button } from '@tale-ui/react/button';
 import { screen } from '@mui/internal-test-utils';
 import { describeConformance, createRenderer } from '#test-utils';
 

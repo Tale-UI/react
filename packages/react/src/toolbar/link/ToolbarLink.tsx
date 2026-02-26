@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { BaseUIComponentProps } from '../../utils/types';
+import { TaleUIComponentProps } from '../../utils/types';
 import type { ToolbarRoot } from '../root/ToolbarRoot';
 import { useToolbarRootContext } from '../root/ToolbarRootContext';
 import { CompositeItem } from '../../composite/item/CompositeItem';
@@ -15,7 +15,7 @@ const TOOLBAR_LINK_METADATA = {
  * A link component.
  * Renders an `<a>` element.
  *
- * Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
+ * Documentation: [Tale UI Toolbar](https://base-ui.com/react/components/toolbar)
  */
 export const ToolbarLink = React.forwardRef(function ToolbarLink(
   componentProps: ToolbarLink.Props,
@@ -46,7 +46,7 @@ export interface ToolbarLinkState {
   orientation: ToolbarRoot.Orientation;
 }
 
-export interface ToolbarLinkProps extends BaseUIComponentProps<'a', ToolbarLink.State> {}
+export interface ToolbarLinkProps extends TaleUIComponentProps<'a', ToolbarLink.State> {}
 
 export namespace ToolbarLink {
   export type State = ToolbarLinkState;

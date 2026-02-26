@@ -1,4 +1,4 @@
-import { Toast } from '@base-ui/react/toast';
+import { Toast } from '@tale-ui/react/toast';
 
 /**
  * @internal

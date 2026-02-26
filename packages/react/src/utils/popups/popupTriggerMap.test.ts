@@ -63,7 +63,7 @@ describe('PopupTriggerMap', () => {
     try {
       map.add('first', button);
       expect(() => map.add('second', button)).to.throw(
-        'Base UI: A trigger element cannot be registered under multiple IDs in PopupTriggerMap.',
+        'Tale UI: A trigger element cannot be registered under multiple IDs in PopupTriggerMap.',
       );
     } finally {
       process.env.NODE_ENV = originalEnv;

@@ -53,7 +53,7 @@ function useNavigationMenuRootContext(optional?: boolean) {
   const context = React.useContext(NavigationMenuRootContext);
   if (context === undefined && !optional) {
     throw new Error(
-      'Base UI: NavigationMenuRootContext is missing. Navigation Menu parts must be placed within <NavigationMenu.Root>.',
+      'Tale UI: NavigationMenuRootContext is missing. Navigation Menu parts must be placed within <NavigationMenu.Root>.',
     );
   }
   return context;

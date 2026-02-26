@@ -1,16 +1,16 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import type { BaseUIComponentProps } from '../../utils/types';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { useMenuGroupRootContext } from '../group/MenuGroupContext';
 
 /**
  * An accessible label that is automatically associated with its parent group.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Tale UI Menu](https://base-ui.com/react/components/menu)
  */
 export const MenuGroupLabel = React.forwardRef(function MenuGroupLabelComponent(
   componentProps: MenuGroupLabel.Props,
@@ -18,7 +18,7 @@ export const MenuGroupLabel = React.forwardRef(function MenuGroupLabelComponent(
 ) {
   const { className, render, id: idProp, ...elementProps } = componentProps;
 
-  const id = useBaseUiId(idProp);
+  const id = useTaleUiId(idProp);
 
   const { setLabelId } = useMenuGroupRootContext();
 
@@ -39,7 +39,7 @@ export const MenuGroupLabel = React.forwardRef(function MenuGroupLabelComponent(
   });
 });
 
-export interface MenuGroupLabelProps extends BaseUIComponentProps<'div', MenuGroupLabel.State> {}
+export interface MenuGroupLabelProps extends TaleUIComponentProps<'div', MenuGroupLabel.State> {}
 
 export interface MenuGroupLabelState {}
 

@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useId } from '@base-ui/utils/useId';
-import type { BaseUIComponentProps } from '../../utils/types';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useId } from '@tale-ui/utils/useId';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useToastRootContext } from '../root/ToastRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
 
@@ -10,7 +10,7 @@ import { useRenderElement } from '../../utils/useRenderElement';
  * A title that labels the toast.
  * Renders an `<h2>` element.
  *
- * Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+ * Documentation: [Tale UI Toast](https://base-ui.com/react/components/toast)
  */
 export const ToastTitle = React.forwardRef(function ToastTitle(
   componentProps: ToastTitle.Props,
@@ -66,7 +66,7 @@ export interface ToastTitleState {
   type: string | undefined;
 }
 
-export interface ToastTitleProps extends BaseUIComponentProps<'h2', ToastTitle.State> {}
+export interface ToastTitleProps extends TaleUIComponentProps<'h2', ToastTitle.State> {}
 
 export namespace ToastTitle {
   export type State = ToastTitleState;

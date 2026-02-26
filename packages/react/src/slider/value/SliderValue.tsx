@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { formatNumber } from '../../utils/formatNumber';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useSliderRootContext } from '../root/SliderRootContext';
 import { sliderStateAttributesMapping } from '../root/stateAttributesMapping';
@@ -11,7 +11,7 @@ import type { SliderRoot } from '../root/SliderRoot';
  * Displays the current value of the slider as text.
  * Renders an `<output>` element.
  *
- * Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
+ * Documentation: [Tale UI Slider](https://base-ui.com/react/components/slider)
  */
 export const SliderValue = React.forwardRef(function SliderValue(
   componentProps: SliderValue.Props,
@@ -74,7 +74,7 @@ export const SliderValue = React.forwardRef(function SliderValue(
 });
 
 export interface SliderValueProps extends Omit<
-  BaseUIComponentProps<'output', SliderRoot.State>,
+  TaleUIComponentProps<'output', SliderRoot.State>,
   'children'
 > {
   children?:

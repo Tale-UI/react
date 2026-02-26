@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useStore } from '@base-ui/utils/store';
-import type { BaseUIComponentProps } from '../../utils/types';
+import { useStore } from '@tale-ui/utils/store';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useComboboxRootContext } from '../root/ComboboxRootContext';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import type { StateAttributesMapping } from '../../utils/getStateAttributesProps';
@@ -54,7 +54,7 @@ export const ComboboxBackdrop = React.forwardRef(function ComboboxBackdrop(
   });
 });
 
-export interface ComboboxBackdropProps extends BaseUIComponentProps<
+export interface ComboboxBackdropProps extends TaleUIComponentProps<
   'div',
   ComboboxBackdrop.State
 > {}

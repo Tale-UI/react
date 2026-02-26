@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { warn } from '@base-ui/utils/warn';
-import { BaseUIComponentProps } from '../../utils/types';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { warn } from '@tale-ui/utils/warn';
+import { TaleUIComponentProps } from '../../utils/types';
 import { useCollapsibleRootContext } from '../../collapsible/root/CollapsibleRootContext';
 import { useCollapsiblePanel } from '../../collapsible/panel/useCollapsiblePanel';
 import { useAccordionRootContext } from '../root/AccordionRootContext';
@@ -19,7 +19,7 @@ import type { TransitionStatus } from '../../utils/useTransitionStatus';
  * A collapsible panel with the accordion item contents.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordion)
+ * Documentation: [Tale UI Accordion](https://base-ui.com/react/components/accordion)
  */
 export const AccordionPanel = React.forwardRef(function AccordionPanel(
   componentProps: AccordionPanel.Props,
@@ -170,7 +170,7 @@ export interface AccordionPanelState extends AccordionItem.State {
 
 export interface AccordionPanelProps
   extends
-    BaseUIComponentProps<'div', AccordionPanel.State>,
+    TaleUIComponentProps<'div', AccordionPanel.State>,
     Pick<AccordionRoot.Props, 'hiddenUntilFound' | 'keepMounted'> {}
 
 export namespace AccordionPanel {

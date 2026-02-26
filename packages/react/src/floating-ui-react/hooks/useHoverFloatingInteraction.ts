@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
 import { isElement } from '@floating-ui/utils/dom';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
 
-import { ownerDocument } from '@base-ui/utils/owner';
+import { ownerDocument } from '@tale-ui/utils/owner';
 import type { FloatingContext, FloatingRootContext } from '../types';
 import { getTarget, isMouseLikePointerType, isTargetInsideEnabledTrigger } from '../utils';
 
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { useFloatingParentNodeId, useFloatingTree } from '../components/FloatingTree';
 import {

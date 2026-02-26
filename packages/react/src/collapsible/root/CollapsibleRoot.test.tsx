@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { screen } from '@mui/internal-test-utils';
 import { expect } from 'chai';
-import { Collapsible } from '@base-ui/react/collapsible';
+import { Collapsible } from '@tale-ui/react/collapsible';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { spy } from 'sinon';
 import { REASONS } from '../../utils/reasons';
@@ -65,7 +65,7 @@ describe('<Collapsible.Root />', () => {
     });
   });
 
-  describe('BaseUIChangeEventDetails', () => {
+  describe('TaleUIChangeEventDetails', () => {
     it('calls onOpenChange with eventDetails', async () => {
       const handleOpenChange = spy();
 

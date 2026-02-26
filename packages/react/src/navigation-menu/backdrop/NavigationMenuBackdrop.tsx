@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useNavigationMenuRootContext } from '../root/NavigationMenuRootContext';
 import type { TransitionStatus } from '../../utils/useTransitionStatus';
@@ -17,7 +17,7 @@ const stateAttributesMapping: StateAttributesMapping<NavigationMenuBackdrop.Stat
  * A backdrop for the navigation menu popup.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Tale UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
  */
 export const NavigationMenuBackdrop = React.forwardRef(function NavigationMenuBackdrop(
   componentProps: NavigationMenuBackdrop.Props,
@@ -63,7 +63,7 @@ export interface NavigationMenuBackdropState {
   transitionStatus: TransitionStatus;
 }
 
-export interface NavigationMenuBackdropProps extends BaseUIComponentProps<
+export interface NavigationMenuBackdropProps extends TaleUIComponentProps<
   'div',
   NavigationMenuBackdrop.State
 > {}

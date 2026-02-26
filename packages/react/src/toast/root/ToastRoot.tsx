@@ -1,12 +1,12 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { inertValue } from '@base-ui/utils/inertValue';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { ownerDocument } from '@tale-ui/utils/owner';
+import { inertValue } from '@tale-ui/utils/inertValue';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
 import { activeElement, contains, getTarget } from '../../floating-ui-react/utils';
-import type { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import type { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 import type { ToastObject as ToastObjectType } from '../useToastManager';
 import { ToastRootContext } from './ToastRootContext';
 import { transitionStatusMapping } from '../../utils/stateAttributesMapping';
@@ -76,7 +76,7 @@ function getElementTransform(element: HTMLElement) {
  * Groups all parts of an individual toast.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+ * Documentation: [Tale UI Toast](https://base-ui.com/react/components/toast)
  */
 export const ToastRoot = React.forwardRef(function ToastRoot(
   componentProps: ToastRoot.Props,
@@ -584,7 +584,7 @@ export interface ToastRootState {
   /** The direction the toast is being swiped. */
   swipeDirection: 'up' | 'down' | 'left' | 'right' | undefined;
 }
-export interface ToastRootProps extends BaseUIComponentProps<'div', ToastRoot.State> {
+export interface ToastRootProps extends TaleUIComponentProps<'div', ToastRoot.State> {
   /**
    * The toast to render.
    */

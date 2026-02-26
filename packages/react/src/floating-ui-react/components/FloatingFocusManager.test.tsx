@@ -16,7 +16,7 @@ import {
 import { test } from 'vitest';
 import * as React from 'react';
 import * as ReactDOMClient from 'react-dom/client';
-import { isJSDOM } from '@base-ui/utils/detectBrowser';
+import { isJSDOM } from '@tale-ui/utils/detectBrowser';
 import {
   FloatingFocusManager,
   FloatingNode,
@@ -1011,15 +1011,15 @@ describe.skipIf(!isJSDOM)('FloatingFocusManager', () => {
       expect(screen.getByTestId('aria-live')).not.toHaveAttribute('inert');
       expect(screen.getByTestId('btn-1')).not.toHaveAttribute('inert');
       expect(screen.getByTestId('btn-2')).not.toHaveAttribute('inert');
-      expect(screen.getByTestId('reference')).toHaveAttribute('data-base-ui-inert');
-      expect(screen.getByTestId('btn-1')).toHaveAttribute('data-base-ui-inert');
-      expect(screen.getByTestId('btn-2')).toHaveAttribute('data-base-ui-inert');
+      expect(screen.getByTestId('reference')).toHaveAttribute('data-tale-ui-inert');
+      expect(screen.getByTestId('btn-1')).toHaveAttribute('data-tale-ui-inert');
+      expect(screen.getByTestId('btn-2')).toHaveAttribute('data-tale-ui-inert');
 
       fireEvent.click(screen.getByTestId('reference'));
 
-      expect(screen.getByTestId('reference')).not.toHaveAttribute('data-base-ui-inert');
-      expect(screen.getByTestId('btn-1')).not.toHaveAttribute('data-base-ui-inert');
-      expect(screen.getByTestId('btn-2')).not.toHaveAttribute('data-base-ui-inert');
+      expect(screen.getByTestId('reference')).not.toHaveAttribute('data-tale-ui-inert');
+      expect(screen.getByTestId('btn-1')).not.toHaveAttribute('data-tale-ui-inert');
+      expect(screen.getByTestId('btn-2')).not.toHaveAttribute('data-tale-ui-inert');
     });
   });
 

@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useOnMount } from '@base-ui/utils/useOnMount';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { visuallyHidden } from '@base-ui/utils/visuallyHidden';
-import { BaseUIComponentProps } from '../../utils/types';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useOnMount } from '@tale-ui/utils/useOnMount';
+import { useMergedRefs } from '@tale-ui/utils/useMergedRefs';
+import { visuallyHidden } from '@tale-ui/utils/visuallyHidden';
+import { TaleUIComponentProps } from '../../utils/types';
 import { formatNumber } from '../../utils/formatNumber';
 import { mergeProps } from '../../merge-props';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { valueToPercent } from '../../utils/valueToPercent';
 import {
@@ -84,7 +84,7 @@ function getNewValue(
  * The draggable part of the slider at the tip of the indicator.
  * Renders a `<div>` element and a nested `<input type="range">`.
  *
- * Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
+ * Documentation: [Tale UI Slider](https://base-ui.com/react/components/slider)
  */
 export const SliderThumb = React.forwardRef(function SliderThumb(
   componentProps: SliderThumb.Props,
@@ -111,7 +111,7 @@ export const SliderThumb = React.forwardRef(function SliderThumb(
   } = componentProps;
 
   const { nonce } = useCSPContext();
-  const id = useBaseUiId(idProp);
+  const id = useTaleUiId(idProp);
 
   const {
     active: activeIndex,
@@ -153,7 +153,7 @@ export const SliderThumb = React.forwardRef(function SliderThumb(
   const thumbRef = React.useRef<HTMLElement>(null);
   const inputRef = React.useRef<HTMLInputElement>(null);
 
-  const defaultInputId = useBaseUiId();
+  const defaultInputId = useTaleUiId();
   const labelableId = useLabelableId();
   const inputId = range ? defaultInputId : labelableId;
 
@@ -470,7 +470,7 @@ export interface ThumbMetadata {
 export interface SliderThumbState extends SliderRoot.State {}
 
 export interface SliderThumbProps extends Omit<
-  BaseUIComponentProps<'div', SliderThumb.State>,
+  TaleUIComponentProps<'div', SliderThumb.State>,
   'onBlur' | 'onFocus'
 > {
   /**

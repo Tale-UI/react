@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { useStore } from '@base-ui/utils/store';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import type { BaseUIComponentProps } from '../../utils/types';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
+import { useStore } from '@tale-ui/utils/store';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useSelectRootContext } from '../root/SelectRootContext';
 import { useSelectPositionerContext } from '../positioner/SelectPositionerContext';
 import { Side } from '../../utils/useAnchorPositioning';
@@ -212,7 +212,7 @@ export interface SelectScrollArrowState {
   transitionStatus: TransitionStatus;
 }
 
-export interface SelectScrollArrowProps extends BaseUIComponentProps<
+export interface SelectScrollArrowProps extends TaleUIComponentProps<
   'div',
   SelectScrollArrow.State
 > {

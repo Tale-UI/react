@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { Tooltip } from '@base-ui/react/tooltip';
+import { Tooltip } from '@tale-ui/react/tooltip';
 import { act, fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
 import { expect } from 'chai';
 import { spy } from 'sinon';
 import { createRenderer, isJSDOM, popupConformanceTests } from '#test-utils';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
 import { OPEN_DELAY } from '../utils/constants';
 import { REASONS } from '../../utils/reasons';
 
 describe('<Tooltip.Root />', () => {
   beforeEach(async () => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
   });
 
   afterEach(async () => {
@@ -366,7 +366,7 @@ describe('<Tooltip.Root />', () => {
       });
 
       it('is called on close when the exit animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = spy();
 
@@ -453,7 +453,7 @@ describe('<Tooltip.Root />', () => {
       });
 
       it('is called on open when the enter animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = spy();
 
@@ -524,7 +524,7 @@ describe('<Tooltip.Root />', () => {
 
     describe.skipIf(isJSDOM)('animations', () => {
       it('toggles instant animations for adjacent tooltips only while opening', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
         const style = `
           .tooltip {
@@ -599,7 +599,7 @@ describe('<Tooltip.Root />', () => {
       });
 
       it('inline opacity: 0 is removed before user CSS transitions run', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
         // The inline opacity: 0 applied before positioning must be removed
         // before CSS transitions start, so it does not trigger an unwanted
@@ -744,7 +744,7 @@ describe('<Tooltip.Root />', () => {
       });
     });
 
-    describe('BaseUIChangeEventDetails', () => {
+    describe('TaleUIChangeEventDetails', () => {
       it('onOpenChange cancel() prevents opening while uncontrolled', async () => {
         await render(
           <TestTooltip

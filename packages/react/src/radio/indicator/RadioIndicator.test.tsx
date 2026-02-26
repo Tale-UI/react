@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
-import { Radio } from '@base-ui/react/radio';
+import { Radio } from '@tale-ui/react/radio';
 import { expect } from 'chai';
-import { RadioGroup } from '@base-ui/react/radio-group';
+import { RadioGroup } from '@tale-ui/react/radio-group';
 
 describe('<Radio.Indicator />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
   });
 
   const { render } = createRenderer();
@@ -59,7 +59,7 @@ describe('<Radio.Indicator />', () => {
       skip();
     }
 
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
     let animationFinished = false;
     const notifyAnimationFinished = () => {
@@ -117,11 +117,11 @@ describe('<Radio.Indicator />', () => {
 
   describe.skipIf(isJSDOM)('animations', () => {
     afterEach(() => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
     });
 
     it('triggers enter animation via data-starting-style when mounting', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
       let transitionFinished = false;
       function notifyTransitionFinished() {
@@ -180,7 +180,7 @@ describe('<Radio.Indicator />', () => {
     });
 
     it('applies data-ending-style before unmount', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
       const style = `
         @keyframes test-anim {

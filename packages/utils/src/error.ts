@@ -8,7 +8,7 @@ export function error(...messages: string[]) {
     const messageKey = messages.join(' ');
     if (!set.has(messageKey)) {
       set.add(messageKey);
-      console.error(`Base UI: ${messageKey}`);
+      console.error(`Tale UI: ${messageKey}`);
     }
   }
 }

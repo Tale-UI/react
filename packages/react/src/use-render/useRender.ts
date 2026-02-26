@@ -5,7 +5,7 @@ import { useRenderElement } from '../utils/useRenderElement';
 import { StateAttributesMapping } from '../utils/getStateAttributesProps';
 
 /**
- * Renders a Base UI element.
+ * Renders a Tale UI element.
  *
  * @public
  */

@@ -1,5 +1,5 @@
 import * as REASONS from './reason-parts';
 
 export { REASONS };
-export type BaseUIEventReasons = typeof REASONS;
-export type BaseUIEventReason = BaseUIEventReasons[keyof BaseUIEventReasons];
+export type TaleUIEventReasons = typeof REASONS;
+export type TaleUIEventReason = TaleUIEventReasons[keyof TaleUIEventReasons];

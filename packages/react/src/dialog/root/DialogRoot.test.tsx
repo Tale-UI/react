@@ -2,18 +2,18 @@ import * as React from 'react';
 import { expect } from 'chai';
 import { spy } from 'sinon';
 import { act, fireEvent, screen, waitFor, flushMicrotasks } from '@mui/internal-test-utils';
-import { Dialog } from '@base-ui/react/dialog';
+import { Dialog } from '@tale-ui/react/dialog';
 import { createRenderer, isJSDOM, popupConformanceTests } from '#test-utils';
-import { Menu } from '@base-ui/react/menu';
-import { Select } from '@base-ui/react/select';
-import { NumberField } from '@base-ui/react/number-field';
+import { Menu } from '@tale-ui/react/menu';
+import { Select } from '@tale-ui/react/select';
+import { NumberField } from '@tale-ui/react/number-field';
 import { REASONS } from '../../utils/reasons';
 
 describe('<Dialog.Root />', () => {
   const { render } = createRenderer();
 
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
   });
 
   popupConformanceTests({
@@ -313,7 +313,7 @@ describe('<Dialog.Root />', () => {
     }
   `;
 
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
       const notifyTransitionEnd = spy();
 
@@ -817,7 +817,7 @@ describe('<Dialog.Root />', () => {
       });
 
       it('is called on close when the exit animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = spy();
 
@@ -897,7 +897,7 @@ describe('<Dialog.Root />', () => {
       });
 
       it('is called on open when the enter animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = spy();
 
@@ -945,7 +945,7 @@ describe('<Dialog.Root />', () => {
       });
 
       it('waits for a restarted enter animation to finish', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = spy();
 
@@ -1016,7 +1016,7 @@ describe('<Dialog.Root />', () => {
       });
 
       it('does not get called on open when dismissed during the enter animation', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = spy();
 

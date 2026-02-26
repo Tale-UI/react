@@ -1,16 +1,16 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import type { BaseUIComponentProps } from '../../utils/types';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 
 /**
  * A heading that labels the popover.
  * Renders an `<h2>` element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Tale UI Popover](https://base-ui.com/react/components/popover)
  */
 export const PopoverTitle = React.forwardRef(function PopoverTitle(
   componentProps: PopoverTitle.Props,
@@ -20,7 +20,7 @@ export const PopoverTitle = React.forwardRef(function PopoverTitle(
 
   const { store } = usePopoverRootContext();
 
-  const id = useBaseUiId(elementProps.id);
+  const id = useTaleUiId(elementProps.id);
 
   useIsoLayoutEffect(() => {
     store.set('titleElementId', id);
@@ -39,7 +39,7 @@ export const PopoverTitle = React.forwardRef(function PopoverTitle(
 
 export interface PopoverTitleState {}
 
-export interface PopoverTitleProps extends BaseUIComponentProps<
+export interface PopoverTitleProps extends TaleUIComponentProps<
   'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
   PopoverTitle.State
 > {}

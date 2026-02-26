@@ -1,4 +1,4 @@
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@tale-ui/react/menu';
 import { createRenderer, describeConformance } from '#test-utils';
 import { screen, waitFor } from '@mui/internal-test-utils';
 

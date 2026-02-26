@@ -1,13 +1,13 @@
 import { expect } from 'vitest';
-import { ScrollArea } from '@base-ui/react/scroll-area';
-import { Select } from '@base-ui/react/select';
-import { CSPProvider } from '@base-ui/react/csp-provider';
+import { ScrollArea } from '@tale-ui/react/scroll-area';
+import { Select } from '@tale-ui/react/select';
+import { CSPProvider } from '@tale-ui/react/csp-provider';
 import { createRenderer } from '#test-utils';
 
 function queryDisableScrollbarStyle() {
   const styles = Array.from(document.querySelectorAll('style'));
   return (
-    styles.find((element) => element.textContent?.includes('.base-ui-disable-scrollbar')) ?? null
+    styles.find((element) => element.textContent?.includes('.tale-ui-disable-scrollbar')) ?? null
   );
 }
 

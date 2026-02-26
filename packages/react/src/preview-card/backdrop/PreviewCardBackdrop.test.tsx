@@ -1,4 +1,4 @@
-import { PreviewCard } from '@base-ui/react/preview-card';
+import { PreviewCard } from '@tale-ui/react/preview-card';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
 

@@ -1,12 +1,12 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
 import {
   createGenericEventDetails,
-  type BaseUIGenericEventDetails,
-} from '../utils/createBaseUIEventDetails';
+  type TaleUIGenericEventDetails,
+} from '../utils/createTaleUIEventDetails';
 import { REASONS } from '../utils/reasons';
-import type { BaseUIComponentProps } from '../utils/types';
+import type { TaleUIComponentProps } from '../utils/types';
 import { FormContext } from './FormContext';
 import { useRenderElement } from '../utils/useRenderElement';
 import { EMPTY_OBJECT } from '../utils/constants';
@@ -16,7 +16,7 @@ import { useValueChanged } from '../utils/useValueChanged';
  * A native form element with consolidated error handling.
  * Renders a `<form>` element.
  *
- * Documentation: [Base UI Form](https://base-ui.com/react/components/form)
+ * Documentation: [Tale UI Form](https://base-ui.com/react/components/form)
  */
 export const Form = React.forwardRef(function Form<
   FormValues extends Record<string, any> = Record<string, any>,
@@ -163,7 +163,7 @@ export const Form = React.forwardRef(function Form<
 };
 
 export type FormSubmitEventReason = typeof REASONS.none;
-export type FormSubmitEventDetails = BaseUIGenericEventDetails<Form.SubmitEventReason>;
+export type FormSubmitEventDetails = TaleUIGenericEventDetails<Form.SubmitEventReason>;
 
 export type FormValidationMode = 'onSubmit' | 'onBlur' | 'onChange';
 
@@ -175,7 +175,7 @@ export interface FormState {}
 
 export interface FormProps<
   FormValues extends Record<string, any> = Record<string, any>,
-> extends BaseUIComponentProps<'form', Form.State> {
+> extends TaleUIComponentProps<'form', Form.State> {
   /**
    * Determines when the form should be validated.
    * The `validationMode` prop on `<Field.Root>` takes precedence over this.

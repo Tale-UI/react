@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { expect } from 'vitest';
 import { act, fireEvent, screen } from '@mui/internal-test-utils';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
+import { useMergedRefs } from '@tale-ui/utils/useMergedRefs';
 import { createRenderer, isJSDOM } from '#test-utils';
 import { useButton } from './useButton';
 import { CompositeRoot } from '../composite/root/CompositeRoot';
@@ -291,7 +291,7 @@ describe('useButton', () => {
       expect(errorSpy).toHaveBeenCalledTimes(1);
       expect(errorSpy).toHaveBeenCalledWith(
         expect.stringContaining(
-          'Base UI: A component that acts as a button expected a native <button> because ' +
+          'Tale UI: A component that acts as a button expected a native <button> because ' +
             'the `nativeButton` prop is true. Rendering a non-<button> removes native button semantics, ' +
             'which can impact forms and accessibility. Use a real <button> in the `render` prop, or set ' +
             '`nativeButton` to `false`.',
@@ -312,8 +312,8 @@ describe('useButton', () => {
       expect(errorSpy).toHaveBeenCalledTimes(1);
       expect(errorSpy).toHaveBeenCalledWith(
         expect.stringContaining(
-          'Base UI: A component that acts as a button expected a non-<button> because ' +
-            'the `nativeButton` prop is false. Rendering a <button> keeps native behavior while Base UI ' +
+          'Tale UI: A component that acts as a button expected a non-<button> because ' +
+            'the `nativeButton` prop is false. Rendering a <button> keeps native behavior while Tale UI ' +
             'applies non-native attributes and handlers, which can add unintended extra attributes ' +
             '(such as `role` or `aria-disabled`). Use a non-<button> in the `render` prop, or set ' +
             '`nativeButton` to `true`.',

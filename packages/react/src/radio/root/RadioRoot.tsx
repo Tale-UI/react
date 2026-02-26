@@ -1,16 +1,16 @@
 'use client';
 import * as React from 'react';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { visuallyHidden, visuallyHiddenInput } from '@base-ui/utils/visuallyHidden';
-import type { BaseUIComponentProps, NonNativeButtonProps } from '../../utils/types';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { useMergedRefs } from '@tale-ui/utils/useMergedRefs';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { visuallyHidden, visuallyHiddenInput } from '@tale-ui/utils/visuallyHidden';
+import type { TaleUIComponentProps, NonNativeButtonProps } from '../../utils/types';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { EMPTY_OBJECT } from '../../utils/constants';
 import { NOOP } from '../../utils/noop';
 import { stateAttributesMapping } from '../utils/stateAttributesMapping';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useButton } from '../../use-button';
 import { ACTIVE_COMPOSITE_ITEM } from '../../composite/constants';
@@ -29,7 +29,7 @@ import { RadioRootContext } from './RadioRootContext';
  * Represents the radio button itself.
  * Renders a `<span>` element and a hidden `<input>` beside.
  *
- * Documentation: [Base UI Radio](https://base-ui.com/react/components/radio)
+ * Documentation: [Tale UI Radio](https://base-ui.com/react/components/radio)
  */
 export const RadioRoot = React.forwardRef(function RadioRoot<Value>(
   componentProps: RadioRoot.Props<Value>,
@@ -119,7 +119,7 @@ export const RadioRoot = React.forwardRef(function RadioRoot<Value>(
     registerInputRef(inputRef.current);
   }, [checked, disabled, registerControlRef, registerInputRef]);
 
-  const id = useBaseUiId();
+  const id = useTaleUiId();
   const inputId = useLabelableId({
     id: idProp,
     implicit: false,
@@ -293,7 +293,7 @@ export interface RadioRootState extends FieldRoot.State {
 }
 
 export interface RadioRootProps<Value = any>
-  extends NonNativeButtonProps, Omit<BaseUIComponentProps<'span', RadioRoot.State>, 'value'> {
+  extends NonNativeButtonProps, Omit<TaleUIComponentProps<'span', RadioRoot.State>, 'value'> {
   /**
    * The unique identifying value of the radio in a group.
    */

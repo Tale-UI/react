@@ -4,7 +4,7 @@ import { CompositeList, type CompositeMetadata } from '../list/CompositeList';
 import { useCompositeRoot } from './useCompositeRoot';
 import { CompositeRootContext } from './CompositeRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import type { Dimensions, ModifierKey } from '../composite';
 import { useDirection } from '../../direction-provider/DirectionContext';
 import { EMPTY_ARRAY, EMPTY_OBJECT } from '../../utils/constants';
@@ -99,7 +99,7 @@ export function CompositeRoot<Metadata extends {}, State extends Record<string, 
 }
 
 export interface CompositeRootProps<Metadata, State extends Record<string, any>> extends Pick<
-  BaseUIComponentProps<'div', State>,
+  TaleUIComponentProps<'div', State>,
   'render' | 'className' | 'children'
 > {
   props?: Array<Record<string, any> | (() => Record<string, any>)> | undefined;

@@ -4,14 +4,14 @@ import { expect } from 'chai';
 import { vi } from 'vitest';
 import { createRenderer } from '#test-utils';
 import { reactMajor } from '@mui/internal-test-utils';
-import type { BaseUIComponentProps, ComponentRenderFn, HTMLProps } from '../utils/types';
+import type { TaleUIComponentProps, ComponentRenderFn, HTMLProps } from '../utils/types';
 import { useRenderElement } from './useRenderElement';
 
 describe('useRenderElement', () => {
   const { render } = createRenderer();
 
   const TestComponent = React.forwardRef(function TestComponent(
-    componentProps: BaseUIComponentProps<'div', { active?: boolean }> & { active?: boolean },
+    componentProps: TaleUIComponentProps<'div', { active?: boolean }> & { active?: boolean },
     forwardedRef: React.ForwardedRef<HTMLDivElement>,
   ) {
     const { className, render: renderProp, active, ...elementProps } = componentProps;
@@ -114,7 +114,7 @@ describe('useRenderElement', () => {
 
       expect(warnSpy.mock.calls.length).to.equal(1);
       expect(warnSpy.mock.calls[0][0]).to.contain(
-        'Base UI: The `render` prop received a function named `UppercaseRenderPropWarningTestComponent` that starts with an uppercase letter.',
+        'Tale UI: The `render` prop received a function named `UppercaseRenderPropWarningTestComponent` that starts with an uppercase letter.',
       );
       expect(warnSpy.mock.calls[0][0]).to.contain(
         'Use `render={<Component />}` or `render={(props) => <Component {...props} />}` instead.',
@@ -287,7 +287,7 @@ describe('useRenderElement', () => {
 
         expect(error).to.not.equal(null);
         expect(error?.message).to.match(
-          /Base UI: The `render` prop was provided an invalid React element/,
+          /Tale UI: The `render` prop was provided an invalid React element/,
         );
       },
     );

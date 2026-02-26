@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import { inertValue } from '@base-ui/utils/inertValue';
+import { inertValue } from '@tale-ui/utils/inertValue';
 import { FloatingNode } from '../../floating-ui-react';
 import { MenuPositionerContext } from './MenuPositionerContext';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import type { MenuRoot } from '../root/MenuRoot';
 import { useAnchorPositioning, type Align, type Side } from '../../utils/useAnchorPositioning';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { BaseUIComponentProps } from '../../utils/types';
+import { TaleUIComponentProps } from '../../utils/types';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import { CompositeList } from '../../composite/list/CompositeList';
 import { InternalBackdrop } from '../../utils/InternalBackdrop';
@@ -15,7 +15,7 @@ import { useMenuPortalContext } from '../portal/MenuPortalContext';
 import { DROPDOWN_COLLISION_AVOIDANCE, POPUP_COLLISION_AVOIDANCE } from '../../utils/constants';
 import { getDisabledMountTransitionStyles } from '../../utils/getDisabledMountTransitionStyles';
 import { useContextMenuRootContext } from '../../context-menu/root/ContextMenuRootContext';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { MenuOpenEventDetails } from '../utils/types';
 
@@ -23,7 +23,7 @@ import { MenuOpenEventDetails } from '../utils/types';
  * Positions the menu popup against the trigger.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Tale UI Menu](https://base-ui.com/react/components/menu)
  */
 export const MenuPositioner = React.forwardRef(function MenuPositioner(
   componentProps: MenuPositioner.Props,
@@ -291,7 +291,7 @@ export interface MenuPositionerState {
 export interface MenuPositionerProps
   extends
     useAnchorPositioning.SharedParameters,
-    BaseUIComponentProps<'div', MenuPositioner.State> {}
+    TaleUIComponentProps<'div', MenuPositioner.State> {}
 
 export namespace MenuPositioner {
   export type State = MenuPositionerState;

@@ -43,3 +43,8 @@ next-env.d.ts
 
 # Testing
 test-results/
+
+# Storybook / Vite build outputs
+/playground/storybook/storybook-static/
+/playground/vite-app/dist/
+/examples/*/dist/

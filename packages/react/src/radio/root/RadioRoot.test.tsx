@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { expect } from 'chai';
-import { Radio } from '@base-ui/react/radio';
-import { RadioGroup } from '@base-ui/react/radio-group';
+import { Radio } from '@tale-ui/react/radio';
+import { RadioGroup } from '@tale-ui/react/radio-group';
 import { fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 import { describeConformance, createRenderer } from '#test-utils';
 

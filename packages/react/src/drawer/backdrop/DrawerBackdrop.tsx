@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { type TransitionStatus } from '../../utils/useTransitionStatus';
-import { type BaseUIComponentProps } from '../../utils/types';
+import { type TaleUIComponentProps } from '../../utils/types';
 import { type StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import { popupStateMapping as baseMapping } from '../../utils/popupStateMapping';
 import { transitionStatusMapping } from '../../utils/stateAttributesMapping';
@@ -19,7 +19,7 @@ const stateAttributesMapping: StateAttributesMapping<DrawerBackdrop.State> = {
  * An overlay displayed beneath the popup.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Tale UI Drawer](https://base-ui.com/react/components/drawer)
  */
 export const DrawerBackdrop = React.forwardRef(function DrawerBackdrop(
   componentProps: DrawerBackdrop.Props,
@@ -60,7 +60,7 @@ export const DrawerBackdrop = React.forwardRef(function DrawerBackdrop(
   });
 });
 
-export interface DrawerBackdropProps extends BaseUIComponentProps<'div', DrawerBackdrop.State> {
+export interface DrawerBackdropProps extends TaleUIComponentProps<'div', DrawerBackdrop.State> {
   /**
    * Whether the backdrop is forced to render even when nested.
    * @default false

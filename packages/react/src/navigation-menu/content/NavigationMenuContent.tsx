@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { inertValue } from '@base-ui/utils/inertValue';
+import { inertValue } from '@tale-ui/utils/inertValue';
 import { FloatingNode } from '../../floating-ui-react';
 import { contains, getTarget } from '../../floating-ui-react/utils';
-import type { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import type { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 import {
   useNavigationMenuRootContext,
   useNavigationMenuTreeContext,
@@ -36,7 +36,7 @@ const stateAttributesMapping: StateAttributesMapping<NavigationMenuContent.State
  * when the item is active.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Tale UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
  */
 export const NavigationMenuContent = React.forwardRef(function NavigationMenuContent(
   componentProps: NavigationMenuContent.Props,
@@ -98,7 +98,7 @@ export const NavigationMenuContent = React.forwardRef(function NavigationMenuCon
   const commonProps: HTMLProps<HTMLDivElement> = {
     onFocus(event) {
       const target = getTarget(event.nativeEvent) as Element | null;
-      if (target?.hasAttribute('data-base-ui-focus-guard')) {
+      if (target?.hasAttribute('data-tale-ui-focus-guard')) {
         return;
       }
       setFocusInside(true);
@@ -174,7 +174,7 @@ export interface NavigationMenuContentState {
   activationDirection: 'left' | 'right' | 'up' | 'down' | null;
 }
 
-export interface NavigationMenuContentProps extends BaseUIComponentProps<
+export interface NavigationMenuContentProps extends TaleUIComponentProps<
   'div',
   NavigationMenuContent.State
 > {

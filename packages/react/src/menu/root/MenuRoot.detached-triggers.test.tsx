@@ -2,12 +2,12 @@ import * as React from 'react';
 import { expect } from 'chai';
 import { act, fireEvent, ignoreActWarnings, screen, waitFor } from '@mui/internal-test-utils';
 import { spy } from 'sinon';
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@tale-ui/react/menu';
 import { createRenderer, isJSDOM, wait } from '#test-utils';
 
 describe('<MenuRoot />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
   });
 
   const { render } = createRenderer();

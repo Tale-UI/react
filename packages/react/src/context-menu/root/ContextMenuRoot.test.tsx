@@ -9,13 +9,13 @@ import {
 } from '@mui/internal-test-utils';
 import { spy } from 'sinon';
 import { vi } from 'vitest';
-import { ContextMenu } from '@base-ui/react/context-menu';
+import { ContextMenu } from '@tale-ui/react/context-menu';
 import { createRenderer, isJSDOM } from '#test-utils';
 import { REASONS } from '../../utils/reasons';
 
-vi.mock('@base-ui/utils/detectBrowser', async () => {
-  const actual = await vi.importActual<typeof import('@base-ui/utils/detectBrowser')>(
-    '@base-ui/utils/detectBrowser',
+vi.mock('@tale-ui/utils/detectBrowser', async () => {
+  const actual = await vi.importActual<typeof import('@tale-ui/utils/detectBrowser')>(
+    '@tale-ui/utils/detectBrowser',
   );
 
   return {
@@ -26,7 +26,7 @@ vi.mock('@base-ui/utils/detectBrowser', async () => {
 
 describe('<ContextMenu.Root />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
   });
 
   const { render, clock } = createRenderer({

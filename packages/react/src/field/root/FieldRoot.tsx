@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
 import { FieldRootContext } from './FieldRootContext';
 import { DEFAULT_VALIDITY_STATE, fieldValidityMapping } from '../utils/constants';
 import { useFieldsetRootContext } from '../../fieldset/root/FieldsetRootContext';
 import type { Form } from '../../form';
 import { useFormContext } from '../../form/FormContext';
 import { LabelableProvider } from '../../labelable-provider';
-import { BaseUIComponentProps } from '../../utils/types';
+import { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useFieldValidation } from './useFieldValidation';
 
@@ -180,7 +180,7 @@ const FieldRootInner = React.forwardRef(function FieldRootInner(
  * Groups all parts of the field.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+ * Documentation: [Tale UI Field](https://base-ui.com/react/components/field)
  */
 export const FieldRoot = React.forwardRef(function FieldRoot(
   componentProps: FieldRoot.Props,
@@ -227,7 +227,7 @@ export interface FieldRootState {
   focused: boolean;
 }
 
-export interface FieldRootProps extends BaseUIComponentProps<'div', FieldRoot.State> {
+export interface FieldRootProps extends TaleUIComponentProps<'div', FieldRoot.State> {
   /**
    * Whether the component should ignore user interaction.
    * Takes precedence over the `disabled` prop on the `<Field.Control>` component.

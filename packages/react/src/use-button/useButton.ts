@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
 import { isHTMLElement } from '@floating-ui/utils/dom';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { error } from '@base-ui/utils/error';
-import { SafeReact } from '@base-ui/utils/safeReact';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { error } from '@tale-ui/utils/error';
+import { SafeReact } from '@tale-ui/utils/safeReact';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
 import { makeEventPreventable, mergeProps } from '../merge-props';
 import { useCompositeRootContext } from '../composite/root/CompositeRootContext';
-import { BaseUIEvent, HTMLProps } from '../utils/types';
+import { TaleUIEvent, HTMLProps } from '../utils/types';
 import { useFocusableWhenDisabled } from '../utils/useFocusableWhenDisabled';
 
 export function useButton(parameters: useButton.Parameters = {}): useButton.ReturnValue {
@@ -53,7 +53,7 @@ export function useButton(parameters: useButton.Parameters = {}): useButton.Retu
         const ownerStackMessage = SafeReact.captureOwnerStack?.() || '';
         const message =
           'A component that acts as a button expected a non-<button> because the `nativeButton` ' +
-          'prop is false. Rendering a <button> keeps native behavior while Base UI applies ' +
+          'prop is false. Rendering a <button> keeps native behavior while Tale UI applies ' +
           'non-native attributes and handlers, which can add unintended extra attributes (such ' +
           'as `role` or `aria-disabled`). Use a non-<button> in the `render` prop, or set ' +
           '`nativeButton` to `true`.';
@@ -113,14 +113,14 @@ export function useButton(parameters: useButton.Parameters = {}): useButton.Retu
               externalOnMouseDown?.(event);
             }
           },
-          onKeyDown(event: BaseUIEvent<React.KeyboardEvent>) {
+          onKeyDown(event: TaleUIEvent<React.KeyboardEvent>) {
             if (disabled) {
               return;
             }
 
             makeEventPreventable(event);
             externalOnKeyDown?.(event);
-            if (event.baseUIHandlerPrevented) {
+            if (event.taleUIHandlerPrevented) {
               return;
             }
 
@@ -141,7 +141,7 @@ export function useButton(parameters: useButton.Parameters = {}): useButton.Retu
               }
             }
           },
-          onKeyUp(event: BaseUIEvent<React.KeyboardEvent>) {
+          onKeyUp(event: TaleUIEvent<React.KeyboardEvent>) {
             if (disabled) {
               return;
             }
@@ -150,7 +150,7 @@ export function useButton(parameters: useButton.Parameters = {}): useButton.Retu
             // https://codesandbox.io/p/sandbox/button-keyup-preventdefault-dn7f0
             makeEventPreventable(event);
             externalOnKeyUp?.(event);
-            if (event.baseUIHandlerPrevented) {
+            if (event.taleUIHandlerPrevented) {
               return;
             }
 

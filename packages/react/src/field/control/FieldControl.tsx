@@ -1,30 +1,30 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { ownerDocument } from '@base-ui/utils/owner';
+import { useControlled } from '@tale-ui/utils/useControlled';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { ownerDocument } from '@tale-ui/utils/owner';
 import { FieldRoot } from '../root/FieldRoot';
 import { useFieldRootContext } from '../root/FieldRootContext';
 import { useLabelableContext } from '../../labelable-provider/LabelableContext';
 import { useLabelableId } from '../../labelable-provider/useLabelableId';
 import { fieldValidityMapping } from '../utils/constants';
-import { BaseUIComponentProps } from '../../utils/types';
+import { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useField } from '../useField';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
-import type { BaseUIChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import type { TaleUIChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { activeElement } from '../../floating-ui-react/utils';
 
 /**
  * The form control to label and validate.
  * Renders an `<input>` element.
  *
- * You can omit this part and use any Base UI input component instead. For example,
+ * You can omit this part and use any Tale UI input component instead. For example,
  * [Input](https://base-ui.com/react/components/input), [Checkbox](https://base-ui.com/react/components/checkbox),
  * or [Select](https://base-ui.com/react/components/select), among others, will work with Field out of the box.
  *
- * Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+ * Documentation: [Tale UI Field](https://base-ui.com/react/components/field)
  */
 export const FieldControl = React.forwardRef(function FieldControl(
   componentProps: FieldControl.Props,
@@ -151,7 +151,7 @@ export const FieldControl = React.forwardRef(function FieldControl(
 
 export type FieldControlState = FieldRoot.State;
 
-export interface FieldControlProps extends BaseUIComponentProps<'input', FieldControl.State> {
+export interface FieldControlProps extends TaleUIComponentProps<'input', FieldControl.State> {
   /**
    * Callback fired when the `value` changes. Use when controlled.
    */
@@ -164,7 +164,7 @@ export interface FieldControlProps extends BaseUIComponentProps<'input', FieldCo
 export type FieldControlChangeEventReason = typeof REASONS.none;
 
 export type FieldControlChangeEventDetails =
-  BaseUIChangeEventDetails<FieldControl.ChangeEventReason>;
+  TaleUIChangeEventDetails<FieldControl.ChangeEventReason>;
 
 export namespace FieldControl {
   export type State = FieldControlState;

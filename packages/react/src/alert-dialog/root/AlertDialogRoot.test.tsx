@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { expect } from 'chai';
 import { act, screen, waitFor } from '@mui/internal-test-utils';
-import { AlertDialog } from '@base-ui/react/alert-dialog';
+import { AlertDialog } from '@tale-ui/react/alert-dialog';
 import { createRenderer, isJSDOM, popupConformanceTests } from '#test-utils';
 import { spy } from 'sinon';
 import { REASONS } from '../../utils/reasons';
@@ -10,7 +10,7 @@ describe('<AlertDialog.Root />', () => {
   const { render } = createRenderer();
 
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
   });
 
   popupConformanceTests({
@@ -656,7 +656,7 @@ describe('<AlertDialog.Root />', () => {
     });
 
     it('is called on close when the exit animation finishes', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
       const onOpenChangeComplete = spy();
 
@@ -739,7 +739,7 @@ describe('<AlertDialog.Root />', () => {
     });
 
     it('is called on open when the enter animation finishes', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
       const onOpenChangeComplete = spy();
 

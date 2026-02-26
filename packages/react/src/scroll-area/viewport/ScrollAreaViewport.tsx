@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { isWebKit } from '@base-ui/utils/detectBrowser';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import type { BaseUIComponentProps } from '../../utils/types';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { isWebKit } from '@tale-ui/utils/detectBrowser';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useScrollAreaRootContext } from '../root/ScrollAreaRootContext';
 import { ScrollAreaViewportContext } from './ScrollAreaViewportContext';
 import { useRenderElement } from '../../utils/useRenderElement';
@@ -68,7 +68,7 @@ function removeCSSVariableInheritance() {
  * The actual scrollable container of the scroll area.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)
+ * Documentation: [Tale UI Scroll Area](https://base-ui.com/react/components/scroll-area)
  */
 export const ScrollAreaViewport = React.forwardRef(function ScrollAreaViewport(
   componentProps: ScrollAreaViewport.Props,
@@ -438,7 +438,7 @@ export const ScrollAreaViewport = React.forwardRef(function ScrollAreaViewport(
   );
 });
 
-export interface ScrollAreaViewportProps extends BaseUIComponentProps<
+export interface ScrollAreaViewportProps extends TaleUIComponentProps<
   'div',
   ScrollAreaViewport.State
 > {}

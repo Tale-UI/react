@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useScrollAreaRootContext } from '../root/ScrollAreaRootContext';
 import { useScrollAreaScrollbarContext } from '../scrollbar/ScrollAreaScrollbarContext';
 import { ScrollAreaScrollbarCssVars } from '../scrollbar/ScrollAreaScrollbarCssVars';
@@ -10,7 +10,7 @@ import { useRenderElement } from '../../utils/useRenderElement';
  * The draggable part of the scrollbar that indicates the current scroll position.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)
+ * Documentation: [Tale UI Scroll Area](https://base-ui.com/react/components/scroll-area)
  */
 export const ScrollAreaThumb = React.forwardRef(function ScrollAreaThumb(
   componentProps: ScrollAreaThumb.Props,
@@ -68,7 +68,7 @@ export interface ScrollAreaThumbState {
   orientation?: 'horizontal' | 'vertical' | undefined;
 }
 
-export interface ScrollAreaThumbProps extends BaseUIComponentProps<'div', ScrollAreaThumb.State> {}
+export interface ScrollAreaThumbProps extends TaleUIComponentProps<'div', ScrollAreaThumb.State> {}
 
 export namespace ScrollAreaThumb {
   export type State = ScrollAreaThumbState;

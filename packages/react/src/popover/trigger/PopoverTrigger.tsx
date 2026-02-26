@@ -2,10 +2,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { type FocusableElement } from 'tabbable';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
 import { useButton } from '../../use-button/useButton';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../utils/types';
+import type { TaleUIComponentProps, NativeButtonProps } from '../../utils/types';
 import {
   triggerOpenStateMapping,
   pressableTriggerOpenStateMapping,
@@ -21,7 +21,7 @@ import {
 } from '../../floating-ui-react';
 import { OPEN_DELAY } from '../utils/constants';
 import { PopoverHandle } from '../store/PopoverHandle';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { FocusGuard } from '../../utils/FocusGuard';
 import {
   contains,
@@ -30,7 +30,7 @@ import {
   getTabbableBeforeElement,
   isOutsideEvent,
 } from '../../floating-ui-react/utils';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { useTriggerDataForwarding } from '../../utils/popups';
 
@@ -38,7 +38,7 @@ import { useTriggerDataForwarding } from '../../utils/popups';
  * A button that opens the popover.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Tale UI Popover](https://base-ui.com/react/components/popover)
  */
 export const PopoverTrigger = React.forwardRef(function PopoverTrigger(
   componentProps: PopoverTrigger.Props,
@@ -62,11 +62,11 @@ export const PopoverTrigger = React.forwardRef(function PopoverTrigger(
   const store = handle?.store ?? rootContext?.store;
   if (!store) {
     throw new Error(
-      'Base UI: <Popover.Trigger> must be either used within a <Popover.Root> component or provided with a handle.',
+      'Tale UI: <Popover.Trigger> must be either used within a <Popover.Root> component or provided with a handle.',
     );
   }
 
-  const thisTriggerId = useBaseUiId(idProp);
+  const thisTriggerId = useTaleUiId(idProp);
   const isTriggerActive = store.useState('isTriggerActive', thisTriggerId);
   const floatingContext = store.useState('floatingRootContext');
   const isOpenedByThisTrigger = store.useState('isOpenedByTrigger', thisTriggerId);
@@ -234,7 +234,7 @@ export interface PopoverTriggerState {
 }
 
 export type PopoverTriggerProps<Payload = unknown> = NativeButtonProps &
-  BaseUIComponentProps<'button', PopoverTriggerState> & {
+  TaleUIComponentProps<'button', PopoverTriggerState> & {
     /**
      * Whether the component renders a native `<button>` element when replacing it
      * via the `render` prop.

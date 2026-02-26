@@ -20,7 +20,7 @@ export function useToolbarRootContext(optional?: boolean) {
   const context = React.useContext(ToolbarRootContext);
   if (context === undefined && !optional) {
     throw new Error(
-      'Base UI: ToolbarRootContext is missing. Toolbar parts must be placed within <Toolbar.Root>.',
+      'Tale UI: ToolbarRootContext is missing. Toolbar parts must be placed within <Toolbar.Root>.',
     );
   }
 

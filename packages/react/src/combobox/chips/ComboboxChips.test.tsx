@@ -1,4 +1,4 @@
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@tale-ui/react/combobox';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
 import { expect } from 'chai';

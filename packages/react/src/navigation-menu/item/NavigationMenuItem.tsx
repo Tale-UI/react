@@ -1,18 +1,18 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import {
   NavigationMenuItemContext,
   NavigationMenuItemContextValue,
 } from './NavigationMenuItemContext';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 
 /**
  * An individual navigation menu item.
  * Renders a `<li>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Tale UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
  */
 export const NavigationMenuItem = React.forwardRef(function NavigationMenuItem(
   componentProps: NavigationMenuItem.Props,
@@ -20,7 +20,7 @@ export const NavigationMenuItem = React.forwardRef(function NavigationMenuItem(
 ) {
   const { className, render, value: valueProp, ...elementProps } = componentProps;
 
-  const fallbackValue = useBaseUiId();
+  const fallbackValue = useTaleUiId();
   const value = valueProp ?? fallbackValue;
 
   const element = useRenderElement('li', componentProps, {
@@ -39,7 +39,7 @@ export const NavigationMenuItem = React.forwardRef(function NavigationMenuItem(
 
 export interface NavigationMenuItemState {}
 
-export interface NavigationMenuItemProps extends BaseUIComponentProps<
+export interface NavigationMenuItemProps extends TaleUIComponentProps<
   'li',
   NavigationMenuItem.State
 > {

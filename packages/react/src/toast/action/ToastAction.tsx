@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../utils/types';
+import type { TaleUIComponentProps, NativeButtonProps } from '../../utils/types';
 import { useToastRootContext } from '../root/ToastRootContext';
 import { useButton } from '../../use-button/useButton';
 import { useRenderElement } from '../../utils/useRenderElement';
@@ -9,7 +9,7 @@ import { useRenderElement } from '../../utils/useRenderElement';
  * Performs an action when clicked.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+ * Documentation: [Tale UI Toast](https://base-ui.com/react/components/toast)
  */
 export const ToastAction = React.forwardRef(function ToastAction(
   componentProps: ToastAction.Props,
@@ -59,7 +59,7 @@ export interface ToastActionState {
 }
 
 export interface ToastActionProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', ToastAction.State> {}
+  extends NativeButtonProps, TaleUIComponentProps<'button', ToastAction.State> {}
 
 export namespace ToastAction {
   export type State = ToastActionState;

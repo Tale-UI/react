@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { createSelector, ReactStore } from '@base-ui/utils/store';
+import { createSelector, ReactStore } from '@tale-ui/utils/store';
 import type { FloatingEvents, ContextData, ReferenceType } from '../types';
-import { type BaseUIChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { type TaleUIChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { createEventEmitter } from '../utils/createEventEmitter';
 import { type FloatingUIOpenChangeDetails } from '../../utils/types';
 import { type PopupTriggerMap } from '../../utils/popups';
@@ -21,7 +21,7 @@ export interface FloatingRootState {
 
 export interface FloatingRootStoreContext {
   onOpenChange:
-    | ((open: boolean, eventDetails: BaseUIChangeEventDetails<string>) => void)
+    | ((open: boolean, eventDetails: TaleUIChangeEventDetails<string>) => void)
     | undefined;
   readonly dataRef: React.RefObject<ContextData>;
   readonly events: FloatingEvents;
@@ -49,7 +49,7 @@ interface FloatingRootStoreOptions {
   nested: boolean;
   noEmit: boolean;
   onOpenChange:
-    | ((open: boolean, eventDetails: BaseUIChangeEventDetails<string>) => void)
+    | ((open: boolean, eventDetails: TaleUIChangeEventDetails<string>) => void)
     | undefined;
 }
 
@@ -85,7 +85,7 @@ export class FloatingRootStore extends ReactStore<
    * @param newOpen The new open state.
    * @param eventDetails Details about the event that triggered the open state change.
    */
-  setOpen = (newOpen: boolean, eventDetails: BaseUIChangeEventDetails<string>) => {
+  setOpen = (newOpen: boolean, eventDetails: TaleUIChangeEventDetails<string>) => {
     if (
       !newOpen ||
       !this.state.open ||

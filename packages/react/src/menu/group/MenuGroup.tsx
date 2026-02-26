@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { BaseUIComponentProps } from '../../utils/types';
+import { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { MenuGroupContext } from './MenuGroupContext';
 
@@ -8,7 +8,7 @@ import { MenuGroupContext } from './MenuGroupContext';
  * Groups related menu items with the corresponding label.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Tale UI Menu](https://base-ui.com/react/components/menu)
  */
 export const MenuGroup = React.forwardRef(function MenuGroup(
   componentProps: MenuGroup.Props,
@@ -32,7 +32,7 @@ export const MenuGroup = React.forwardRef(function MenuGroup(
   return <MenuGroupContext.Provider value={context}>{element}</MenuGroupContext.Provider>;
 });
 
-export interface MenuGroupProps extends BaseUIComponentProps<'div', MenuGroup.State> {
+export interface MenuGroupProps extends TaleUIComponentProps<'div', MenuGroup.State> {
   /**
    * The content of the component.
    */

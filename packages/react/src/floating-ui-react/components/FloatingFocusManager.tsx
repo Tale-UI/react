@@ -2,16 +2,16 @@
 import * as React from 'react';
 import { tabbable, isTabbable, focusable, type FocusableElement } from 'tabbable';
 import { getComputedStyle, getNodeName, isHTMLElement } from '@floating-ui/utils/dom';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { visuallyHidden } from '@base-ui/utils/visuallyHidden';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { isWebKit } from '@base-ui/utils/detectBrowser';
-import type { InteractionType } from '@base-ui/utils/useEnhancedClickHandler';
-import { useAnimationFrame } from '@base-ui/utils/useAnimationFrame';
-import { ownerDocument, ownerWindow } from '@base-ui/utils/owner';
+import { useMergedRefs } from '@tale-ui/utils/useMergedRefs';
+import { useValueAsRef } from '@tale-ui/utils/useValueAsRef';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { visuallyHidden } from '@tale-ui/utils/visuallyHidden';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
+import { isWebKit } from '@tale-ui/utils/detectBrowser';
+import type { InteractionType } from '@tale-ui/utils/useEnhancedClickHandler';
+import { useAnimationFrame } from '@tale-ui/utils/useAnimationFrame';
+import { ownerDocument, ownerWindow } from '@tale-ui/utils/owner';
 import { FocusGuard } from '../../utils/FocusGuard';
 import {
   activeElement,
@@ -31,7 +31,7 @@ import {
   isTypeableElement,
 } from '../utils';
 import type { FloatingContext, FloatingRootContext } from '../types';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { createAttribute } from '../utils/createAttribute';
 import { enqueueFocus } from '../utils/enqueueFocus';

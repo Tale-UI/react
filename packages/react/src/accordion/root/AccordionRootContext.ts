@@ -25,7 +25,7 @@ export function useAccordionRootContext<Value = any>() {
   const context = React.useContext<AccordionRootContext<Value> | undefined>(AccordionRootContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: AccordionRootContext is missing. Accordion parts must be placed within <Accordion.Root>.',
+      'Tale UI: AccordionRootContext is missing. Accordion parts must be placed within <Accordion.Root>.',
     );
   }
   return context;

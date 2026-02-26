@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
 import { isElement } from '@floating-ui/utils/dom';
 import { NOOP } from '../utils/noop';
-import { useBaseUiId } from '../utils/useBaseUiId';
+import { useTaleUiId } from '../utils/useTaleUiId';
 import { useLabelableContext } from './LabelableContext';
 
 export function useLabelableId(params: useLabelableId.Parameters = {}) {
@@ -13,7 +13,7 @@ export function useLabelableId(params: useLabelableId.Parameters = {}) {
 
   const { controlId, registerControlId } = useLabelableContext();
 
-  const defaultId = useBaseUiId(id);
+  const defaultId = useTaleUiId(id);
 
   const controlIdForEffect = implicit ? controlId : undefined;
 

@@ -2,8 +2,8 @@ export const TYPEAHEAD_RESET_MS = 500;
 export const PATIENT_CLICK_THRESHOLD = 500;
 export const DISABLED_TRANSITIONS_STYLE = { style: { transition: 'none' } };
 
-export { EMPTY_OBJECT, EMPTY_ARRAY } from '@base-ui/utils/empty';
-export const CLICK_TRIGGER_IDENTIFIER = 'data-base-ui-click-trigger';
+export { EMPTY_OBJECT, EMPTY_ARRAY } from '@tale-ui/utils/empty';
+export const CLICK_TRIGGER_IDENTIFIER = 'data-tale-ui-click-trigger';
 
 /**
  * Used for dropdowns that usually strictly prefer top/bottom placements and

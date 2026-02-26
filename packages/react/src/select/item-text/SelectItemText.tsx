@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useSelectRootContext } from '../root/SelectRootContext';
 import { useSelectItemContext } from '../item/SelectItemContext';
 import { useRenderElement } from '../../utils/useRenderElement';
@@ -9,7 +9,7 @@ import { useRenderElement } from '../../utils/useRenderElement';
  * A text label of the select item.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Tale UI Select](https://base-ui.com/react/components/select)
  */
 export const SelectItemText = React.memo(
   React.forwardRef(function SelectItemText(
@@ -46,7 +46,7 @@ export const SelectItemText = React.memo(
 
 export interface SelectItemTextState {}
 
-export interface SelectItemTextProps extends BaseUIComponentProps<'div', SelectItemText.State> {}
+export interface SelectItemTextProps extends TaleUIComponentProps<'div', SelectItemText.State> {}
 
 export namespace SelectItemText {
   export type State = SelectItemTextState;

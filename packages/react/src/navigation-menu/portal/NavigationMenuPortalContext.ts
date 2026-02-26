@@ -6,7 +6,7 @@ export const NavigationMenuPortalContext = React.createContext<boolean | undefin
 export function useNavigationMenuPortalContext() {
   const value = React.useContext(NavigationMenuPortalContext);
   if (value === undefined) {
-    throw new Error('Base UI: <NavigationMenu.Portal> is missing.');
+    throw new Error('Tale UI: <NavigationMenu.Portal> is missing.');
   }
   return value;
 }

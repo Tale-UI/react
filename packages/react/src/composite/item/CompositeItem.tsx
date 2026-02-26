@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useCompositeItem } from './useCompositeItem';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { EMPTY_OBJECT, EMPTY_ARRAY } from '../../utils/constants';
 import { StateAttributesMapping } from '../../utils/getStateAttributesProps';
 
@@ -35,7 +35,7 @@ export function CompositeItem<Metadata, State extends Record<string, any>>(
 }
 
 export interface CompositeItemProps<Metadata, State extends Record<string, any>> extends Pick<
-  BaseUIComponentProps<any, State>,
+  TaleUIComponentProps<any, State>,
   'render' | 'className'
 > {
   children?: React.ReactNode;

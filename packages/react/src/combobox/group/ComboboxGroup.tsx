@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { BaseUIComponentProps } from '../../utils/types';
+import { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { ComboboxGroupContext } from './ComboboxGroupContext';
 import { GroupCollectionProvider } from '../collection/GroupCollectionContext';
@@ -50,7 +50,7 @@ export const ComboboxGroup = React.forwardRef(function ComboboxGroup(
 
 export interface ComboboxGroupState {}
 
-export interface ComboboxGroupProps extends BaseUIComponentProps<'div', ComboboxGroup.State> {
+export interface ComboboxGroupProps extends TaleUIComponentProps<'div', ComboboxGroup.State> {
   /**
    * Items to be rendered within this group.
    * When provided, child `Collection` components will use these items.

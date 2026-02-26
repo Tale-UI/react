@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { getWindow } from '@floating-ui/utils/dom';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
 import { contains, getTarget, isMouseLikePointerType } from '../utils';
 
 import type { ContextData, ElementProps, FloatingContext, FloatingRootContext } from '../types';

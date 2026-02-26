@@ -3,13 +3,13 @@ import { act, fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-
 import { createRenderer, isJSDOM } from '#test-utils';
 import { expect } from 'chai';
 import { spy } from 'sinon';
-import { Autocomplete } from '@base-ui/react/autocomplete';
-import { Field } from '@base-ui/react/field';
-import { Form } from '@base-ui/react/form';
+import { Autocomplete } from '@tale-ui/react/autocomplete';
+import { Field } from '@tale-ui/react/field';
+import { Form } from '@tale-ui/react/form';
 
 describe('<Autocomplete.Root />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
   });
 
   const { render } = createRenderer();

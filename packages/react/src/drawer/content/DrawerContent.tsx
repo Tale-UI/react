@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 
 /**
  * A container for the drawer contents.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Tale UI Drawer](https://base-ui.com/react/components/drawer)
  */
 export const DrawerContent = React.forwardRef(function DrawerContent(
   componentProps: DrawerContent.Props,
@@ -24,7 +24,7 @@ export const DrawerContent = React.forwardRef(function DrawerContent(
   });
 });
 
-export interface DrawerContentProps extends BaseUIComponentProps<'div', DrawerContent.State> {}
+export interface DrawerContentProps extends TaleUIComponentProps<'div', DrawerContent.State> {}
 export interface DrawerContentState {}
 
 export namespace DrawerContent {

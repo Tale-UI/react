@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useDismiss } from '../../floating-ui-react';
 import { getTarget } from '../../floating-ui-react/utils';
-import type { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import type { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 import { CompositeRoot } from '../../composite/root/CompositeRoot';
 import { useNavigationMenuRootContext } from '../root/NavigationMenuRootContext';
 import { EMPTY_OBJECT } from '../../utils/constants';
@@ -15,7 +15,7 @@ import { useRenderElement } from '../../utils/useRenderElement';
  * Contains a list of navigation menu items.
  * Renders a `<ul>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Tale UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
  */
 export const NavigationMenuList = React.forwardRef(function NavigationMenuList(
   componentProps: NavigationMenuList.Props,
@@ -109,7 +109,7 @@ export interface NavigationMenuListState {
   open: boolean;
 }
 
-export interface NavigationMenuListProps extends BaseUIComponentProps<
+export interface NavigationMenuListProps extends TaleUIComponentProps<
   'ul',
   NavigationMenuList.State
 > {}

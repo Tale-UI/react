@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Mock } from 'vitest';
-import { Avatar } from '@base-ui/react/avatar';
+import { Avatar } from '@tale-ui/react/avatar';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { describeConformance, createRenderer, isJSDOM } from '#test-utils';
 import { useImageLoadingStatus } from './useImageLoadingStatus';
@@ -29,11 +29,11 @@ describe('<Avatar.Image />', () => {
 
   describe.skipIf(isJSDOM)('animations', () => {
     afterEach(() => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
     });
 
     it('triggers enter animation via data-starting-style when mounting', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
       useImageLoadingStatusMock.mockImplementation((src) => (src ? 'loaded' : 'idle'));
 
@@ -90,7 +90,7 @@ describe('<Avatar.Image />', () => {
     });
 
     it('applies data-ending-style before unmount', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
       useImageLoadingStatusMock.mockImplementation((src) => (src ? 'loaded' : 'idle'));
 

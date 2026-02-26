@@ -1,4 +1,4 @@
-import { Field } from '@base-ui/react/field';
+import { Field } from '@tale-ui/react/field';
 import { screen } from '@mui/internal-test-utils';
 import { expect } from 'vitest';
 import { createRenderer, describeConformance } from '#test-utils';
@@ -80,7 +80,7 @@ describe('<Field.Label />', () => {
       expect(errorSpy).toHaveBeenCalledTimes(1);
       expect(errorSpy).toHaveBeenCalledWith(
         expect.stringContaining(
-          'Base UI: <Field.Label> expected a <label> element because the `nativeLabel` prop is true. ' +
+          'Tale UI: <Field.Label> expected a <label> element because the `nativeLabel` prop is true. ' +
             'Rendering a non-<label> disables native label association, so `htmlFor` will not ' +
             'work. Use a real <label> in the `render` prop, or set `nativeLabel` to `false`.',
         ),
@@ -104,8 +104,8 @@ describe('<Field.Label />', () => {
       expect(errorSpy).toHaveBeenCalledTimes(1);
       expect(errorSpy).toHaveBeenCalledWith(
         expect.stringContaining(
-          'Base UI: <Field.Label> expected a non-<label> element because the `nativeLabel` prop is false. ' +
-            'Rendering a <label> assumes native label behavior while Base UI treats it as ' +
+          'Tale UI: <Field.Label> expected a non-<label> element because the `nativeLabel` prop is false. ' +
+            'Rendering a <label> assumes native label behavior while Tale UI treats it as ' +
             'non-native, which can cause unexpected pointer behavior. Use a non-<label> in the ' +
             '`render` prop, or set `nativeLabel` to `true`.',
         ),

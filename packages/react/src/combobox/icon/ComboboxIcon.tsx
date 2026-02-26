@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 
 /**
@@ -29,7 +29,7 @@ export const ComboboxIcon = React.forwardRef(function ComboboxIcon(
 
 export interface ComboboxIconState {}
 
-export interface ComboboxIconProps extends BaseUIComponentProps<'span', ComboboxIcon.State> {}
+export interface ComboboxIconProps extends TaleUIComponentProps<'span', ComboboxIcon.State> {}
 
 export namespace ComboboxIcon {
   export type State = ComboboxIconState;

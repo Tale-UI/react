@@ -1,17 +1,17 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../utils/types';
+import type { TaleUIComponentProps, NativeButtonProps } from '../../utils/types';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useButton } from '../../use-button';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 
 /**
  * A button that closes the popover.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Tale UI Popover](https://base-ui.com/react/components/popover)
  */
 export const PopoverClose = React.forwardRef(function PopoverClose(
   props: PopoverClose.Props,
@@ -49,7 +49,7 @@ export const PopoverClose = React.forwardRef(function PopoverClose(
 export interface PopoverCloseState {}
 
 export interface PopoverCloseProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', PopoverClose.State> {}
+  extends NativeButtonProps, TaleUIComponentProps<'button', PopoverClose.State> {}
 
 export namespace PopoverClose {
   export type State = PopoverCloseState;

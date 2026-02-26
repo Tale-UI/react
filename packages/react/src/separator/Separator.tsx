@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps, Orientation } from '../utils/types';
+import type { TaleUIComponentProps, Orientation } from '../utils/types';
 import { useRenderElement } from '../utils/useRenderElement';
 
 /**
  * A separator element accessible to screen readers.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Separator](https://base-ui.com/react/components/separator)
+ * Documentation: [Tale UI Separator](https://base-ui.com/react/components/separator)
  */
 export const Separator = React.forwardRef(function SeparatorComponent(
   componentProps: Separator.Props,
@@ -26,7 +26,7 @@ export const Separator = React.forwardRef(function SeparatorComponent(
   return element;
 });
 
-export interface SeparatorProps extends BaseUIComponentProps<'div', Separator.State> {
+export interface SeparatorProps extends TaleUIComponentProps<'div', Separator.State> {
   /**
    * The orientation of the separator.
    * @default 'horizontal'

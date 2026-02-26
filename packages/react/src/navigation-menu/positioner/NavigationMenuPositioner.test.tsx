@@ -1,4 +1,4 @@
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
+import { NavigationMenu } from '@tale-ui/react/navigation-menu';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<NavigationMenu.Positioner />', () => {

@@ -20,15 +20,15 @@ export default defineConfig(() => {
     },
     resolve: {
       alias: {
-        '@base-ui/react': path.resolve(__dirname, '..', '..', 'packages', 'react', 'src'),
-        '@base-ui/utils': path.resolve(__dirname, '..', '..', 'packages', 'utils', 'src'),
+        '@tale-ui/react': path.resolve(__dirname, '..', '..', 'packages', 'react', 'src'),
+        '@tale-ui/utils': path.resolve(__dirname, '..', '..', 'packages', 'utils', 'src'),
+        '@tale-ui/react-styles': path.resolve(__dirname, '..', '..', 'packages', 'styles', 'src'),
         ...(isProfiling ? { 'react-dom/client': 'react-dom/profiling' } : {}),
-        docs: path.resolve(__dirname, '..', '..', 'docs'),
       },
     },
     server: {
       fs: {
-        // Allow serving Base UI source from the monorepo root.
+        // Allow serving Tale UI source from the monorepo root.
         allow: [path.resolve(__dirname, '..', '..')],
       },
     },

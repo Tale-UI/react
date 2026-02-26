@@ -18,7 +18,7 @@ export function useCollapsibleRootContext() {
   const context = React.useContext(CollapsibleRootContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: CollapsibleRootContext is missing. Collapsible parts must be placed within <Collapsible.Root>.',
+      'Tale UI: CollapsibleRootContext is missing. Collapsible parts must be placed within <Collapsible.Root>.',
     );
   }
 

@@ -1,19 +1,19 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { BaseUIComponentProps } from '../../utils/types';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useCollapsibleRoot } from './useCollapsibleRoot';
 import { CollapsibleRootContext } from './CollapsibleRootContext';
 import { collapsibleStateAttributesMapping } from './stateAttributesMapping';
-import type { BaseUIChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import type { TaleUIChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 
 /**
  * Groups all parts of the collapsible.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Collapsible](https://base-ui.com/react/components/collapsible)
+ * Documentation: [Tale UI Collapsible](https://base-ui.com/react/components/collapsible)
  */
 export const CollapsibleRoot = React.forwardRef(function CollapsibleRoot(
   componentProps: CollapsibleRoot.Props,
@@ -75,7 +75,7 @@ export interface CollapsibleRootState extends Pick<
   'open' | 'disabled'
 > {}
 
-export interface CollapsibleRootProps extends BaseUIComponentProps<'div', CollapsibleRoot.State> {
+export interface CollapsibleRootProps extends TaleUIComponentProps<'div', CollapsibleRoot.State> {
   /**
    * Whether the collapsible panel is currently open.
    *
@@ -104,7 +104,7 @@ export interface CollapsibleRootProps extends BaseUIComponentProps<'div', Collap
 
 export type CollapsibleRootChangeEventReason = typeof REASONS.triggerPress | typeof REASONS.none;
 export type CollapsibleRootChangeEventDetails =
-  BaseUIChangeEventDetails<CollapsibleRootChangeEventReason>;
+  TaleUIChangeEventDetails<CollapsibleRootChangeEventReason>;
 
 export namespace CollapsibleRoot {
   export type State = CollapsibleRootState;

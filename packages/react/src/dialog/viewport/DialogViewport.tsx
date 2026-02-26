@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { type BaseUIComponentProps } from '../../utils/types';
+import { type TaleUIComponentProps } from '../../utils/types';
 import { type TransitionStatus } from '../../utils/useTransitionStatus';
 import { type StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import { popupStateMapping as baseMapping } from '../../utils/popupStateMapping';
@@ -25,7 +25,7 @@ const stateAttributesMapping: StateAttributesMapping<DialogViewport.State> = {
  * A positioning container for the dialog popup that can be made scrollable.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+ * Documentation: [Tale UI Dialog](https://base-ui.com/react/components/dialog)
  */
 export const DialogViewport = React.forwardRef(function DialogViewport(
   componentProps: DialogViewport.Props,
@@ -88,7 +88,7 @@ export interface DialogViewportState {
   nestedDialogOpen: boolean;
 }
 
-export interface DialogViewportProps extends BaseUIComponentProps<'div', DialogViewportState> {}
+export interface DialogViewportProps extends TaleUIComponentProps<'div', DialogViewportState> {}
 
 export namespace DialogViewport {
   export type State = DialogViewportState;

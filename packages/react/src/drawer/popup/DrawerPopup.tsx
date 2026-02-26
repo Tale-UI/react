@@ -1,12 +1,12 @@
 'use client';
 import * as React from 'react';
-import type { InteractionType } from '@base-ui/utils/useEnhancedClickHandler';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import type { InteractionType } from '@tale-ui/utils/useEnhancedClickHandler';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
 import { FloatingFocusManager } from '../../floating-ui-react';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import type { TransitionStatus } from '../../utils/useTransitionStatus';
 import type { StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import { popupStateMapping as baseMapping } from '../../utils/popupStateMapping';
@@ -110,7 +110,7 @@ const stateAttributesMapping: StateAttributesMapping<DrawerPopup.State> = {
  * A container for the drawer contents.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Tale UI Drawer](https://base-ui.com/react/components/drawer)
  */
 export const DrawerPopup = React.forwardRef(function DrawerPopup(
   componentProps: DrawerPopup.Props,
@@ -391,7 +391,7 @@ export const DrawerPopup = React.forwardRef(function DrawerPopup(
   );
 });
 
-export interface DrawerPopupProps extends BaseUIComponentProps<'div', DrawerPopup.State> {
+export interface DrawerPopupProps extends TaleUIComponentProps<'div', DrawerPopup.State> {
   /**
    * Determines the element to focus when the drawer is opened.
    *

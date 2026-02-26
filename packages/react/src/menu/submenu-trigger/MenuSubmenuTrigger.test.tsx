@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 import { fireEvent, waitFor, screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
-import { DirectionProvider } from '@base-ui/react/direction-provider';
-import { Menu } from '@base-ui/react/menu';
+import { DirectionProvider } from '@tale-ui/react/direction-provider';
+import { Menu } from '@tale-ui/react/menu';
 
 type TextDirection = 'ltr' | 'rtl';
 

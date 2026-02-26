@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { Switch } from '@base-ui/react/switch';
+import { Switch } from '@tale-ui/react/switch';
 
 export function Root({ className, ...props }: Switch.Root.Props) {
   return (

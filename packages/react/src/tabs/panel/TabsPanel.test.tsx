@@ -1,4 +1,4 @@
-import { Tabs } from '@base-ui/react/tabs';
+import { Tabs } from '@tale-ui/react/tabs';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { afterEach, expect } from 'vitest';
@@ -13,11 +13,11 @@ describe('<Tabs.Panel />', () => {
 
   describe.skipIf(isJSDOM)('animations', () => {
     afterEach(() => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
     });
 
     it('triggers enter animation via data-starting-style when mounting', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
       let transitionFinished = false;
       const notifyTransitionFinished = () => {
@@ -69,7 +69,7 @@ describe('<Tabs.Panel />', () => {
     });
 
     it('applies data-ending-style before unmount', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
       const style = `
         @keyframes test-anim {

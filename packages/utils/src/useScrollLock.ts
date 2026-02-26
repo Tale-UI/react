@@ -177,7 +177,7 @@ function preventScrollInsetScrollbars(referenceElement: Element | null) {
 
     body.scrollTop = scrollTop;
     body.scrollLeft = scrollLeft;
-    html.setAttribute('data-base-ui-scroll-locked', '');
+    html.setAttribute('data-tale-ui-scroll-locked', '');
     html.style.scrollBehavior = 'unset';
   }
 
@@ -188,7 +188,7 @@ function preventScrollInsetScrollbars(referenceElement: Element | null) {
     if (!updateGutterOnly) {
       html.scrollTop = scrollTop;
       html.scrollLeft = scrollLeft;
-      html.removeAttribute('data-base-ui-scroll-locked');
+      html.removeAttribute('data-tale-ui-scroll-locked');
       html.style.scrollBehavior = originalHtmlScrollBehavior;
     }
   }

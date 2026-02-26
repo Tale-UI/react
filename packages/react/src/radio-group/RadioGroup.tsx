@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import type { BaseUIComponentProps, HTMLProps } from '../utils/types';
-import { useBaseUiId } from '../utils/useBaseUiId';
+import { useControlled } from '@tale-ui/utils/useControlled';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import type { TaleUIComponentProps, HTMLProps } from '../utils/types';
+import { useTaleUiId } from '../utils/useTaleUiId';
 import { contains } from '../floating-ui-react/utils';
 import { SHIFT } from '../composite/composite';
 import { CompositeRoot } from '../composite/root/CompositeRoot';
@@ -16,7 +16,7 @@ import { useFormContext } from '../form/FormContext';
 import { useLabelableContext } from '../labelable-provider/LabelableContext';
 import { useValueChanged } from '../utils/useValueChanged';
 import { RadioGroupContext } from './RadioGroupContext';
-import type { BaseUIChangeEventDetails } from '../utils/createBaseUIEventDetails';
+import type { TaleUIChangeEventDetails } from '../utils/createTaleUIEventDetails';
 import { REASONS } from '../utils/reasons';
 
 const MODIFIER_KEYS = [SHIFT];
@@ -25,7 +25,7 @@ const MODIFIER_KEYS = [SHIFT];
  * Provides a shared state to a series of radio buttons.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Radio Group](https://base-ui.com/react/components/radio)
+ * Documentation: [Tale UI Radio Group](https://base-ui.com/react/components/radio)
  */
 export const RadioGroup = React.forwardRef(function RadioGroup<Value>(
   componentProps: RadioGroup.Props<Value>,
@@ -65,7 +65,7 @@ export const RadioGroup = React.forwardRef(function RadioGroup<Value>(
 
   const disabled = fieldDisabled || disabledProp;
   const name = fieldName ?? nameProp;
-  const id = useBaseUiId(idProp);
+  const id = useTaleUiId(idProp);
 
   const [checkedValue, setCheckedValueUnwrapped] = useControlled({
     controlled: externalValue,
@@ -274,7 +274,7 @@ export interface RadioGroupState extends FieldRoot.State {
 }
 
 export interface RadioGroupProps<Value = any> extends Omit<
-  BaseUIComponentProps<'div', RadioGroup.State>,
+  TaleUIComponentProps<'div', RadioGroup.State>,
   'value'
 > {
   /**
@@ -320,7 +320,7 @@ export interface RadioGroupProps<Value = any> extends Omit<
 
 export type RadioGroupChangeEventReason = typeof REASONS.none;
 
-export type RadioGroupChangeEventDetails = BaseUIChangeEventDetails<RadioGroup.ChangeEventReason>;
+export type RadioGroupChangeEventDetails = TaleUIChangeEventDetails<RadioGroup.ChangeEventReason>;
 
 export namespace RadioGroup {
   export type State = RadioGroupState;

@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
 import { usePreviewCardRootContext } from '../root/PreviewCardContext';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { triggerOpenStateMapping } from '../../utils/popupStateMapping';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { PreviewCardHandle } from '../store/PreviewCardHandle';
 import { useTriggerDataForwarding } from '../../utils/popups';
 import { CLOSE_DELAY, OPEN_DELAY } from '../utils/constants';
@@ -15,7 +15,7 @@ import { safePolygon, useFocus, useHoverReferenceInteraction } from '../../float
  * A link that opens the preview card.
  * Renders an `<a>` element.
  *
- * Documentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)
+ * Documentation: [Tale UI Preview Card](https://base-ui.com/react/components/preview-card)
  */
 export const PreviewCardTrigger = React.forwardRef(function PreviewCardTrigger(
   componentProps: PreviewCardTrigger.Props,
@@ -36,11 +36,11 @@ export const PreviewCardTrigger = React.forwardRef(function PreviewCardTrigger(
   const store = handle?.store ?? rootContext;
   if (!store) {
     throw new Error(
-      'Base UI: <PreviewCard.Trigger> must be either used within a <PreviewCard.Root> component or provided with a handle.',
+      'Tale UI: <PreviewCard.Trigger> must be either used within a <PreviewCard.Root> component or provided with a handle.',
     );
   }
 
-  const thisTriggerId = useBaseUiId(idProp);
+  const thisTriggerId = useTaleUiId(idProp);
   const isTriggerActive = store.useState('isTriggerActive', thisTriggerId);
   const isOpenedByThisTrigger = store.useState('isOpenedByTrigger', thisTriggerId);
   const floatingRootContext = store.useState('floatingRootContext');
@@ -109,7 +109,7 @@ export interface PreviewCardTriggerState {
   open: boolean;
 }
 
-export interface PreviewCardTriggerProps<Payload = unknown> extends BaseUIComponentProps<
+export interface PreviewCardTriggerProps<Payload = unknown> extends TaleUIComponentProps<
   'a',
   PreviewCardTrigger.State
 > {

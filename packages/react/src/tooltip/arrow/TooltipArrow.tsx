@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { useTooltipPositionerContext } from '../positioner/TooltipPositionerContext';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import type { Side, Align } from '../../utils/useAnchorPositioning';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import { useRenderElement } from '../../utils/useRenderElement';
@@ -11,7 +11,7 @@ import { useTooltipRootContext } from '../root/TooltipRootContext';
  * Displays an element positioned against the tooltip anchor.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+ * Documentation: [Tale UI Tooltip](https://base-ui.com/react/components/tooltip)
  */
 export const TooltipArrow = React.forwardRef(function TooltipArrow(
   componentProps: TooltipArrow.Props,
@@ -54,7 +54,7 @@ export interface TooltipArrowState {
   instant: 'delay' | 'dismiss' | 'focus' | undefined;
 }
 
-export interface TooltipArrowProps extends BaseUIComponentProps<'div', TooltipArrow.State> {}
+export interface TooltipArrowProps extends TaleUIComponentProps<'div', TooltipArrow.State> {}
 
 export namespace TooltipArrow {
   export type State = TooltipArrowState;

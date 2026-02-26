@@ -1,5 +1,5 @@
 import { tabbable, type FocusableElement } from 'tabbable';
-import { ownerDocument } from '@base-ui/utils/owner';
+import { ownerDocument } from '@tale-ui/utils/owner';
 import { activeElement, contains } from './element';
 
 export const getTabbableOptions = () =>

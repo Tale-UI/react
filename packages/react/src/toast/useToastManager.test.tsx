@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Toast } from '@base-ui/react/toast';
-import { Dialog } from '@base-ui/react/dialog';
+import { Toast } from '@tale-ui/react/toast';
+import { Dialog } from '@tale-ui/react/dialog';
 import { fireEvent, flushMicrotasks, screen } from '@mui/internal-test-utils';
 import { expect } from 'chai';
 import { spy } from 'sinon';

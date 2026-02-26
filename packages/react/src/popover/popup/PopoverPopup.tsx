@@ -1,12 +1,12 @@
 'use client';
 import * as React from 'react';
-import { InteractionType } from '@base-ui/utils/useEnhancedClickHandler';
+import { InteractionType } from '@tale-ui/utils/useEnhancedClickHandler';
 import { isHTMLElement } from '@floating-ui/utils/dom';
 import { FloatingFocusManager, useHoverFloatingInteraction } from '../../floating-ui-react';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
 import { usePopoverPositionerContext } from '../positioner/PopoverPositionerContext';
 import type { Side, Align } from '../../utils/useAnchorPositioning';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import type { StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import type { TransitionStatus } from '../../utils/useTransitionStatus';
 import { popupStateMapping as baseMapping } from '../../utils/popupStateMapping';
@@ -27,7 +27,7 @@ const stateAttributesMapping: StateAttributesMapping<PopoverPopup.State> = {
  * A container for the popover contents.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Tale UI Popover](https://base-ui.com/react/components/popover)
  */
 export const PopoverPopup = React.forwardRef(function PopoverPopup(
   componentProps: PopoverPopup.Props,
@@ -147,7 +147,7 @@ export interface PopoverPopupState {
   instant: 'dismiss' | 'click' | undefined;
 }
 
-export interface PopoverPopupProps extends BaseUIComponentProps<'div', PopoverPopup.State> {
+export interface PopoverPopupProps extends TaleUIComponentProps<'div', PopoverPopup.State> {
   /**
    * Determines the element to focus when the popover is opened.
    *

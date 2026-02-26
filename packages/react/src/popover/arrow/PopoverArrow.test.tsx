@@ -1,4 +1,4 @@
-import { Popover } from '@base-ui/react/popover';
+import { Popover } from '@tale-ui/react/popover';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Popover.Arrow />', () => {

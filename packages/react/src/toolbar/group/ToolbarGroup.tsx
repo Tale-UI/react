@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { BaseUIComponentProps } from '../../utils/types';
+import { TaleUIComponentProps } from '../../utils/types';
 import { useToolbarRootContext } from '../root/ToolbarRootContext';
 import type { ToolbarRoot } from '../root/ToolbarRoot';
 import { ToolbarGroupContext } from './ToolbarGroupContext';
@@ -10,7 +10,7 @@ import { ToolbarGroupContext } from './ToolbarGroupContext';
  * Groups several toolbar items or toggles.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
+ * Documentation: [Tale UI Toolbar](https://base-ui.com/react/components/toolbar)
  */
 export const ToolbarGroup = React.forwardRef(function ToolbarGroup(
   componentProps: ToolbarGroup.Props,
@@ -45,7 +45,7 @@ export const ToolbarGroup = React.forwardRef(function ToolbarGroup(
   );
 });
 
-export interface ToolbarGroupProps extends BaseUIComponentProps<'div', ToolbarRoot.State> {
+export interface ToolbarGroupProps extends TaleUIComponentProps<'div', ToolbarRoot.State> {
   /**
    * When `true` all toolbar items in the group are disabled.
    * @default false

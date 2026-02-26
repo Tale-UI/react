@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Popover } from '@base-ui/react/popover';
-import { Combobox } from '@base-ui/react/combobox';
-import { Menu } from '@base-ui/react/menu';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { Popover } from '@tale-ui/react/popover';
+import { Combobox } from '@tale-ui/react/combobox';
+import { Menu } from '@tale-ui/react/menu';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
 import { act, fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
 import { expect } from 'chai';
 import { spy } from 'sinon';
@@ -12,7 +12,7 @@ import { PATIENT_CLICK_THRESHOLD } from '../../utils/constants';
 
 describe('<Popover.Root />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
   });
 
   const { render, clock } = createRenderer();
@@ -314,7 +314,7 @@ describe('<Popover.Root />', () => {
       });
     });
 
-    describe('BaseUIChangeEventDetails', () => {
+    describe('TaleUIChangeEventDetails', () => {
       it('onOpenChange cancel() prevents opening while uncontrolled', async () => {
         await render(
           <TestPopover
@@ -1053,7 +1053,7 @@ describe('<Popover.Root />', () => {
       });
 
       it('is called on close when the exit animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = spy();
 
@@ -1134,7 +1134,7 @@ describe('<Popover.Root />', () => {
       });
 
       it('is called on open when the enter animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = spy();
 

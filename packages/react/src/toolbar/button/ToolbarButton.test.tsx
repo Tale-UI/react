@@ -1,13 +1,13 @@
 import { expect, vi } from 'vitest';
-import { Toolbar } from '@base-ui/react/toolbar';
-import { Switch } from '@base-ui/react/switch';
-import { Menu } from '@base-ui/react/menu';
-import { Select } from '@base-ui/react/select';
-import { Dialog } from '@base-ui/react/dialog';
-import { AlertDialog } from '@base-ui/react/alert-dialog';
-import { Popover } from '@base-ui/react/popover';
-import { Toggle } from '@base-ui/react/toggle';
-import { ToggleGroup } from '@base-ui/react/toggle-group';
+import { Toolbar } from '@tale-ui/react/toolbar';
+import { Switch } from '@tale-ui/react/switch';
+import { Menu } from '@tale-ui/react/menu';
+import { Select } from '@tale-ui/react/select';
+import { Dialog } from '@tale-ui/react/dialog';
+import { AlertDialog } from '@tale-ui/react/alert-dialog';
+import { Popover } from '@tale-ui/react/popover';
+import { Toggle } from '@tale-ui/react/toggle';
+import { ToggleGroup } from '@tale-ui/react/toggle-group';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { NOOP } from '../../utils/noop';
@@ -92,7 +92,7 @@ describe('<Toolbar.Button />', () => {
     });
   });
 
-  describe('rendering other Base UI components', () => {
+  describe('rendering other Tale UI components', () => {
     describe('Switch', () => {
       it('renders a switch', async () => {
         vi.spyOn(console, 'error')
@@ -108,7 +108,7 @@ describe('<Toolbar.Button />', () => {
         expect(console.error).toHaveBeenCalledTimes(1);
         expect(console.error).toHaveBeenCalledWith(
           expect.stringContaining(
-            'Base UI: A component that acts as a button expected a native <button> because ' +
+            'Tale UI: A component that acts as a button expected a native <button> because ' +
               'the `nativeButton` prop is true. Rendering a non-<button> removes native button semantics, ' +
               'which can impact forms and accessibility. Use a real <button> in the `render` prop, or ' +
               'set `nativeButton` to `false`.',
@@ -137,7 +137,7 @@ describe('<Toolbar.Button />', () => {
         expect(console.error).toHaveBeenCalledTimes(1);
         expect(console.error).toHaveBeenCalledWith(
           expect.stringContaining(
-            'Base UI: A component that acts as a button expected a native <button> because ' +
+            'Tale UI: A component that acts as a button expected a native <button> because ' +
               'the `nativeButton` prop is true. Rendering a non-<button> removes native button semantics, ' +
               'which can impact forms and accessibility. Use a real <button> in the `render` prop, or ' +
               'set `nativeButton` to `false`.',
@@ -186,7 +186,7 @@ describe('<Toolbar.Button />', () => {
         expect(console.error).toHaveBeenCalledTimes(1);
         expect(console.error).toHaveBeenCalledWith(
           expect.stringContaining(
-            'Base UI: A component that acts as a button expected a native <button> because ' +
+            'Tale UI: A component that acts as a button expected a native <button> because ' +
               'the `nativeButton` prop is true. Rendering a non-<button> removes native button semantics, ' +
               'which can impact forms and accessibility. Use a real <button> in the `render` prop, or ' +
               'set `nativeButton` to `false`.',
@@ -471,8 +471,8 @@ describe('<Toolbar.Button />', () => {
           expect(onOpenChange).toHaveBeenCalledTimes(0);
           expect(onValueChange).toHaveBeenCalledTimes(0);
         }).toErrorDev([
-          'Base UI: A component that acts as a button expected a non-<button> because ' +
-            'the `nativeButton` prop is false. Rendering a <button> keeps native behavior while Base UI ' +
+          'Tale UI: A component that acts as a button expected a non-<button> because ' +
+            'the `nativeButton` prop is false. Rendering a <button> keeps native behavior while Tale UI ' +
             'applies non-native attributes and handlers, which can add unintended extra attributes ' +
             '(such as `role` or `aria-disabled`). Use a non-<button> in the `render` prop, or set ' +
             '`nativeButton` to `true`.',

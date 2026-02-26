@@ -3,12 +3,12 @@ import * as React from 'react';
 import { spy, stub } from 'sinon';
 import { expect as expectVitest, vi } from 'vitest';
 import { act, flushMicrotasks, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
-import { DirectionProvider, type TextDirection } from '@base-ui/react/direction-provider';
-import { Field } from '@base-ui/react/field';
-import { Slider } from '@base-ui/react/slider';
-import { Form } from '@base-ui/react/form';
+import { DirectionProvider, type TextDirection } from '@tale-ui/react/direction-provider';
+import { Field } from '@tale-ui/react/field';
+import { Slider } from '@tale-ui/react/slider';
+import { Form } from '@tale-ui/react/form';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
-import { isWebKit } from '@base-ui/utils/detectBrowser';
+import { isWebKit } from '@tale-ui/utils/detectBrowser';
 import { REASONS } from '../../utils/reasons';
 import {
   ARROW_RIGHT,

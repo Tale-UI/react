@@ -16,13 +16,13 @@ function App() {
     <div className="min-h-dvh flex justify-center items-center">
       <main className="grid grid-cols-2 gap-4">
         <div className="w-[320px]">
-          <h2 className="my-1 text-lg font-bold text-balance">Base UI + TanStack Start</h2>
+          <h2 className="my-1 text-lg font-bold text-balance">Tale UI + TanStack Start</h2>
           <p className="text-sm">
             This is a{' '}
             <Link href="https://tanstack.com/start/latest/docs/framework/react/overview">
               TanStack Start
             </Link>{' '}
-            app with <Link href="https://base-ui.com">Base UI components</Link> and{' '}
+            app with <Link href="https://base-ui.com">Tale UI components</Link> and{' '}
             <Link href="https://tailwindcss.com/">Tailwind CSS</Link>.
           </p>
         </div>
@@ -110,7 +110,7 @@ function App() {
                             TanStack Form Example
                           </h3>
                           <p className="m-0 text-sm leading-5 text-gray-500">
-                            A guide to integrating Base UI components and TanStack Form.
+                            A guide to integrating Tale UI components and TanStack Form.
                           </p>
                         </NavigationMenu.Link>
                       </li>

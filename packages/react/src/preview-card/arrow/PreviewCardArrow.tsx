@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { usePreviewCardPositionerContext } from '../positioner/PreviewCardPositionerContext';
 import { usePreviewCardRootContext } from '../root/PreviewCardContext';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import type { Align, Side } from '../../utils/useAnchorPositioning';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import { useRenderElement } from '../../utils/useRenderElement';
@@ -11,7 +11,7 @@ import { useRenderElement } from '../../utils/useRenderElement';
  * Displays an element positioned against the preview card anchor.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)
+ * Documentation: [Tale UI Preview Card](https://base-ui.com/react/components/preview-card)
  */
 export const PreviewCardArrow = React.forwardRef(function PreviewCardArrow(
   componentProps: PreviewCardArrow.Props,
@@ -50,7 +50,7 @@ export interface PreviewCardArrowState {
   uncentered: boolean;
 }
 
-export interface PreviewCardArrowProps extends BaseUIComponentProps<
+export interface PreviewCardArrowProps extends TaleUIComponentProps<
   'div',
   PreviewCardArrow.State
 > {}

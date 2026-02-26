@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { createSelector, ReactStore } from '@base-ui/utils/store';
-import { EMPTY_OBJECT } from '@base-ui/utils/empty';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { createSelector, ReactStore } from '@tale-ui/utils/store';
+import { EMPTY_OBJECT } from '@tale-ui/utils/empty';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
 import { MenuParent, MenuRoot } from '../root/MenuRoot';
 import { FloatingTreeStore } from '../../floating-ui-react/components/FloatingTreeStore';
 import { HTMLProps } from '../../utils/types';

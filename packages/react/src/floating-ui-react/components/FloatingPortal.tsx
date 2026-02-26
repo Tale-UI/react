@@ -2,9 +2,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { isNode } from '@floating-ui/utils/dom';
-import { useId } from '@base-ui/utils/useId';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useId } from '@tale-ui/utils/useId';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
 import { FocusGuard } from '../../utils/FocusGuard';
 import {
   enableFocusInside,
@@ -13,12 +13,12 @@ import {
   getNextTabbable,
   isOutsideEvent,
 } from '../utils';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { createAttribute } from '../utils/createAttribute';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { EMPTY_OBJECT, ownerVisuallyHidden } from '../../utils/constants';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 
 type FocusManagerState = null | {
   modal: boolean;
@@ -280,7 +280,7 @@ export const FloatingPortal = React.forwardRef(function FloatingPortal(
 });
 
 export namespace FloatingPortal {
-  export interface Props<State> extends BaseUIComponentProps<'div', State> {
+  export interface Props<State> extends TaleUIComponentProps<'div', State> {
     /**
      * A parent element to render the portal element into.
      */

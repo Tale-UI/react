@@ -2,14 +2,14 @@
 import * as React from 'react';
 import { useDialogRootContext } from '../root/DialogRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { useBaseUiId } from '../../utils/useBaseUiId';
-import type { BaseUIComponentProps } from '../../utils/types';
+import { useTaleUiId } from '../../utils/useTaleUiId';
+import type { TaleUIComponentProps } from '../../utils/types';
 
 /**
  * A paragraph with additional information about the dialog.
  * Renders a `<p>` element.
  *
- * Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+ * Documentation: [Tale UI Dialog](https://base-ui.com/react/components/dialog)
  */
 export const DialogDescription = React.forwardRef(function DialogDescription(
   componentProps: DialogDescription.Props,
@@ -18,7 +18,7 @@ export const DialogDescription = React.forwardRef(function DialogDescription(
   const { render, className, id: idProp, ...elementProps } = componentProps;
   const { store } = useDialogRootContext();
 
-  const id = useBaseUiId(idProp);
+  const id = useTaleUiId(idProp);
 
   store.useSyncedValueWithCleanup('descriptionElementId', id);
 
@@ -28,7 +28,7 @@ export const DialogDescription = React.forwardRef(function DialogDescription(
   });
 });
 
-export interface DialogDescriptionProps extends BaseUIComponentProps<
+export interface DialogDescriptionProps extends TaleUIComponentProps<
   'p',
   DialogDescription.State
 > {}

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Field } from '@base-ui/react/field';
-import { Checkbox } from '@base-ui/react/checkbox';
-import { CheckboxGroup } from '@base-ui/react/checkbox-group';
-import { Radio } from '@base-ui/react/radio';
-import { RadioGroup } from '@base-ui/react/radio-group';
+import { Field } from '@tale-ui/react/field';
+import { Checkbox } from '@tale-ui/react/checkbox';
+import { CheckboxGroup } from '@tale-ui/react/checkbox-group';
+import { Radio } from '@tale-ui/react/radio';
+import { RadioGroup } from '@tale-ui/react/radio-group';
 import { createRenderer, screen } from '@mui/internal-test-utils';
 import { expect } from 'chai';
 import { spy } from 'sinon';

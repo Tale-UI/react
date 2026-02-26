@@ -5,13 +5,13 @@ import { valueToPercent } from '../../utils/valueToPercent';
 import type { ProgressRoot } from '../root/ProgressRoot';
 import { useProgressRootContext } from '../root/ProgressRootContext';
 import { progressStateAttributesMapping } from '../root/stateAttributesMapping';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 
 /**
  * Visualizes the completion status of the task.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Progress](https://base-ui.com/react/components/progress)
+ * Documentation: [Tale UI Progress](https://base-ui.com/react/components/progress)
  */
 export const ProgressIndicator = React.forwardRef(function ProgressIndicator(
   componentProps: ProgressIndicator.Props,
@@ -51,7 +51,7 @@ export const ProgressIndicator = React.forwardRef(function ProgressIndicator(
   return element;
 });
 
-export interface ProgressIndicatorProps extends BaseUIComponentProps<'div', ProgressRoot.State> {}
+export interface ProgressIndicatorProps extends TaleUIComponentProps<'div', ProgressRoot.State> {}
 
 export namespace ProgressIndicator {
   export type Props = ProgressIndicatorProps;

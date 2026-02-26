@@ -1,17 +1,17 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useControlled } from '@base-ui/utils/useControlled';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useControlled } from '@tale-ui/utils/useControlled';
 import { MenuCheckboxItemContext } from './MenuCheckboxItemContext';
 import { REGULAR_ITEM, useMenuItem } from '../item/useMenuItem';
 import { useCompositeListItem } from '../../composite/list/useCompositeListItem';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { useBaseUiId } from '../../utils/useBaseUiId';
-import type { BaseUIComponentProps, NonNativeButtonProps } from '../../utils/types';
+import { useTaleUiId } from '../../utils/useTaleUiId';
+import type { TaleUIComponentProps, NonNativeButtonProps } from '../../utils/types';
 import { itemMapping } from '../utils/stateAttributesMapping';
 import { useMenuPositionerContext } from '../positioner/MenuPositionerContext';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import type { MenuRoot } from '../root/MenuRoot';
 
@@ -19,7 +19,7 @@ import type { MenuRoot } from '../root/MenuRoot';
  * A menu item that toggles a setting on or off.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Tale UI Menu](https://base-ui.com/react/components/menu)
  */
 export const MenuCheckboxItem = React.forwardRef(function MenuCheckboxItem(
   componentProps: MenuCheckboxItem.Props,
@@ -41,7 +41,7 @@ export const MenuCheckboxItem = React.forwardRef(function MenuCheckboxItem(
 
   const listItem = useCompositeListItem({ label });
   const menuPositionerContext = useMenuPositionerContext(true);
-  const id = useBaseUiId(idProp);
+  const id = useTaleUiId(idProp);
 
   const { store } = useMenuRootContext();
   const highlighted = store.useState('isActive', listItem.index);
@@ -126,7 +126,7 @@ export type MenuCheckboxItemState = {
 };
 
 export interface MenuCheckboxItemProps
-  extends NonNativeButtonProps, BaseUIComponentProps<'div', MenuCheckboxItem.State> {
+  extends NonNativeButtonProps, TaleUIComponentProps<'div', MenuCheckboxItem.State> {
   /**
    * Whether the checkbox item is currently ticked.
    *
@@ -149,7 +149,7 @@ export interface MenuCheckboxItemProps
   /**
    * The click handler for the menu item.
    */
-  onClick?: BaseUIComponentProps<'div', MenuCheckboxItemState>['onClick'] | undefined;
+  onClick?: TaleUIComponentProps<'div', MenuCheckboxItemState>['onClick'] | undefined;
   /**
    * Whether the component should ignore user interaction.
    * @default false

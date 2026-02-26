@@ -1,29 +1,21 @@
 {
-  "name": "@base-ui/react",
-  "version": "1.2.0",
-  "author": "MUI Team",
-  "description": "Base UI is a library of headless ('unstyled') React components and low-level hooks. You gain complete control over your app's CSS and accessibility features.",
+  "name": "@tale-ui/react",
+  "version": "0.1.0",
+  "description": "Opinionated React component library built on tale-ui primitives, styled with @tale-ui/core design tokens.",
   "keywords": [
     "react",
     "react-component",
-    "mui",
+    "design-system",
+    "tale-ui",
     "unstyled",
     "a11y"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mui/base-ui.git",
+    "url": "git+https://github.com/Tale-UI/react.git",
     "directory": "packages/react"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mui/base-ui/issues"
-  },
-  "homepage": "https://base-ui.com",
-  "funding": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/mui-org"
-  },
   "exports": {
     ".": "./src/index.ts",
     "./accordion": "./src/accordion/index.ts",
@@ -72,7 +64,7 @@
   },
   "imports": {
     "#test-utils": "./test/index.ts",
-    "#formatErrorMessage": "@base-ui/utils/formatErrorMessage"
+    "#formatErrorMessage": "@tale-ui/utils/formatErrorMessage"
   },
   "type": "commonjs",
   "scripts": {
@@ -85,13 +77,14 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.28.6",
-    "@base-ui/utils": "workspace:*",
+    "@tale-ui/utils": "workspace:*",
     "@floating-ui/react-dom": "^2.1.7",
     "@floating-ui/utils": "^0.2.10",
     "tabbable": "^6.4.0",
     "use-sync-external-store": "^1.6.0"
   },
   "devDependencies": {
+    "@tale-ui/core": "^1.1.6",
     "@testing-library/react": "16.3.2",
     "@testing-library/user-event": "14.6.1",
     "@types/chai": "5.2.3",

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { createRenderer, isJSDOM } from '#test-utils';
-import { Tooltip } from '@base-ui/react/tooltip';
+import { Tooltip } from '@tale-ui/react/tooltip';
 import { screen, waitFor, randomStringValue, act, flushMicrotasks } from '@mui/internal-test-utils';
 
 describe('<Tooltip.Root />', () => {
   beforeEach(async () => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
 
     await act(async () => {
       document.body.click();
@@ -713,7 +713,7 @@ describe('<Tooltip.Root />', () => {
     });
 
     it('should not have inline scale style after switching triggers', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
       const testTooltip = Tooltip.createHandle<number>();
 

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { useMergedRefs, useMergedRefsN } from '@base-ui/utils/useMergedRefs';
-import { getReactElementRef } from '@base-ui/utils/getReactElementRef';
-import { mergeObjects } from '@base-ui/utils/mergeObjects';
-import { warn } from '@base-ui/utils/warn';
-import type { BaseUIComponentProps, ComponentRenderFn, HTMLProps } from './types';
+import { useMergedRefs, useMergedRefsN } from '@tale-ui/utils/useMergedRefs';
+import { getReactElementRef } from '@tale-ui/utils/getReactElementRef';
+import { mergeObjects } from '@tale-ui/utils/mergeObjects';
+import { warn } from '@tale-ui/utils/warn';
+import type { TaleUIComponentProps, ComponentRenderFn, HTMLProps } from './types';
 import { getStateAttributesProps, StateAttributesMapping } from './getStateAttributesProps';
 import { resolveClassName } from './resolveClassName';
 import { resolveStyle } from './resolveStyle';
@@ -13,7 +13,7 @@ import { EMPTY_OBJECT } from './constants';
 type IntrinsicTagName = keyof React.JSX.IntrinsicElements;
 
 /**
- * Renders a Base UI element.
+ * Renders a Tale UI element.
  *
  * @param element The default HTML element to render. Can be overridden by the `render` prop.
  * @param componentProps An object containing the `render` and `className` props to be used for element customization. Other props are ignored.
@@ -113,7 +113,7 @@ const REACT_LAZY_TYPE = Symbol.for('react.lazy');
 
 function evaluateRenderProp<T extends React.ElementType, S>(
   element: IntrinsicTagName | undefined,
-  render: BaseUIComponentProps<T, S>['render'],
+  render: TaleUIComponentProps<T, S>['render'],
   props: React.HTMLAttributes<any> & React.RefAttributes<any>,
   state: S,
 ): React.ReactElement {
@@ -134,7 +134,7 @@ function evaluateRenderProp<T extends React.ElementType, S>(
     // https://github.com/facebook/react/blob/a0566250b210499b4c5677f5ac2eedbd71d51a1b/packages/react/src/ReactChildren.js#L186
     if (newElement?.$$typeof === REACT_LAZY_TYPE) {
       const children = React.Children.toArray(render);
-      newElement = children[0] as BaseUIComponentProps<T, S>['render'];
+      newElement = children[0] as TaleUIComponentProps<T, S>['render'];
     }
 
     // There is a high number of indirections, the error message thrown by React.cloneElement() is
@@ -147,7 +147,7 @@ function evaluateRenderProp<T extends React.ElementType, S>(
       if (!React.isValidElement(newElement)) {
         throw new Error(
           [
-            'Base UI: The `render` prop was provided an invalid React element as `React.isValidElement(render)` is `false`.',
+            'Tale UI: The `render` prop was provided an invalid React element as `React.isValidElement(render)` is `false`.',
             'A valid React element must be provided to the `render` prop because it is cloned with props to replace the default element.',
             'https://base-ui.com/r/invalid-render-prop',
           ].join('\n'),
@@ -164,7 +164,7 @@ function evaluateRenderProp<T extends React.ElementType, S>(
   }
   // Unreachable, but the typings on `useRenderElement` need to be reworked
   // to annotate it correctly.
-  throw new Error('Base UI: Render element or function are not defined.');
+  throw new Error('Tale UI: Render element or function are not defined.');
 }
 
 function warnIfRenderPropLooksLikeComponent(renderFn: { name: string }) {
@@ -181,7 +181,7 @@ function warnIfRenderPropLooksLikeComponent(renderFn: { name: string }) {
   warn(
     `The \`render\` prop received a function named \`${functionName}\` that starts with an uppercase letter.`,
     'This usually means a React component was passed directly as `render={Component}`.',
-    'Base UI calls `render` as a plain function, which can break the Rules of Hooks during reconciliation.',
+    'Tale UI calls `render` as a plain function, which can break the Rules of Hooks during reconciliation.',
     'If this is an intentional render callback, rename it to start with a lowercase letter.',
     'Use `render={<Component />}` or `render={(props) => <Component {...props} />}` instead.',
     'https://base-ui.com/r/invalid-render-prop',

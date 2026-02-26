@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@tale-ui/react/combobox';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { expect } from 'chai';
 import { spy } from 'sinon';
-import { Field } from '@base-ui/react/field';
+import { Field } from '@tale-ui/react/field';
 import { REASONS } from '../../utils/reasons';
 
 describe('<Combobox.Input />', () => {

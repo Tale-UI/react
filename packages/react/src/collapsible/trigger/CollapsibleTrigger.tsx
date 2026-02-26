@@ -4,7 +4,7 @@ import { triggerOpenStateMapping } from '../../utils/collapsibleOpenStateMapping
 import type { StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import { transitionStatusMapping } from '../../utils/stateAttributesMapping';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { BaseUIComponentProps, NativeButtonProps } from '../../utils/types';
+import { TaleUIComponentProps, NativeButtonProps } from '../../utils/types';
 import { useButton } from '../../use-button';
 import { useCollapsibleRootContext } from '../root/CollapsibleRootContext';
 import { CollapsibleRoot } from '../root/CollapsibleRoot';
@@ -18,7 +18,7 @@ const stateAttributesMapping: StateAttributesMapping<CollapsibleRoot.State> = {
  * A button that opens and closes the collapsible panel.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Collapsible](https://base-ui.com/react/components/collapsible)
+ * Documentation: [Tale UI Collapsible](https://base-ui.com/react/components/collapsible)
  */
 export const CollapsibleTrigger = React.forwardRef(function CollapsibleTrigger(
   componentProps: CollapsibleTrigger.Props,
@@ -67,7 +67,7 @@ export const CollapsibleTrigger = React.forwardRef(function CollapsibleTrigger(
 });
 
 export interface CollapsibleTriggerProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', CollapsibleRoot.State> {}
+  extends NativeButtonProps, TaleUIComponentProps<'button', CollapsibleRoot.State> {}
 
 export namespace CollapsibleTrigger {
   export type Props = CollapsibleTriggerProps;

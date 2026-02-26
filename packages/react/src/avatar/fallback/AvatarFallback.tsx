@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { BaseUIComponentProps } from '../../utils/types';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
+import { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useAvatarRootContext } from '../root/AvatarRootContext';
 import type { AvatarRoot } from '../root/AvatarRoot';
@@ -11,7 +11,7 @@ import { avatarStateAttributesMapping } from '../root/stateAttributesMapping';
  * Rendered when the image fails to load or when no image is provided.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Avatar](https://base-ui.com/react/components/avatar)
+ * Documentation: [Tale UI Avatar](https://base-ui.com/react/components/avatar)
  */
 export const AvatarFallback = React.forwardRef(function AvatarFallback(
   componentProps: AvatarFallback.Props,
@@ -47,7 +47,7 @@ export const AvatarFallback = React.forwardRef(function AvatarFallback(
 
 export interface AvatarFallbackState extends AvatarRoot.State {}
 
-export interface AvatarFallbackProps extends BaseUIComponentProps<'span', AvatarFallback.State> {
+export interface AvatarFallbackProps extends TaleUIComponentProps<'span', AvatarFallback.State> {
   /**
    * How long to wait before showing the fallback. Specified in milliseconds.
    */

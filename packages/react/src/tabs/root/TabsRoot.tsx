@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import type { BaseUIComponentProps, Orientation as BaseOrientation } from '../../utils/types';
+import { useControlled } from '@tale-ui/utils/useControlled';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import type { TaleUIComponentProps, Orientation as BaseOrientation } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { CompositeList } from '../../composite/list/CompositeList';
 import type { CompositeMetadata } from '../../composite/list/CompositeList';
@@ -12,14 +12,14 @@ import { TabsRootContext } from './TabsRootContext';
 import { tabsStateAttributesMapping } from './stateAttributesMapping';
 import type { TabsTab } from '../tab/TabsTab';
 import type { TabsPanel } from '../panel/TabsPanel';
-import { type BaseUIChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { type TaleUIChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 
 /**
  * Groups the tabs and the corresponding panels.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
+ * Documentation: [Tale UI Tabs](https://base-ui.com/react/components/tabs)
  */
 export const TabsRoot = React.forwardRef(function TabsRoot(
   componentProps: TabsRoot.Props,
@@ -260,7 +260,7 @@ export interface TabsRootState {
   tabActivationDirection: TabsTab.ActivationDirection;
 }
 
-export interface TabsRootProps extends BaseUIComponentProps<'div', TabsRoot.State> {
+export interface TabsRootProps extends TaleUIComponentProps<'div', TabsRoot.State> {
   /**
    * The value of the currently active `Tab`. Use when the component is controlled.
    * When the value is `null`, no Tab will be active.
@@ -286,7 +286,7 @@ export interface TabsRootProps extends BaseUIComponentProps<'div', TabsRoot.Stat
 }
 
 export type TabsRootChangeEventReason = typeof REASONS.none;
-export type TabsRootChangeEventDetails = BaseUIChangeEventDetails<
+export type TabsRootChangeEventDetails = TaleUIChangeEventDetails<
   TabsRoot.ChangeEventReason,
   { activationDirection: TabsTab.ActivationDirection }
 >;

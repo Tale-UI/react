@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../utils/types';
+import type { TaleUIComponentProps } from '../utils/types';
 import { Field } from '../field';
 
 /**
  * A native input element that automatically works with [Field](https://base-ui.com/react/components/field).
  * Renders an `<input>` element.
  *
- * Documentation: [Base UI Input](https://base-ui.com/react/components/input)
+ * Documentation: [Tale UI Input](https://base-ui.com/react/components/input)
  */
 export const Input = React.forwardRef(function Input(
   props: Input.Props,
@@ -16,7 +16,7 @@ export const Input = React.forwardRef(function Input(
   return <Field.Control ref={forwardedRef} {...props} />;
 });
 
-export interface InputProps extends BaseUIComponentProps<'input', Input.State> {
+export interface InputProps extends TaleUIComponentProps<'input', Input.State> {
   /**
    * Callback fired when the `value` changes. Use when controlled.
    */

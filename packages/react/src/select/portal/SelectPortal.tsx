@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { useStore } from '@base-ui/utils/store';
+import { useStore } from '@tale-ui/utils/store';
 import { FloatingPortal } from '../../floating-ui-react';
 import { SelectPortalContext } from './SelectPortalContext';
 import { useSelectRootContext } from '../root/SelectRootContext';
@@ -11,7 +11,7 @@ import { selectors } from '../store';
  * By default, the portal element is appended to `<body>`.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Tale UI Select](https://base-ui.com/react/components/select)
  */
 export const SelectPortal = React.forwardRef(function SelectPortal(
   portalProps: SelectPortal.Props,

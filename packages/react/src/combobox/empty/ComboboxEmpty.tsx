@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { BaseUIComponentProps } from '../../utils/types';
+import { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import {
   useComboboxDerivedItemsContext,
@@ -40,7 +40,7 @@ export const ComboboxEmpty = React.forwardRef(function ComboboxEmpty(
 
 export interface ComboboxEmptyState {}
 
-export interface ComboboxEmptyProps extends BaseUIComponentProps<'div', ComboboxEmpty.State> {}
+export interface ComboboxEmptyProps extends TaleUIComponentProps<'div', ComboboxEmpty.State> {}
 
 export namespace ComboboxEmpty {
   export type State = ComboboxEmptyState;

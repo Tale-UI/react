@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { spy } from 'sinon';
-import { mergeProps } from '@base-ui/react/merge-props';
-import type { BaseUIEvent } from '../utils/types';
+import { mergeProps } from '@tale-ui/react/merge-props';
+import type { TaleUIEvent } from '../utils/types';
 
 describe('mergeProps', () => {
   it('merges event handlers', () => {
@@ -157,7 +157,7 @@ describe('mergeProps', () => {
     expect(mergedProps.className).to.equal(undefined);
   });
 
-  it('does not prevent internal handler if event.preventBaseUIHandler() is not called', () => {
+  it('does not prevent internal handler if event.preventTaleUIHandler() is not called', () => {
     let ran = false;
 
     const mergedProps = mergeProps<'button'>(
@@ -176,7 +176,7 @@ describe('mergeProps', () => {
     expect(ran).to.equal(true);
   });
 
-  it('prevents internal handler if event.preventBaseUIHandler() is called', () => {
+  it('prevents internal handler if event.preventTaleUIHandler() is called', () => {
     let ran = false;
 
     const mergedProps = mergeProps<'button'>(
@@ -192,7 +192,7 @@ describe('mergeProps', () => {
       },
       {
         onClick: function onClick1(event) {
-          event.preventBaseUIHandler();
+          event.preventTaleUIHandler();
         },
       },
     );
@@ -203,7 +203,7 @@ describe('mergeProps', () => {
     expect(ran).to.equal(false);
   });
 
-  it('prevents handlers merged after event.preventBaseUIHandler() is called', () => {
+  it('prevents handlers merged after event.preventTaleUIHandler() is called', () => {
     const log: string[] = [];
 
     const mergedProps = mergeProps<any>(
@@ -213,8 +213,8 @@ describe('mergeProps', () => {
         },
       },
       {
-        onClick(event: BaseUIEvent<React.MouseEvent>) {
-          event.preventBaseUIHandler();
+        onClick(event: TaleUIEvent<React.MouseEvent>) {
+          event.preventTaleUIHandler();
           log.push('1');
         },
       },
@@ -267,7 +267,7 @@ describe('mergeProps', () => {
     expect(mergedProps.title).to.equal('internal title 1');
   });
 
-  it('sets baseUIHandlerPrevented to true after calling preventBaseUIHandler()', () => {
+  it('sets taleUIHandlerPrevented to true after calling preventTaleUIHandler()', () => {
     let observedFlag: boolean | undefined;
 
     const mergedProps = mergeProps<'button'>(
@@ -276,8 +276,8 @@ describe('mergeProps', () => {
       },
       {
         onClick(event) {
-          event.preventBaseUIHandler();
-          observedFlag = event.baseUIHandlerPrevented;
+          event.preventTaleUIHandler();
+          observedFlag = event.taleUIHandlerPrevented;
         },
       },
     );
@@ -380,9 +380,9 @@ describe('mergeProps', () => {
           },
         },
         (props) => ({
-          onClick(event: BaseUIEvent<React.MouseEvent>) {
-            // Call preventBaseUIHandler to signal prevention
-            event.preventBaseUIHandler();
+          onClick(event: TaleUIEvent<React.MouseEvent>) {
+            // Call preventTaleUIHandler to signal prevention
+            event.preventTaleUIHandler();
             log.push('getter-handler');
             // Manually calling the previous handler - this bypasses automatic prevention!
             props.onClick?.({ nativeEvent: new MouseEvent('click') } as any);
@@ -390,7 +390,7 @@ describe('mergeProps', () => {
         }),
         {
           onClick() {
-            // This handler does NOT call preventBaseUIHandler, so getter-handler runs
+            // This handler does NOT call preventTaleUIHandler, so getter-handler runs
             log.push('last-handler');
           },
         },
@@ -399,11 +399,11 @@ describe('mergeProps', () => {
       mergedProps.onClick?.({ nativeEvent: new MouseEvent('click') } as any);
 
       // last-handler runs first, then getter-handler (not prevented), then getter-handler
-      // manually calls first-handler which runs despite preventBaseUIHandler being called
+      // manually calls first-handler which runs despite preventTaleUIHandler being called
       expect(log).to.deep.equal(['last-handler', 'getter-handler', 'first-handler']);
     });
 
-    it('allows props getter handlers to check baseUIHandlerPrevented manually', () => {
+    it('allows props getter handlers to check taleUIHandlerPrevented manually', () => {
       const log: string[] = [];
 
       const mergedProps = mergeProps<'button'>(
@@ -413,19 +413,19 @@ describe('mergeProps', () => {
           },
         },
         (props) => ({
-          onClick(event: BaseUIEvent<React.MouseEvent>) {
-            // Call preventBaseUIHandler to signal prevention
-            event.preventBaseUIHandler();
+          onClick(event: TaleUIEvent<React.MouseEvent>) {
+            // Call preventTaleUIHandler to signal prevention
+            event.preventTaleUIHandler();
             log.push('getter-handler');
             // Check the flag before manually calling previous handlers - this respects prevention
-            if (!event.baseUIHandlerPrevented) {
+            if (!event.taleUIHandlerPrevented) {
               props.onClick?.({ nativeEvent: new MouseEvent('click') } as any);
             }
           },
         }),
         {
           onClick() {
-            // This handler does NOT call preventBaseUIHandler, so getter-handler runs
+            // This handler does NOT call preventTaleUIHandler, so getter-handler runs
             log.push('last-handler');
           },
         },

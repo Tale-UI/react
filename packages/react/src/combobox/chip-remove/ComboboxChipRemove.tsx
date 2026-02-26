@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
-import { useStore } from '@base-ui/utils/store';
+import { useStore } from '@tale-ui/utils/store';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { BaseUIComponentProps, NativeButtonProps } from '../../utils/types';
+import { TaleUIComponentProps, NativeButtonProps } from '../../utils/types';
 import { useComboboxRootContext } from '../root/ComboboxRootContext';
 import { useComboboxChipContext } from '../chip/ComboboxChipContext';
 import { useButton } from '../../use-button';
 import { stopEvent } from '../../floating-ui-react/utils';
 import { selectors } from '../store';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { findItemIndex } from '../../utils/itemEquality';
 
@@ -132,7 +132,7 @@ export interface ComboboxChipRemoveState {
 }
 
 export interface ComboboxChipRemoveProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', ComboboxChipRemove.State> {}
+  extends NativeButtonProps, TaleUIComponentProps<'button', ComboboxChipRemove.State> {}
 
 export namespace ComboboxChipRemove {
   export type State = ComboboxChipRemoveState;

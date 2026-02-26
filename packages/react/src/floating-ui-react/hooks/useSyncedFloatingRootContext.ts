@@ -1,10 +1,10 @@
 'use client';
-import { useId } from '@base-ui/utils/useId';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
-import { ReactStore } from '@base-ui/utils/store';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useId } from '@tale-ui/utils/useId';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
+import { ReactStore } from '@tale-ui/utils/store';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
 import { isElement } from '@floating-ui/utils/dom';
-import { BaseUIChangeEventDetails } from '../../types';
+import { TaleUIChangeEventDetails } from '../../types';
 import { useFloatingParentNodeId } from '../components/FloatingTree';
 import { PopupStoreContext, PopupStoreSelectors, PopupStoreState } from '../../utils/popups';
 import { FloatingRootState, FloatingRootStore } from '../components/FloatingRootStore';
@@ -19,7 +19,7 @@ export interface UseSyncedFloatingRootContextOptions<State extends PopupStoreSta
    * Whether the Popup element is passed to Floating UI as the floating element instead of the default Positioner.
    */
   treatPopupAsFloatingElement?: boolean | undefined;
-  onOpenChange(open: boolean, eventDetails: BaseUIChangeEventDetails<string>): void;
+  onOpenChange(open: boolean, eventDetails: TaleUIChangeEventDetails<string>): void;
 }
 
 /**

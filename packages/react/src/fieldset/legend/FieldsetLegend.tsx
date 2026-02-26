@@ -1,16 +1,16 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useFieldsetRootContext } from '../root/FieldsetRootContext';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 
 /**
  * An accessible label that is automatically associated with the fieldset.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Fieldset](https://base-ui.com/react/components/fieldset)
+ * Documentation: [Tale UI Fieldset](https://base-ui.com/react/components/fieldset)
  */
 export const FieldsetLegend = React.forwardRef(function FieldsetLegend(
   componentProps: FieldsetLegend.Props,
@@ -20,7 +20,7 @@ export const FieldsetLegend = React.forwardRef(function FieldsetLegend(
 
   const { disabled, setLegendId } = useFieldsetRootContext();
 
-  const id = useBaseUiId(idProp);
+  const id = useTaleUiId(idProp);
 
   useIsoLayoutEffect(() => {
     setLegendId(id);
@@ -49,7 +49,7 @@ export interface FieldsetLegendState {
   disabled: boolean;
 }
 
-export interface FieldsetLegendProps extends BaseUIComponentProps<'div', FieldsetLegend.State> {}
+export interface FieldsetLegendProps extends TaleUIComponentProps<'div', FieldsetLegend.State> {}
 
 export namespace FieldsetLegend {
   export type State = FieldsetLegendState;

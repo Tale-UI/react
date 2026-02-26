@@ -16,7 +16,7 @@ export function useMenuRadioGroupContext() {
   const context = React.useContext(MenuRadioGroupContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: MenuRadioGroupContext is missing. MenuRadioGroup parts must be placed within <Menu.RadioGroup>.',
+      'Tale UI: MenuRadioGroupContext is missing. MenuRadioGroup parts must be placed within <Menu.RadioGroup>.',
     );
   }
 

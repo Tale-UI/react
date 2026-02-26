@@ -1,4 +1,4 @@
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@tale-ui/react/menu';
 
 export default function MenuLinkItemNavigation() {
   return (

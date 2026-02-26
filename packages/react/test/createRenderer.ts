@@ -8,23 +8,23 @@ import {
   act,
 } from '@mui/internal-test-utils';
 
-export type BaseUIRenderResult = Omit<MuiRenderResult, 'rerender' | 'setProps'> & {
+export type TaleUIRenderResult = Omit<MuiRenderResult, 'rerender' | 'setProps'> & {
   rerender: (newElement: React.ReactElement<DataAttributes>) => Promise<void>;
   setProps: (newProps: object) => Promise<void>;
 };
 
-type BaseUITestRenderer = Omit<Renderer, 'render'> & {
+type TaleUITestRenderer = Omit<Renderer, 'render'> & {
   render: (
     element: React.ReactElement<DataAttributes>,
     options?: RenderOptions,
-  ) => Promise<BaseUIRenderResult>;
+  ) => Promise<TaleUIRenderResult>;
 };
 
 interface DataAttributes {
   [key: `data-${string}`]: string;
 }
 
-export function createRenderer(globalOptions?: CreateRendererOptions): BaseUITestRenderer {
+export function createRenderer(globalOptions?: CreateRendererOptions): TaleUITestRenderer {
   const createRendererResult = sharedCreateRenderer(globalOptions);
   const { render: originalRender } = createRendererResult;
 

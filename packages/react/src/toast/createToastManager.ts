@@ -1,4 +1,4 @@
-import { generateId } from '@base-ui/utils/generateId';
+import { generateId } from '@tale-ui/utils/generateId';
 import type {
   ToastObject,
   ToastManagerAddOptions,

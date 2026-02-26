@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { ownerDocument } from '@tale-ui/utils/owner';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
 import { contains, getTarget, stopEvent } from '../../floating-ui-react/utils';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useContextMenuRootContext } from '../root/ContextMenuRootContext';
 import { useMenuRootContext } from '../../menu/root/MenuRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { pressableTriggerOpenStateMapping } from '../../utils/popupStateMapping';
 import { REASONS } from '../../utils/reasons';
 import { findRootOwnerId } from '../../menu/utils/findRootOwnerId';
@@ -18,7 +18,7 @@ const LONG_PRESS_DELAY = 500;
  * An area that opens the menu on right click or long press.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Context Menu](https://base-ui.com/react/components/context-menu)
+ * Documentation: [Tale UI Context Menu](https://base-ui.com/react/components/context-menu)
  */
 export const ContextMenuTrigger = React.forwardRef(function ContextMenuTrigger(
   componentProps: ContextMenuTrigger.Props,
@@ -207,7 +207,7 @@ export type ContextMenuTriggerState = {
   open: boolean;
 };
 
-export interface ContextMenuTriggerProps extends BaseUIComponentProps<
+export interface ContextMenuTriggerProps extends TaleUIComponentProps<
   'div',
   ContextMenuTrigger.State
 > {}

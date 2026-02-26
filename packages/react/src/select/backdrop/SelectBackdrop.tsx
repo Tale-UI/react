@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useStore } from '@base-ui/utils/store';
-import type { BaseUIComponentProps } from '../../utils/types';
+import { useStore } from '@tale-ui/utils/store';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useSelectRootContext } from '../root/SelectRootContext';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import type { StateAttributesMapping } from '../../utils/getStateAttributesProps';
@@ -19,7 +19,7 @@ const stateAttributesMapping: StateAttributesMapping<SelectBackdrop.State> = {
  * An overlay displayed beneath the menu popup.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Tale UI Select](https://base-ui.com/react/components/select)
  */
 export const SelectBackdrop = React.forwardRef(function SelectBackdrop(
   componentProps: SelectBackdrop.Props,
@@ -63,7 +63,7 @@ export interface SelectBackdropState {
   transitionStatus: TransitionStatus;
 }
 
-export interface SelectBackdropProps extends BaseUIComponentProps<'div', SelectBackdrop.State> {}
+export interface SelectBackdropProps extends TaleUIComponentProps<'div', SelectBackdrop.State> {}
 
 export namespace SelectBackdrop {
   export type State = SelectBackdropState;

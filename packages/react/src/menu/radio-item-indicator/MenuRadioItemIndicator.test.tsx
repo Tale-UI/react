@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@tale-ui/react/menu';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { expect } from 'chai';
@@ -76,7 +76,7 @@ describe('<Menu.RadioItemIndicator />', () => {
       skip();
     }
 
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
     let animationFinished = false;
     const notifyAnimationFinished = () => {

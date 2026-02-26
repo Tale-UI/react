@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useOnMount } from '@base-ui/utils/useOnMount';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { useOnMount } from '@tale-ui/utils/useOnMount';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
 import { ToastContext } from './ToastProviderContext';
 import type { ToastManager } from '../createToastManager';
 import { ToastStore } from '../store';
@@ -9,7 +9,7 @@ import { ToastStore } from '../store';
 /**
  * Provides a context for creating and managing toasts.
  *
- * Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+ * Documentation: [Tale UI Toast](https://base-ui.com/react/components/toast)
  */
 export const ToastProvider: React.FC<ToastProvider.Props> = function ToastProvider(props) {
   const { children, timeout = 5000, limit = 3, toastManager } = props;

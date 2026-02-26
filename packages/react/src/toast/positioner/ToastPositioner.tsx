@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { isElement } from '@floating-ui/utils/dom';
 import { useAnchorPositioning, type Side, type Align } from '../../utils/useAnchorPositioning';
-import type { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import type { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { EMPTY_OBJECT, POPUP_COLLISION_AVOIDANCE } from '../../utils/constants';
@@ -18,7 +18,7 @@ import { useToastProviderContext } from '../provider/ToastProviderContext';
  * Positions the toast against the anchor.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+ * Documentation: [Tale UI Toast](https://base-ui.com/react/components/toast)
  */
 export const ToastPositioner = React.forwardRef(function ToastPositioner(
   componentProps: ToastPositioner.Props,
@@ -139,7 +139,7 @@ export interface ToastPositionerState {
 
 export interface ToastPositionerProps
   extends
-    BaseUIComponentProps<'div', ToastPositioner.State>,
+    TaleUIComponentProps<'div', ToastPositioner.State>,
     Omit<useAnchorPositioning.SharedParameters, 'side' | 'anchor'> {
   /**
    * An element to position the toast against.

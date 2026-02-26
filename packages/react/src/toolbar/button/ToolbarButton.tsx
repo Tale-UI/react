@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { BaseUIComponentProps, NativeButtonProps } from '../../utils/types';
+import { TaleUIComponentProps, NativeButtonProps } from '../../utils/types';
 import { useButton } from '../../use-button';
 import type { ToolbarRoot } from '../root/ToolbarRoot';
 import { useToolbarRootContext } from '../root/ToolbarRootContext';
@@ -11,7 +11,7 @@ import { CompositeItem } from '../../composite/item/CompositeItem';
  * A button that can be used as-is or as a trigger for other components.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
+ * Documentation: [Tale UI Toolbar](https://base-ui.com/react/components/toolbar)
  */
 export const ToolbarButton = React.forwardRef(function ToolbarButton(
   componentProps: ToolbarButton.Props,
@@ -72,7 +72,7 @@ export interface ToolbarButtonState extends ToolbarRoot.State {
 }
 
 export interface ToolbarButtonProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', ToolbarButton.State> {
+  extends NativeButtonProps, TaleUIComponentProps<'button', ToolbarButton.State> {
   /**
    * When `true` the item is disabled.
    * @default false

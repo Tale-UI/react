@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { PreviewCard } from '@base-ui/react/preview-card';
+import { PreviewCard } from '@tale-ui/react/preview-card';
 import { act, fireEvent, screen, flushMicrotasks, waitFor } from '@mui/internal-test-utils';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
 import { expect } from 'chai';
 import { spy } from 'sinon';
 import { createRenderer, isJSDOM, popupConformanceTests } from '#test-utils';
@@ -9,7 +9,7 @@ import { CLOSE_DELAY, OPEN_DELAY } from '../utils/constants';
 
 describe('<PreviewCard.Root />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
   });
 
   const { render, clock } = createRenderer();
@@ -307,7 +307,7 @@ describe('<PreviewCard.Root />', () => {
       });
     });
 
-    describe('BaseUIChangeEventDetails', () => {
+    describe('TaleUIChangeEventDetails', () => {
       it('onOpenChange cancel() prevents opening while uncontrolled', async () => {
         await render(
           <TestPreviewCard
@@ -409,7 +409,7 @@ describe('<PreviewCard.Root />', () => {
       });
 
       it('is called on close when the exit animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = spy();
 
@@ -494,7 +494,7 @@ describe('<PreviewCard.Root />', () => {
       });
 
       it('is called on close when the exit animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = spy();
 
@@ -582,7 +582,7 @@ describe('<PreviewCard.Root />', () => {
       });
 
       it('is called on open when the enter animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = spy();
 

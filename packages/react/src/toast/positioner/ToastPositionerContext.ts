@@ -18,7 +18,7 @@ export function useToastPositionerContext() {
   const context = React.useContext(ToastPositionerContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: ToastPositionerContext is missing. ToastPositioner parts must be placed within <Toast.Positioner>.',
+      'Tale UI: ToastPositionerContext is missing. ToastPositioner parts must be placed within <Toast.Positioner>.',
     );
   }
   return context;

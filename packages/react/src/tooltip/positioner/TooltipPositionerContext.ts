@@ -19,7 +19,7 @@ export function useTooltipPositionerContext() {
   const context = React.useContext(TooltipPositionerContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: TooltipPositionerContext is missing. TooltipPositioner parts must be placed within <Tooltip.Positioner>.',
+      'Tale UI: TooltipPositionerContext is missing. TooltipPositioner parts must be placed within <Tooltip.Positioner>.',
     );
   }
   return context;

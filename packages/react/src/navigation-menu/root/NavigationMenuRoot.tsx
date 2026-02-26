@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
 import { isHTMLElement } from '@floating-ui/utils/dom';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { ownerDocument } from '@base-ui/utils/owner';
+import { useControlled } from '@tale-ui/utils/useControlled';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { ownerDocument } from '@tale-ui/utils/owner';
 import {
   FloatingTree,
   useFloatingNodeId,
@@ -17,11 +17,11 @@ import {
   NavigationMenuTreeContext,
   useNavigationMenuRootContext,
 } from './NavigationMenuRootContext';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useOpenChangeComplete } from '../../utils/useOpenChangeComplete';
 import { useTransitionStatus } from '../../utils/useTransitionStatus';
 import { setFixedSize } from '../utils/setFixedSize';
-import { type BaseUIChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { type TaleUIChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 
 const blockedReturnFocusReasons = new Set<string>([
@@ -34,7 +34,7 @@ const blockedReturnFocusReasons = new Set<string>([
  * Groups all parts of the navigation menu.
  * Renders a `<nav>` element at the root, or `<div>` element when nested.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Tale UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
  */
 export const NavigationMenuRoot = React.forwardRef(function NavigationMenuRoot(
   componentProps: NavigationMenuRoot.Props,
@@ -288,7 +288,7 @@ export interface NavigationMenuRootState {
   nested: boolean;
 }
 
-export interface NavigationMenuRootProps extends BaseUIComponentProps<
+export interface NavigationMenuRootProps extends TaleUIComponentProps<
   'nav',
   NavigationMenuRoot.State
 > {
@@ -353,7 +353,7 @@ export type NavigationMenuRootChangeEventReason =
   | typeof REASONS.none;
 
 export type NavigationMenuRootChangeEventDetails =
-  BaseUIChangeEventDetails<NavigationMenuRoot.ChangeEventReason>;
+  TaleUIChangeEventDetails<NavigationMenuRoot.ChangeEventReason>;
 
 export namespace NavigationMenuRoot {
   export type State = NavigationMenuRootState;

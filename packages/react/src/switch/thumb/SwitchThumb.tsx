@@ -4,14 +4,14 @@ import type { SwitchRoot } from '../root/SwitchRoot';
 import { useSwitchRootContext } from '../root/SwitchRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useFieldRootContext } from '../../field/root/FieldRootContext';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { stateAttributesMapping } from '../stateAttributesMapping';
 
 /**
  * The movable part of the switch that indicates whether the switch is on or off.
  * Renders a `<span>`.
  *
- * Documentation: [Base UI Switch](https://base-ui.com/react/components/switch)
+ * Documentation: [Tale UI Switch](https://base-ui.com/react/components/switch)
  */
 export const SwitchThumb = React.forwardRef(function SwitchThumb(
   componentProps: SwitchThumb.Props,
@@ -32,7 +32,7 @@ export const SwitchThumb = React.forwardRef(function SwitchThumb(
   });
 });
 
-export interface SwitchThumbProps extends BaseUIComponentProps<'span', SwitchThumb.State> {}
+export interface SwitchThumbProps extends TaleUIComponentProps<'span', SwitchThumb.State> {}
 
 export interface SwitchThumbState extends SwitchRoot.State {}
 

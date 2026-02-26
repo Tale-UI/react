@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useId } from '@base-ui/utils/useId';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import type { BaseUIComponentProps } from '../../utils/types';
+import { useId } from '@tale-ui/utils/useId';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useToastRootContext } from '../root/ToastRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
 
@@ -11,7 +11,7 @@ import { useRenderElement } from '../../utils/useRenderElement';
  * Can be used as the default message for the toast when no title is provided.
  * Renders a `<p>` element.
  *
- * Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+ * Documentation: [Tale UI Toast](https://base-ui.com/react/components/toast)
  */
 export const ToastDescription = React.forwardRef(function ToastDescription(
   componentProps: ToastDescription.Props,
@@ -67,7 +67,7 @@ export interface ToastDescriptionState {
   type: string | undefined;
 }
 
-export interface ToastDescriptionProps extends BaseUIComponentProps<'p', ToastDescription.State> {}
+export interface ToastDescriptionProps extends TaleUIComponentProps<'p', ToastDescription.State> {}
 
 export namespace ToastDescription {
   export type State = ToastDescriptionState;

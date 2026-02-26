@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Select } from '@base-ui/react/select';
+import { Select } from '@tale-ui/react/select';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Select.Portal />', () => {

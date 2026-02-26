@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { expect } from 'chai';
-import { Checkbox } from '@base-ui/react/checkbox';
+import { Checkbox } from '@tale-ui/react/checkbox';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { CheckboxRootContext } from '../root/CheckboxRootContext';
@@ -20,7 +20,7 @@ const testContext = {
 
 describe('<Checkbox.Indicator />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
   });
 
   const { render } = createRenderer();
@@ -131,7 +131,7 @@ describe('<Checkbox.Indicator />', () => {
       skip();
     }
 
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
     let animationFinished = false;
     const notifyAnimationFinished = () => {
@@ -183,11 +183,11 @@ describe('<Checkbox.Indicator />', () => {
 
   describe.skipIf(isJSDOM)('animations', () => {
     afterEach(() => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
     });
 
     it('triggers enter animation via data-starting-style when mounting', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
       let transitionFinished = false;
       function notifyTransitionFinished() {
@@ -241,7 +241,7 @@ describe('<Checkbox.Indicator />', () => {
     });
 
     it('applies data-ending-style before unmount', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
       const style = `
         @keyframes test-anim {

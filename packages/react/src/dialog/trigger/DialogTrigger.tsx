@@ -3,19 +3,19 @@ import * as React from 'react';
 import { useDialogRootContext } from '../root/DialogRootContext';
 import { useButton } from '../../use-button/useButton';
 import { useRenderElement } from '../../utils/useRenderElement';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../utils/types';
+import type { TaleUIComponentProps, NativeButtonProps } from '../../utils/types';
 import { triggerOpenStateMapping } from '../../utils/popupStateMapping';
 import { CLICK_TRIGGER_IDENTIFIER } from '../../utils/constants';
 import { DialogHandle } from '../store/DialogHandle';
 import { useTriggerDataForwarding } from '../../utils/popups';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { useClick, useInteractions } from '../../floating-ui-react';
 
 /**
  * A button that opens the dialog.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+ * Documentation: [Tale UI Dialog](https://base-ui.com/react/components/dialog)
  */
 export const DialogTrigger = React.forwardRef(function DialogTrigger(
   componentProps: DialogTrigger.Props,
@@ -36,11 +36,11 @@ export const DialogTrigger = React.forwardRef(function DialogTrigger(
   const store = handle?.store ?? dialogRootContext?.store;
   if (!store) {
     throw new Error(
-      'Base UI: <Dialog.Trigger> must be used within <Dialog.Root> or provided with a handle.',
+      'Tale UI: <Dialog.Trigger> must be used within <Dialog.Root> or provided with a handle.',
     );
   }
 
-  const thisTriggerId = useBaseUiId(idProp);
+  const thisTriggerId = useTaleUiId(idProp);
   const floatingContext = store.useState('floatingRootContext');
   const isOpenedByThisTrigger = store.useState('isOpenedByTrigger', thisTriggerId);
 
@@ -92,7 +92,7 @@ export interface DialogTrigger {
 }
 
 export interface DialogTriggerProps<Payload = unknown>
-  extends NativeButtonProps, BaseUIComponentProps<'button', DialogTrigger.State> {
+  extends NativeButtonProps, TaleUIComponentProps<'button', DialogTrigger.State> {
   /**
    * A handle to associate the trigger with a dialog.
    * Can be created with the Dialog.createHandle() method.

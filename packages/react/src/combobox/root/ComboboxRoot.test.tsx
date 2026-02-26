@@ -11,11 +11,11 @@ import {
 import { createRenderer, isJSDOM, popupConformanceTests } from '#test-utils';
 import { expect } from 'chai';
 import { spy } from 'sinon';
-import { Combobox } from '@base-ui/react/combobox';
-import { Dialog } from '@base-ui/react/dialog';
-import { Field } from '@base-ui/react/field';
-import { Form } from '@base-ui/react/form';
-import { useStore } from '@base-ui/utils/store';
+import { Combobox } from '@tale-ui/react/combobox';
+import { Dialog } from '@tale-ui/react/dialog';
+import { Field } from '@tale-ui/react/field';
+import { Form } from '@tale-ui/react/form';
+import { useStore } from '@tale-ui/utils/store';
 import { CompositeRoot } from '../../composite/root/CompositeRoot';
 import { CompositeItem } from '../../composite/item/CompositeItem';
 import { REASONS } from '../../utils/reasons';
@@ -67,7 +67,7 @@ function SelectedIndexProbe() {
 
 describe('<Combobox.Root />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
   });
 
   const { render } = createRenderer();

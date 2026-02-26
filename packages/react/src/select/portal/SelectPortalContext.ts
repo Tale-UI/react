@@ -6,7 +6,7 @@ export const SelectPortalContext = React.createContext<boolean | undefined>(unde
 export function useSelectPortalContext() {
   const value = React.useContext(SelectPortalContext);
   if (value === undefined) {
-    throw new Error('Base UI: <Select.Portal> is missing.');
+    throw new Error('Tale UI: <Select.Portal> is missing.');
   }
   return value;
 }

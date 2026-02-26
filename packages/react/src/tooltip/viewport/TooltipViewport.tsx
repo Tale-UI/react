@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useTooltipRootContext } from '../root/TooltipRootContext';
 import { useTooltipPositionerContext } from '../positioner/TooltipPositionerContext';
-import { BaseUIComponentProps } from '../../utils/types';
+import { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import { TooltipViewportCssVars } from './TooltipViewportCssVars';
@@ -23,7 +23,7 @@ const stateAttributesMapping: StateAttributesMapping<TooltipViewport.State> = {
  * and switching between them is animated.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+ * Documentation: [Tale UI Tooltip](https://base-ui.com/react/components/tooltip)
  */
 export const TooltipViewport = React.forwardRef(function TooltipViewport(
   componentProps: TooltipViewport.Props,
@@ -57,7 +57,7 @@ export const TooltipViewport = React.forwardRef(function TooltipViewport(
 });
 
 export namespace TooltipViewport {
-  export interface Props extends BaseUIComponentProps<'div', State> {
+  export interface Props extends TaleUIComponentProps<'div', State> {
     /**
      * The content to render inside the transition container.
      */

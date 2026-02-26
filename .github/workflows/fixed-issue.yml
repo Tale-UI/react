@@ -125,12 +125,12 @@ jobs:
 
             const typeText = isNewFeature ? 'feature' : 'fix';
 
-            const commentBody = `This ${typeText} will be available in the next npm release of Base UI.
+            const commentBody = `This ${typeText} will be available in the next npm release of Tale UI.
 
             In the meantime, you can try it out on our Canary release channel:
 
             \`\`\`sh
-            npm i https://pkg.pr.new/@base-ui/react@${prNumber}
+            npm i https://pkg.pr.new/@tale-ui/react@${prNumber}
             \`\`\``;
 
             await github.rest.issues.createComment({

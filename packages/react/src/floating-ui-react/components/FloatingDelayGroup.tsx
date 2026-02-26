@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
-import { useTimeout, Timeout } from '@base-ui/utils/useTimeout';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useTimeout, Timeout } from '@tale-ui/utils/useTimeout';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
 
 import { getDelay } from '../hooks/useHover';
 import type { FloatingRootContext, Delay, FloatingContext } from '../types';
 import {
-  BaseUIChangeEventDetails,
+  TaleUIChangeEventDetails,
   createChangeEventDetails,
-} from '../../utils/createBaseUIEventDetails';
+} from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 
 interface ContextValue {
@@ -19,7 +19,7 @@ interface ContextValue {
   timeout: Timeout;
   currentIdRef: React.RefObject<any>;
   currentContextRef: React.RefObject<{
-    onOpenChange: (open: boolean, eventDetails: BaseUIChangeEventDetails<any>) => void;
+    onOpenChange: (open: boolean, eventDetails: TaleUIChangeEventDetails<any>) => void;
     setIsInstantPhase: (value: boolean) => void;
   } | null>;
 }

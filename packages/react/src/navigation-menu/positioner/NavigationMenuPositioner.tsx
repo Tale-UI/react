@@ -1,15 +1,15 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { ownerWindow } from '@base-ui/utils/owner';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { ownerWindow } from '@tale-ui/utils/owner';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
 import {
   disableFocusInside,
   enableFocusInside,
   isOutsideEvent,
 } from '../../floating-ui-react/utils';
 import { getEmptyRootContext } from '../../floating-ui-react/utils/getEmptyRootContext';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import {
   useNavigationMenuRootContext,
@@ -29,7 +29,7 @@ const EMPTY_ROOT_CONTEXT = getEmptyRootContext();
  * Positions the navigation menu against the currently active trigger.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Tale UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
  */
 export const NavigationMenuPositioner = React.forwardRef(function NavigationMenuPositioner(
   componentProps: NavigationMenuPositioner.Props,
@@ -202,7 +202,7 @@ export interface NavigationMenuPositionerState {
 export interface NavigationMenuPositionerProps
   extends
     useAnchorPositioning.SharedParameters,
-    BaseUIComponentProps<'div', NavigationMenuPositioner.State> {}
+    TaleUIComponentProps<'div', NavigationMenuPositioner.State> {}
 
 export namespace NavigationMenuPositioner {
   export type State = NavigationMenuPositionerState;

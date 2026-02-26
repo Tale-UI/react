@@ -1,5 +1,5 @@
 import { PreviewCardStore } from './PreviewCardStore';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 
 /**
@@ -30,7 +30,7 @@ export class PreviewCardHandle<Payload> {
       : undefined;
 
     if (triggerId && !triggerElement) {
-      throw new Error(`Base UI: PreviewCardHandle.open: No trigger found with id "${triggerId}".`);
+      throw new Error(`Tale UI: PreviewCardHandle.open: No trigger found with id "${triggerId}".`);
     }
 
     this.store.setOpen(

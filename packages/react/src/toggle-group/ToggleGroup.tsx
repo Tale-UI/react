@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useControlled } from '@base-ui/utils/useControlled';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useControlled } from '@tale-ui/utils/useControlled';
 import { useRenderElement } from '../utils/useRenderElement';
-import type { BaseUIComponentProps, HTMLProps, Orientation } from '../utils/types';
+import type { TaleUIComponentProps, HTMLProps, Orientation } from '../utils/types';
 import { CompositeRoot } from '../composite/root/CompositeRoot';
 import { useToolbarRootContext } from '../toolbar/root/ToolbarRootContext';
 import { ToggleGroupContext } from './ToggleGroupContext';
 import { ToggleGroupDataAttributes } from './ToggleGroupDataAttributes';
-import type { BaseUIChangeEventDetails } from '../utils/createBaseUIEventDetails';
+import type { TaleUIChangeEventDetails } from '../utils/createTaleUIEventDetails';
 import { REASONS } from '../utils/reasons';
 
 const stateAttributesMapping = {
@@ -23,7 +23,7 @@ const stateAttributesMapping = {
 /**
  * Provides a shared state to a series of toggle buttons.
  *
- * Documentation: [Base UI Toggle Group](https://base-ui.com/react/components/toggle-group)
+ * Documentation: [Tale UI Toggle Group](https://base-ui.com/react/components/toggle-group)
  */
 export const ToggleGroup = React.forwardRef(function ToggleGroup<Value extends string>(
   componentProps: ToggleGroup.Props<Value>,
@@ -70,7 +70,7 @@ export const ToggleGroup = React.forwardRef(function ToggleGroup<Value extends s
     (
       newValue: Value,
       nextPressed: boolean,
-      eventDetails: BaseUIChangeEventDetails<typeof REASONS.none>,
+      eventDetails: TaleUIChangeEventDetails<typeof REASONS.none>,
     ) => {
       let newGroupValue: Value[];
       if (multiple) {
@@ -162,7 +162,7 @@ export interface ToggleGroupState {
   orientation: Orientation;
 }
 
-export interface ToggleGroupProps<Value extends string> extends BaseUIComponentProps<
+export interface ToggleGroupProps<Value extends string> extends TaleUIComponentProps<
   'div',
   ToggleGroup.State
 > {
@@ -210,7 +210,7 @@ export interface ToggleGroupProps<Value extends string> extends BaseUIComponentP
 
 export type ToggleGroupChangeEventReason = typeof REASONS.none;
 
-export type ToggleGroupChangeEventDetails = BaseUIChangeEventDetails<ToggleGroup.ChangeEventReason>;
+export type ToggleGroupChangeEventDetails = TaleUIChangeEventDetails<ToggleGroup.ChangeEventReason>;
 
 export namespace ToggleGroup {
   export type State = ToggleGroupState;

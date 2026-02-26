@@ -1,4 +1,4 @@
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@tale-ui/react/combobox';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 import { expect } from 'chai';
@@ -109,7 +109,7 @@ describe('<Combobox.Clear />', () => {
 
   describe.skipIf(isJSDOM)('animations', () => {
     it('triggers enter animation via data-starting-style when becoming visible', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
       let animationFinished = false;
       const notifyAnimationFinished = () => {
@@ -165,7 +165,7 @@ describe('<Combobox.Clear />', () => {
     });
 
     it('triggers exit animation via data-ending-style before unmount', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
       let animationFinished = false;
       const notifyAnimationFinished = () => {

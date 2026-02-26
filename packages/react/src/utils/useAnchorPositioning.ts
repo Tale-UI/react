@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
 import { getSide, getAlignment, type Rect, getSideAxis } from '@floating-ui/utils';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { ownerDocument } from '@tale-ui/utils/owner';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useValueAsRef } from '@tale-ui/utils/useValueAsRef';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
 import {
   autoUpdate,
   flip,

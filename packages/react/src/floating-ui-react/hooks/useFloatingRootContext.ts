@@ -1,17 +1,17 @@
 'use client';
 import { isElement } from '@floating-ui/utils/dom';
-import { useId } from '@base-ui/utils/useId';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useId } from '@tale-ui/utils/useId';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
 import type { ReferenceType } from '../types';
-import type { BaseUIChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import type { TaleUIChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { useFloatingParentNodeId } from '../components/FloatingTree';
 import { FloatingRootStore, type FloatingRootState } from '../components/FloatingRootStore';
 import { PopupTriggerMap } from '../../utils/popups';
 
 export interface UseFloatingRootContextOptions {
   open?: boolean | undefined;
-  onOpenChange?(open: boolean, eventDetails: BaseUIChangeEventDetails<string>): void;
+  onOpenChange?(open: boolean, eventDetails: TaleUIChangeEventDetails<string>): void;
   elements?:
     | {
         reference?: ReferenceType | null | undefined;

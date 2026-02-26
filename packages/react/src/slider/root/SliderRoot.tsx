@@ -1,20 +1,20 @@
 'use client';
 import * as React from 'react';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { warn } from '@base-ui/utils/warn';
-import type { BaseUIComponentProps, Orientation } from '../../utils/types';
+import { ownerDocument } from '@tale-ui/utils/owner';
+import { useControlled } from '@tale-ui/utils/useControlled';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useValueAsRef } from '@tale-ui/utils/useValueAsRef';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { warn } from '@tale-ui/utils/warn';
+import type { TaleUIComponentProps, Orientation } from '../../utils/types';
 import {
   createChangeEventDetails,
   createGenericEventDetails,
-  type BaseUIChangeEventDetails,
-  type BaseUIGenericEventDetails,
-} from '../../utils/createBaseUIEventDetails';
+  type TaleUIChangeEventDetails,
+  type TaleUIGenericEventDetails,
+} from '../../utils/createTaleUIEventDetails';
 import { useValueChanged } from '../../utils/useValueChanged';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { clamp } from '../../utils/clamp';
 import { areArraysEqual } from '../../utils/areArraysEqual';
@@ -56,7 +56,7 @@ function areValuesEqual(
  * Groups all parts of the slider.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
+ * Documentation: [Tale UI Slider](https://base-ui.com/react/components/slider)
  */
 export const SliderRoot = React.forwardRef(function SliderRoot<
   Value extends number | readonly number[],
@@ -85,7 +85,7 @@ export const SliderRoot = React.forwardRef(function SliderRoot<
     ...elementProps
   } = componentProps;
 
-  const id = useBaseUiId(idProp);
+  const id = useTaleUiId(idProp);
   const onValueChange = useStableCallback(
     onValueChangeProp as (
       value: number | number[],
@@ -461,7 +461,7 @@ export interface SliderRootState extends FieldRoot.State {
 
 export interface SliderRootProps<
   Value extends number | readonly number[] = number | readonly number[],
-> extends BaseUIComponentProps<'div', SliderRoot.State> {
+> extends TaleUIComponentProps<'div', SliderRoot.State> {
   /**
    * The uncontrolled value of the slider when it’s initially rendered.
    *
@@ -594,7 +594,7 @@ export type SliderRootChangeEventReason =
   | typeof REASONS.drag
   | typeof REASONS.keyboard
   | typeof REASONS.none;
-export type SliderRootChangeEventDetails = BaseUIChangeEventDetails<
+export type SliderRootChangeEventDetails = TaleUIChangeEventDetails<
   SliderRoot.ChangeEventReason,
   SliderRootChangeEventCustomProperties
 >;
@@ -605,7 +605,7 @@ export type SliderRootCommitEventReason =
   | typeof REASONS.drag
   | typeof REASONS.keyboard
   | typeof REASONS.none;
-export type SliderRootCommitEventDetails = BaseUIGenericEventDetails<SliderRoot.CommitEventReason>;
+export type SliderRootCommitEventDetails = TaleUIGenericEventDetails<SliderRoot.CommitEventReason>;
 
 export namespace SliderRoot {
   export type State = SliderRootState;

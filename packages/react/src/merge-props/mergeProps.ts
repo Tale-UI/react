@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { mergeObjects } from '@base-ui/utils/mergeObjects';
-import type { BaseUIEvent, WithBaseUIEvent } from '../utils/types';
+import { mergeObjects } from '@tale-ui/utils/mergeObjects';
+import type { TaleUIEvent, WithTaleUIEvent } from '../utils/types';
 
 type ElementType = React.ElementType;
-type PropsOf<T extends React.ElementType> = WithBaseUIEvent<React.ComponentPropsWithRef<T>>;
+type PropsOf<T extends React.ElementType> = WithTaleUIEvent<React.ComponentPropsWithRef<T>>;
 type InputProps<T extends React.ElementType> =
   | PropsOf<T>
   | ((otherProps: PropsOf<T>) => PropsOf<T>)
@@ -18,7 +18,7 @@ const EMPTY_PROPS = {};
  *
  * Event handlers are merged and called in right-to-left order (rightmost handler executes first, leftmost last).
  * For React synthetic events, the rightmost handler can prevent prior (left-positioned) handlers from executing
- * by calling `event.preventBaseUIHandler()`. For non-synthetic events (custom events with primitive/object values),
+ * by calling `event.preventTaleUIHandler()`. For non-synthetic events (custom events with primitive/object values),
  * all handlers always execute without prevention capability.
  *
  * The `className` prop is merged by concatenating classes in right-to-left order (rightmost class appears first in the string).
@@ -29,8 +29,8 @@ const EMPTY_PROPS = {};
  * so in the case of `(obj1, obj2, fn, obj3)`, `fn` will receive the merged props of `obj1` and `obj2`.
  * The function is responsible for chaining event handlers if needed (i.e. we don't run the merge logic).
  *
- * Event handlers returned by the functions are not automatically prevented when `preventBaseUIHandler` is called.
- * They must check `event.baseUIHandlerPrevented` themselves and bail out if it's true.
+ * Event handlers returned by the functions are not automatically prevented when `preventTaleUIHandler` is called.
+ * They must check `event.taleUIHandlerPrevented` themselves and bail out if it's true.
  *
  * @important **`ref` is not merged.**
  * @param a Props object to merge.
@@ -200,14 +200,14 @@ function mergeEventHandlers(ourHandler: Function | undefined, theirHandler: Func
 
   return (event: unknown) => {
     if (isSyntheticEvent(event)) {
-      const baseUIEvent = event as BaseUIEvent<typeof event>;
+      const taleUIEvent = event as TaleUIEvent<typeof event>;
 
-      makeEventPreventable(baseUIEvent);
+      makeEventPreventable(taleUIEvent);
 
-      const result = theirHandler(baseUIEvent);
+      const result = theirHandler(taleUIEvent);
 
-      if (!baseUIEvent.baseUIHandlerPrevented) {
-        ourHandler?.(baseUIEvent);
+      if (!taleUIEvent.taleUIHandlerPrevented) {
+        ourHandler?.(taleUIEvent);
       }
 
       return result;
@@ -219,9 +219,9 @@ function mergeEventHandlers(ourHandler: Function | undefined, theirHandler: Func
   };
 }
 
-export function makeEventPreventable<T extends React.SyntheticEvent>(event: BaseUIEvent<T>) {
-  event.preventBaseUIHandler = () => {
-    (event.baseUIHandlerPrevented as boolean) = true;
+export function makeEventPreventable<T extends React.SyntheticEvent>(event: TaleUIEvent<T>) {
+  event.preventTaleUIHandler = () => {
+    (event.taleUIHandlerPrevented as boolean) = true;
   };
 
   return event;

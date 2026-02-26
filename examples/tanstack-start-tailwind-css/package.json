@@ -1,5 +1,5 @@
 {
-  "name": "base-ui-tanstack-start",
+  "name": "tale-ui-tanstack-start",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,8 +11,8 @@
     "typescript": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@base-ui/react": "latest",
-    "@base-ui/utils": "latest",
+    "@tale-ui/react": "workspace:*",
+    "@tale-ui/utils": "workspace:*",
     "@tanstack/react-devtools": "^0.9.2",
     "@tanstack/react-router": "^1.154.12",
     "@tanstack/react-router-devtools": "^1.154.12",

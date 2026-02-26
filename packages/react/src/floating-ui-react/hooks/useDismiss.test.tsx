@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import * as React from 'react';
 import { vi } from 'vitest';
 
-import { isJSDOM } from '@base-ui/utils/detectBrowser';
+import { isJSDOM } from '@tale-ui/utils/detectBrowser';
 import {
   FloatingFocusManager,
   FloatingNode,

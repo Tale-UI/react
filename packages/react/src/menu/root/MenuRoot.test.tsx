@@ -8,10 +8,10 @@ import {
   screen,
   waitFor,
 } from '@mui/internal-test-utils';
-import { DirectionProvider } from '@base-ui/react/direction-provider';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
-import { Menu } from '@base-ui/react/menu';
-import { Dialog } from '@base-ui/react/dialog';
+import { DirectionProvider } from '@tale-ui/react/direction-provider';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
+import { Menu } from '@tale-ui/react/menu';
+import { Dialog } from '@tale-ui/react/dialog';
 import userEvent from '@testing-library/user-event';
 import { spy } from 'sinon';
 import { createRenderer, isJSDOM, popupConformanceTests, wait } from '#test-utils';
@@ -20,7 +20,7 @@ import { PATIENT_CLICK_THRESHOLD } from '../../utils/constants';
 
 describe('<Menu.Root />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
   });
 
   const { render } = createRenderer();
@@ -863,7 +863,7 @@ describe('<Menu.Root />', () => {
 
         const isScrollLocked =
           doc.documentElement.style.overflow === 'hidden' ||
-          doc.documentElement.hasAttribute('data-base-ui-scroll-locked') ||
+          doc.documentElement.hasAttribute('data-tale-ui-scroll-locked') ||
           doc.body.style.overflow === 'hidden';
 
         expect(isScrollLocked).to.equal(false);
@@ -880,7 +880,7 @@ describe('<Menu.Root />', () => {
 
         const isScrollLocked =
           doc.documentElement.style.overflow === 'hidden' ||
-          doc.documentElement.hasAttribute('data-base-ui-scroll-locked') ||
+          doc.documentElement.hasAttribute('data-tale-ui-scroll-locked') ||
           doc.body.style.overflow === 'hidden';
 
         expect(isScrollLocked).to.equal(true);
@@ -966,7 +966,7 @@ describe('<Menu.Root />', () => {
       });
 
       it('is called on close when the exit animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = spy();
 
@@ -1044,7 +1044,7 @@ describe('<Menu.Root />', () => {
       });
 
       it('is called on open when the enter animation finishes', async () => {
-        globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+        globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
         const onOpenChangeComplete = spy();
 
@@ -1434,7 +1434,7 @@ describe('<Menu.Root />', () => {
       });
     });
 
-    describe('BaseUIChangeEventDetails', () => {
+    describe('TaleUIChangeEventDetails', () => {
       it('onOpenChange cancel() prevents opening while uncontrolled', async () => {
         await render(
           <TestMenu

@@ -8,9 +8,9 @@ import {
   isLastTraversableNode,
   isWebKit,
 } from '@floating-ui/utils/dom';
-import { Timeout, useTimeout } from '@base-ui/utils/useTimeout';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { ownerDocument } from '@base-ui/utils/owner';
+import { Timeout, useTimeout } from '@tale-ui/utils/useTimeout';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { ownerDocument } from '@tale-ui/utils/owner';
 import {
   contains,
   getTarget,
@@ -25,7 +25,7 @@ import {
 import { useFloatingTree } from '../components/FloatingTree';
 import { FloatingTreeStore } from '../components/FloatingTreeStore';
 import type { ElementProps, FloatingContext, FloatingRootContext } from '../types';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { createAttribute } from '../utils/createAttribute';
 

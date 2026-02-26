@@ -1,4 +1,4 @@
-import { Accordion } from '@base-ui/react/accordion';
+import { Accordion } from '@tale-ui/react/accordion';
 import { describeConformance, createRenderer } from '#test-utils';
 
 describe('<Accordion.Panel />', () => {

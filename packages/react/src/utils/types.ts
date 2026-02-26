@@ -1,7 +1,7 @@
 import type * as React from 'react';
-import type { BaseUIEvent, ComponentRenderFn, HTMLProps } from '../types';
+import type { TaleUIEvent, ComponentRenderFn, HTMLProps } from '../types';
 
-export type { HTMLProps, BaseUIEvent, ComponentRenderFn };
+export type { HTMLProps, TaleUIEvent, ComponentRenderFn };
 
 export interface FloatingUIOpenChangeDetails {
   open: boolean;
@@ -11,31 +11,31 @@ export interface FloatingUIOpenChangeDetails {
   triggerElement?: Element | undefined;
 }
 
-type WithPreventBaseUIHandler<T> = T extends (event: infer E) => any
+type WithPreventTaleUIHandler<T> = T extends (event: infer E) => any
   ? E extends React.SyntheticEvent<Element, Event>
-    ? (event: BaseUIEvent<E>) => ReturnType<T>
+    ? (event: TaleUIEvent<E>) => ReturnType<T>
     : T
   : T extends undefined
     ? undefined
     : T;
 
 /**
- * Adds a `preventBaseUIHandler` method to all event handlers.
+ * Adds a `preventTaleUIHandler` method to all event handlers.
  */
-export type WithBaseUIEvent<T> = {
-  [K in keyof T]: WithPreventBaseUIHandler<T[K]>;
+export type WithTaleUIEvent<T> = {
+  [K in keyof T]: WithPreventTaleUIHandler<T[K]>;
 };
 
 /**
- * Props shared by all Base UI components.
+ * Props shared by all Tale UI components.
  * Contains `className` (string or callback taking the component's state as an argument) and `render` (function to customize rendering).
  */
-export type BaseUIComponentProps<
+export type TaleUIComponentProps<
   ElementType extends React.ElementType,
   State,
   RenderFunctionProps = HTMLProps,
 > = Omit<
-  WithBaseUIEvent<React.ComponentPropsWithRef<ElementType>>,
+  WithTaleUIEvent<React.ComponentPropsWithRef<ElementType>>,
   'className' | 'color' | 'defaultValue' | 'defaultChecked'
 > & {
   /**

@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
+import { useMergedRefs } from '@tale-ui/utils/useMergedRefs';
 import { useButton } from '../../use-button';
 import { mergeProps } from '../../merge-props';
-import { HTMLProps, BaseUIEvent } from '../../utils/types';
+import { HTMLProps, TaleUIEvent } from '../../utils/types';
 import { MenuStore } from '../store/MenuStore';
 import { useMenuItemCommonProps } from './useMenuItemCommonProps';
 
@@ -53,9 +53,9 @@ export function useMenuItem(params: useMenuItem.Parameters): useMenuItem.ReturnV
 
             itemMetadata.setActive();
           },
-          onKeyUp(event: BaseUIEvent<React.KeyboardEvent>) {
+          onKeyUp(event: TaleUIEvent<React.KeyboardEvent>) {
             if (event.key === ' ' && store.context.typingRef.current) {
-              event.preventBaseUIHandler();
+              event.preventTaleUIHandler();
             }
           },
         },

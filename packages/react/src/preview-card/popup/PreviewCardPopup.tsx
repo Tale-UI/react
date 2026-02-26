@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
 import { usePreviewCardRootContext } from '../root/PreviewCardContext';
 import { usePreviewCardPositionerContext } from '../positioner/PreviewCardPositionerContext';
 import type { StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import type { Align, Side } from '../../utils/useAnchorPositioning';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { popupStateMapping as baseMapping } from '../../utils/popupStateMapping';
 import type { TransitionStatus } from '../../utils/useTransitionStatus';
 import { transitionStatusMapping } from '../../utils/stateAttributesMapping';
@@ -23,7 +23,7 @@ const stateAttributesMapping: StateAttributesMapping<PreviewCardPopup.State> = {
  * A container for the preview card contents.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)
+ * Documentation: [Tale UI Preview Card](https://base-ui.com/react/components/preview-card)
  */
 export const PreviewCardPopup = React.forwardRef(function PreviewCardPopup(
   componentProps: PreviewCardPopup.Props,
@@ -85,7 +85,7 @@ export interface PreviewCardPopupState {
   transitionStatus: TransitionStatus;
 }
 
-export interface PreviewCardPopupProps extends BaseUIComponentProps<
+export interface PreviewCardPopupProps extends TaleUIComponentProps<
   'div',
   PreviewCardPopup.State
 > {}

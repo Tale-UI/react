@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { fireEvent, flushMicrotasks, render, screen } from '@mui/internal-test-utils';
-import { isJSDOM } from '@base-ui/utils/detectBrowser';
+import { isJSDOM } from '@tale-ui/utils/detectBrowser';
 import { FloatingPortal, useFloating } from '../index';
 import { FloatingPortalLite } from '../../utils/FloatingPortalLite';
 import type { UseFloatingPortalNodeProps } from './FloatingPortal';
@@ -37,7 +37,7 @@ describe.skipIf(!isJSDOM)('FloatingPortal', () => {
     await flushMicrotasks();
 
     const parent = screen.getByTestId('floating').parentElement;
-    expect(parent?.hasAttribute('data-base-ui-portal')).toBe(true);
+    expect(parent?.hasAttribute('data-tale-ui-portal')).toBe(true);
     expect(parent?.parentElement).toBe(customRoot);
     customRoot.remove();
   });
@@ -50,7 +50,7 @@ describe.skipIf(!isJSDOM)('FloatingPortal', () => {
     fireEvent.click(screen.getByTestId('reference'));
     await flushMicrotasks();
     const parent = screen.getByTestId('floating').parentElement;
-    expect(parent?.hasAttribute('data-base-ui-portal')).toBe(true);
+    expect(parent?.hasAttribute('data-tale-ui-portal')).toBe(true);
     expect(parent?.parentElement).toBe(el);
     document.body.removeChild(el);
   });
@@ -134,7 +134,7 @@ describe.skipIf(!isJSDOM)('FloatingPortal', () => {
     const portal = document.querySelector('[data-testid="portal-element"]') as HTMLElement | null;
     expect(portal).not.toBeNull();
     expect(portal).toHaveClass('closed');
-    expect(portal).toHaveAttribute('data-base-ui-portal');
+    expect(portal).toHaveAttribute('data-tale-ui-portal');
   });
 
   test('FloatingPortalLite forwards HTML props to the portal element', async () => {

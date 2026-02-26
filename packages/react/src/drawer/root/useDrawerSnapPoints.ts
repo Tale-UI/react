@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { ownerDocument } from '@base-ui/utils/owner';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { ownerDocument } from '@tale-ui/utils/owner';
 import { clamp } from '../../utils/clamp';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
 import { useDrawerRootContext } from './DrawerRootContext';

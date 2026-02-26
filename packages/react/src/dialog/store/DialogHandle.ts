@@ -1,5 +1,5 @@
 import { DialogStore } from './DialogStore';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 
 /**
@@ -32,7 +32,7 @@ export class DialogHandle<Payload> {
     if (process.env.NODE_ENV !== 'production') {
       if (triggerId && !triggerElement) {
         console.warn(
-          `Base UI: DialogHandle.open: No trigger found with id "${triggerId}". The dialog will open, but the trigger will not be associated with the dialog.`,
+          `Tale UI: DialogHandle.open: No trigger found with id "${triggerId}". The dialog will open, but the trigger will not be associated with the dialog.`,
         );
       }
     }

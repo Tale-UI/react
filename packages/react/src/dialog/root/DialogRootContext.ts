@@ -15,7 +15,7 @@ export function useDialogRootContext(optional?: boolean) {
 
   if (optional === false && dialogRootContext === undefined) {
     throw new Error(
-      'Base UI: DialogRootContext is missing. Dialog parts must be placed within <Dialog.Root>.',
+      'Tale UI: DialogRootContext is missing. Dialog parts must be placed within <Dialog.Root>.',
     );
   }
 

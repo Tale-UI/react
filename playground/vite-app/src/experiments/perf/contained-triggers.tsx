@@ -1,14 +1,15 @@
 import * as React from 'react';
-import { Menu } from '@base-ui/react/menu';
-import { Tooltip } from '@base-ui/react/tooltip';
-import { Popover } from '@base-ui/react/popover';
-import { Dialog } from '@base-ui/react/dialog';
-import { PreviewCard } from '@base-ui/react/preview-card';
-import menuDemoStyles from 'docs/src/app/(docs)/react/components/menu/demos/submenu/css-modules/index.module.css';
-import tooltipDemoStyles from 'docs/src/app/(docs)/react/components/tooltip/demos/hero/css-modules/index.module.css';
-import popoverDemoStyles from 'docs/src/app/(docs)/react/components/popover/demos/_index.module.css';
-import dialogDemoStyles from 'docs/src/app/(docs)/react/components/dialog/demos/_index.module.css';
-import previewCardDemoStyles from 'docs/src/app/(docs)/react/components/preview-card/demos/index.module.css';
+import { Menu } from '@tale-ui/react/menu';
+import { Tooltip } from '@tale-ui/react/tooltip';
+import { Popover } from '@tale-ui/react/popover';
+import { Dialog } from '@tale-ui/react/dialog';
+import { PreviewCard } from '@tale-ui/react/preview-card';
+// docs/ was removed from this fork — stubs keep the perf benchmarks functional without styling
+const menuDemoStyles: Record<string, string> = {};
+const tooltipDemoStyles: Record<string, string> = {};
+const popoverDemoStyles: Record<string, string> = {};
+const dialogDemoStyles: Record<string, string> = {};
+const previewCardDemoStyles: Record<string, string> = {};
 import PerformanceBenchmark from './utils/benchmark';
 import { type Settings, SettingsPanel, usePersistedSettings } from './SettingsPanel';
 import styles from './perf.module.css';

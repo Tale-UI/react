@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useSelectItemContext } from '../item/SelectItemContext';
 import { type TransitionStatus, useTransitionStatus } from '../../utils/useTransitionStatus';
 import { useOpenChangeComplete } from '../../utils/useOpenChangeComplete';
@@ -11,7 +11,7 @@ import { transitionStatusMapping } from '../../utils/stateAttributesMapping';
  * Indicates whether the select item is selected.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Tale UI Select](https://base-ui.com/react/components/select)
  */
 export const SelectItemIndicator = React.forwardRef(function SelectItemIndicator(
   componentProps: SelectItemIndicator.Props,
@@ -84,7 +84,7 @@ export interface SelectItemIndicatorState {
   transitionStatus: TransitionStatus;
 }
 
-export interface SelectItemIndicatorProps extends BaseUIComponentProps<
+export interface SelectItemIndicatorProps extends TaleUIComponentProps<
   'span',
   SelectItemIndicator.State
 > {

@@ -1,17 +1,17 @@
 'use client';
 import * as React from 'react';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { ownerDocument } from '@tale-ui/utils/owner';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { useRenderElement } from '../../utils/useRenderElement';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../utils/types';
+import type { TaleUIComponentProps, NativeButtonProps } from '../../utils/types';
 import { useButton } from '../../use-button';
 import { ACTIVE_COMPOSITE_ITEM } from '../../composite/constants';
 import { useCompositeItem } from '../../composite/item/useCompositeItem';
 import type { TabsRoot } from '../root/TabsRoot';
 import { useTabsRootContext } from '../root/TabsRootContext';
 import { useTabsListContext } from '../list/TabsListContext';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { activeElement, contains } from '../../floating-ui-react/utils';
 
@@ -19,7 +19,7 @@ import { activeElement, contains } from '../../floating-ui-react/utils';
  * An individual interactive tab button that toggles the corresponding panel.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
+ * Documentation: [Tale UI Tabs](https://base-ui.com/react/components/tabs)
  */
 export const TabsTab = React.forwardRef(function TabsTab(
   componentProps: TabsTab.Props,
@@ -45,7 +45,7 @@ export const TabsTab = React.forwardRef(function TabsTab(
     tabsListElement,
   } = useTabsListContext();
 
-  const id = useBaseUiId(idProp);
+  const id = useTaleUiId(idProp);
 
   const tabMetadata = React.useMemo(() => ({ disabled, id, value }), [disabled, id, value]);
 
@@ -229,7 +229,7 @@ export interface TabsTabState {
 }
 
 export interface TabsTabProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', TabsTab.State> {
+  extends NativeButtonProps, TaleUIComponentProps<'button', TabsTab.State> {
   /**
    * The value of the Tab.
    */

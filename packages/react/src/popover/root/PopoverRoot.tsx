@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useScrollLock } from '@base-ui/utils/useScrollLock';
-import { useOnFirstRender } from '@base-ui/utils/useOnFirstRender';
+import { useScrollLock } from '@tale-ui/utils/useScrollLock';
+import { useOnFirstRender } from '@tale-ui/utils/useOnFirstRender';
 import {
   useDismiss,
   useInteractions,
@@ -15,8 +15,8 @@ import { PopoverStore } from '../store/PopoverStore';
 import { PopoverHandle } from '../store/PopoverHandle';
 import {
   createChangeEventDetails,
-  type BaseUIChangeEventDetails,
-} from '../../utils/createBaseUIEventDetails';
+  type TaleUIChangeEventDetails,
+} from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import {
   useImplicitActiveTrigger,
@@ -173,7 +173,7 @@ function PopoverRootComponent<Payload>({ props }: { props: PopoverRoot.Props<Pay
  * Groups all parts of the popover.
  * Doesn’t render its own HTML element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Tale UI Popover](https://base-ui.com/react/components/popover)
  */
 export function PopoverRoot<Payload = unknown>(props: PopoverRoot.Props<Payload>) {
   if (usePopoverRootContext(true)) {
@@ -266,7 +266,7 @@ export type PopoverRootChangeEventReason =
   | typeof REASONS.imperativeAction
   | typeof REASONS.none;
 export type PopoverRootChangeEventDetails =
-  BaseUIChangeEventDetails<PopoverRoot.ChangeEventReason> & {
+  TaleUIChangeEventDetails<PopoverRoot.ChangeEventReason> & {
     preventUnmountOnClose(): void;
   };
 

@@ -9,7 +9,7 @@ import { useIsoLayoutEffect } from '../useIsoLayoutEffect';
 import { useTimeout } from '../useTimeout';
 
 const STYLES = `
-.baseui-store-inspector-trigger {
+.taleui-store-inspector-trigger {
   all: unset;
   width: 32px;
   height: 32px;
@@ -19,12 +19,12 @@ const STYLES = `
   color: oklch(0.651 0.078 264);
 }
 
-.baseui-store-inspector-trigger:hover,
-.baseui-store-inspector-trigger:focus-visible {
+.taleui-store-inspector-trigger:hover,
+.taleui-store-inspector-trigger:focus-visible {
  opacity: 0.8;
 }
 
-.baseui-store-inspector-content {
+.taleui-store-inspector-content {
   background: #101010;
   flex: 1 1 auto;
   min-height: 0;
@@ -36,20 +36,20 @@ const STYLES = `
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.baseui-store-inspector-content h3 {
+.taleui-store-inspector-content h3 {
   text-transform: uppercase;
   font-weight: bold;
 }
 
-.baseui-store-inspector-content pre {
+.taleui-store-inspector-content pre {
   margin: 0 0 16px 0;
 }
 
-.baseui-store-inspector-content pre:last-child {
+.taleui-store-inspector-content pre:last-child {
   margin-bottom: 0;
 }
 
-.baseui-store-inspector-root {
+.taleui-store-inspector-root {
   position: fixed;
   background: oklch(0.34 0.036 264);
   color: #fff;
@@ -68,7 +68,7 @@ const STYLES = `
     0 4px 6px -4px oklch(12% 9% 264deg / 8%);
 }
 
-.baseui-store-inspector-header {
+.taleui-store-inspector-header {
   display: flex;
   align-items: center;
   cursor: move;
@@ -84,7 +84,7 @@ const STYLES = `
   }
 }
 
-.baseui-store-inspector-header button {
+.taleui-store-inspector-header button {
   all: unset;
   width: 32px;
   height: 32px;
@@ -94,12 +94,12 @@ const STYLES = `
   cursor: default;
 }
 
-.baseui-store-inspector-header button:hover,
-.baseui-store-inspector-header button:focus-visible {
+.taleui-store-inspector-header button:hover,
+.taleui-store-inspector-header button:focus-visible {
   opacity: 0.8;
 }
 
-.baseui-store-inspector-resize-handle {
+.taleui-store-inspector-resize-handle {
   position: absolute;
   width: 8px;
   height: 8px;
@@ -141,11 +141,11 @@ export function StoreInspector(props: StoreInspectorProps) {
 
   return (
     <React.Fragment>
-      <style href="baseui-store-inspector" precedence="default">
+      <style href="taleui-store-inspector" precedence="default">
         {STYLES}
       </style>
       <button
-        className="baseui-store-inspector-trigger"
+        className="taleui-store-inspector-trigger"
         type="button"
         onClick={(event) => {
           event.preventDefault();
@@ -490,21 +490,21 @@ function Window({ title, onClose, children, headerActions }: WindowProps) {
   }
 
   return (
-    <div ref={rootRef} className="baseui-store-inspector-root" style={style}>
-      <div ref={headerRef} className="baseui-store-inspector-header" onPointerDown={onPointerDown}>
+    <div ref={rootRef} className="taleui-store-inspector-root" style={style}>
+      <div ref={headerRef} className="taleui-store-inspector-header" onPointerDown={onPointerDown}>
         <h2>{title}</h2>
         {headerActions}
         <button type="button" onClick={onClose} title="Close window">
           <CloseIcon />
         </button>
       </div>
-      <div className="baseui-store-inspector-content">{children}</div>
+      <div className="taleui-store-inspector-content">{children}</div>
       <div
         ref={resizeHandleRef}
         onPointerDown={onResizePointerDown}
         style={{ position: 'relative' }}
       >
-        <div className="baseui-store-inspector-resize-handle" />
+        <div className="taleui-store-inspector-resize-handle" />
       </div>
     </div>
   );

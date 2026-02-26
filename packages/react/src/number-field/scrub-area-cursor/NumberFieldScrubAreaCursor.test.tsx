@@ -2,8 +2,8 @@ import * as React from 'react';
 import { expect } from 'chai';
 import { screen, act } from '@mui/internal-test-utils';
 import sinon from 'sinon';
-import { NumberField } from '@base-ui/react/number-field';
-import { isWebKit } from '@base-ui/utils/detectBrowser';
+import { NumberField } from '@tale-ui/react/number-field';
+import { isWebKit } from '@tale-ui/utils/detectBrowser';
 import { createRenderer, describeConformance } from '#test-utils';
 import { NumberFieldScrubAreaContext } from '../scrub-area/NumberFieldScrubAreaContext';
 

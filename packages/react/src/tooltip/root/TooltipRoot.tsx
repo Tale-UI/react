@@ -1,14 +1,14 @@
 'use client';
 import * as React from 'react';
-import { fastComponent } from '@base-ui/utils/fastHooks';
-import { useOnFirstRender } from '@base-ui/utils/useOnFirstRender';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { fastComponent } from '@tale-ui/utils/fastHooks';
+import { useOnFirstRender } from '@tale-ui/utils/useOnFirstRender';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
 import { TooltipRootContext } from './TooltipRootContext';
 import { useClientPoint, useDismiss, useInteractions } from '../../floating-ui-react';
 import {
-  type BaseUIChangeEventDetails,
+  type TaleUIChangeEventDetails,
   createChangeEventDetails,
-} from '../../utils/createBaseUIEventDetails';
+} from '../../utils/createTaleUIEventDetails';
 import {
   useImplicitActiveTrigger,
   useOpenStateTransitions,
@@ -22,7 +22,7 @@ import { REASONS } from '../../utils/reasons';
  * Groups all parts of the tooltip.
  * Doesn’t render its own HTML element.
  *
- * Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+ * Documentation: [Tale UI Tooltip](https://base-ui.com/react/components/tooltip)
  */
 export const TooltipRoot = fastComponent(function TooltipRoot<Payload>(
   props: TooltipRoot.Props<Payload>,
@@ -261,7 +261,7 @@ export type TooltipRootChangeEventReason =
   | typeof REASONS.none;
 
 export type TooltipRootChangeEventDetails =
-  BaseUIChangeEventDetails<TooltipRoot.ChangeEventReason> & {
+  TaleUIChangeEventDetails<TooltipRoot.ChangeEventReason> & {
     preventUnmountOnClose(): void;
   };
 

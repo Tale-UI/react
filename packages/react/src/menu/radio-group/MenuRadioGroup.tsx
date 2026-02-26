@@ -1,17 +1,17 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useControlled } from '@tale-ui/utils/useControlled';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
 import { MenuRadioGroupContext } from './MenuRadioGroupContext';
 import { useRenderElement } from '../../utils/useRenderElement';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import type { MenuRoot } from '../root/MenuRoot';
 
 /**
  * Groups related radio items.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Tale UI Menu](https://base-ui.com/react/components/menu)
  */
 export const MenuRadioGroup = React.memo(
   React.forwardRef(function MenuRadioGroup(
@@ -75,7 +75,7 @@ export const MenuRadioGroup = React.memo(
   }),
 );
 
-export interface MenuRadioGroupProps extends BaseUIComponentProps<'div', MenuRadioGroup.State> {
+export interface MenuRadioGroupProps extends TaleUIComponentProps<'div', MenuRadioGroup.State> {
   /**
    * The content of the component.
    */

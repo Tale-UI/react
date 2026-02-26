@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useStore } from '@base-ui/utils/store';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import type { BaseUIComponentProps } from '../../utils/types';
+import { useStore } from '@tale-ui/utils/store';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import {
   useComboboxDerivedItemsContext,
@@ -134,7 +134,7 @@ export interface ComboboxListState {
 }
 
 export interface ComboboxListProps extends Omit<
-  BaseUIComponentProps<'div', ComboboxList.State>,
+  TaleUIComponentProps<'div', ComboboxList.State>,
   'children'
 > {
   children?: React.ReactNode | ((item: any, index: number) => React.ReactNode);

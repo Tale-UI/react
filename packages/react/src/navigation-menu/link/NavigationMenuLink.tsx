@@ -1,21 +1,21 @@
 'use client';
 import * as React from 'react';
 import { useFloatingTree } from '../../floating-ui-react';
-import type { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import type { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 import {
   useNavigationMenuRootContext,
   useNavigationMenuTreeContext,
 } from '../root/NavigationMenuRootContext';
 import { isOutsideMenuEvent } from '../utils/isOutsideMenuEvent';
 import { CompositeItem } from '../../composite/item/CompositeItem';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 
 /**
  * A link in the navigation menu that can be used to navigate to a different page or section.
  * Renders an `<a>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Tale UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
  */
 export const NavigationMenuLink = React.forwardRef(function NavigationMenuLink(
   componentProps: NavigationMenuLink.Props,
@@ -81,7 +81,7 @@ export interface NavigationMenuLinkState {
   active: boolean;
 }
 
-export interface NavigationMenuLinkProps extends BaseUIComponentProps<
+export interface NavigationMenuLinkProps extends TaleUIComponentProps<
   'a',
   NavigationMenuLink.State
 > {

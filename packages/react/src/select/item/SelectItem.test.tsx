@@ -1,4 +1,4 @@
-import { Select } from '@base-ui/react/select';
+import { Select } from '@tale-ui/react/select';
 import {
   act,
   fireEvent,
@@ -333,9 +333,9 @@ describe('<Select.Item />', () => {
       expect(handleClick).toHaveBeenCalledOnce();
     });
 
-    it('should not select item when onClick calls preventBaseUIHandler during drag-to-select', async () => {
+    it('should not select item when onClick calls preventTaleUIHandler during drag-to-select', async () => {
       ignoreActWarnings();
-      const handleClick = vi.fn((event) => event.preventBaseUIHandler());
+      const handleClick = vi.fn((event) => event.preventTaleUIHandler());
 
       await renderFakeTimers(
         <Select.Root>

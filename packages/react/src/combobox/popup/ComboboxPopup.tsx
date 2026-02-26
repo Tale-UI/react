@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { InteractionType } from '@base-ui/utils/useEnhancedClickHandler';
-import { useStore } from '@base-ui/utils/store';
+import { InteractionType } from '@tale-ui/utils/useEnhancedClickHandler';
+import { useStore } from '@tale-ui/utils/store';
 import { FloatingFocusManager } from '../../floating-ui-react';
-import { BaseUIComponentProps } from '../../utils/types';
+import { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import {
   useComboboxFloatingContext,
@@ -133,7 +133,7 @@ export interface ComboboxPopupState {
   empty: boolean;
 }
 
-export interface ComboboxPopupProps extends BaseUIComponentProps<'div', ComboboxPopup.State> {
+export interface ComboboxPopupProps extends TaleUIComponentProps<'div', ComboboxPopup.State> {
   /**
    * Determines the element to focus when the popup is opened.
    *

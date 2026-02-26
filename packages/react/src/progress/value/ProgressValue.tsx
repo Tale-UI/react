@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useProgressRootContext } from '../root/ProgressRootContext';
 import type { ProgressRoot } from '../root/ProgressRoot';
@@ -9,7 +9,7 @@ import { progressStateAttributesMapping } from '../root/stateAttributesMapping';
  * A text label displaying the current value.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Progress](https://base-ui.com/react/components/progress)
+ * Documentation: [Tale UI Progress](https://base-ui.com/react/components/progress)
  */
 export const ProgressValue = React.forwardRef(function ProgressValue(
   componentProps: ProgressValue.Props,
@@ -42,7 +42,7 @@ export const ProgressValue = React.forwardRef(function ProgressValue(
 });
 
 export interface ProgressValueProps extends Omit<
-  BaseUIComponentProps<'span', ProgressRoot.State>,
+  TaleUIComponentProps<'span', ProgressRoot.State>,
   'children'
 > {
   children?:

@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { Form } from '@base-ui/react/form';
-import { NumberField } from '@base-ui/react/number-field';
-import { Radio } from '@base-ui/react/radio';
-import { RadioGroup } from '@base-ui/react/radio-group';
-import { Select } from '@base-ui/react/select';
-import { Checkbox } from '@base-ui/react/checkbox';
-import { CheckboxGroup } from '@base-ui/react/checkbox-group';
-import { Switch } from '@base-ui/react/switch';
-import { Slider } from '@base-ui/react/slider';
-import { Field } from '@base-ui/react/field';
+import { Form } from '@tale-ui/react/form';
+import { NumberField } from '@tale-ui/react/number-field';
+import { Radio } from '@tale-ui/react/radio';
+import { RadioGroup } from '@tale-ui/react/radio-group';
+import { Select } from '@tale-ui/react/select';
+import { Checkbox } from '@tale-ui/react/checkbox';
+import { CheckboxGroup } from '@tale-ui/react/checkbox-group';
+import { Switch } from '@tale-ui/react/switch';
+import { Slider } from '@tale-ui/react/slider';
+import { Field } from '@tale-ui/react/field';
 import {
   act,
   fireEvent,

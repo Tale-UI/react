@@ -2,9 +2,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { isTabbable } from 'tabbable';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { useAnimationFrame } from '@base-ui/utils/useAnimationFrame';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
+import { useAnimationFrame } from '@tale-ui/utils/useAnimationFrame';
 import {
   safePolygon,
   useClick,
@@ -20,13 +20,13 @@ import {
   isOutsideEvent,
   stopEvent,
 } from '../../floating-ui-react/utils';
-import type { BaseUIComponentProps, NativeButtonProps, HTMLProps } from '../../utils/types';
+import type { TaleUIComponentProps, NativeButtonProps, HTMLProps } from '../../utils/types';
 import { useNavigationMenuItemContext } from '../item/NavigationMenuItemContext';
 import {
   useNavigationMenuRootContext,
   useNavigationMenuTreeContext,
 } from '../root/NavigationMenuRootContext';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { EMPTY_ARRAY, ownerVisuallyHidden, PATIENT_CLICK_THRESHOLD } from '../../utils/constants';
 import { FocusGuard } from '../../utils/FocusGuard';
@@ -43,7 +43,7 @@ import { useNavigationMenuDismissContext } from '../list/NavigationMenuDismissCo
  * associated content.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Tale UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
  */
 export const NavigationMenuTrigger = React.forwardRef(function NavigationMenuTrigger(
   componentProps: NavigationMenuTrigger.Props,
@@ -355,7 +355,7 @@ export interface NavigationMenuTriggerState {
 }
 
 export interface NavigationMenuTriggerProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', NavigationMenuTrigger.State> {}
+  extends NativeButtonProps, TaleUIComponentProps<'button', NavigationMenuTrigger.State> {}
 
 export namespace NavigationMenuTrigger {
   export type State = NavigationMenuTriggerState;

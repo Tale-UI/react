@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { useAnimationFrame } from '@base-ui/utils/useAnimationFrame';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useAnimationFrame } from '@tale-ui/utils/useAnimationFrame';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
 import { resolveRef } from './resolveRef';
 import { TransitionStatusDataAttributes } from './stateAttributesMapping';
 
@@ -50,7 +50,7 @@ export function useAnimationsFinished(
 
       if (
         typeof resolvedElement.getAnimations !== 'function' ||
-        globalThis.BASE_UI_ANIMATIONS_DISABLED
+        globalThis.TALE_UI_ANIMATIONS_DISABLED
       ) {
         fnToExecute();
       } else {

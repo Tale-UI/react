@@ -4,13 +4,13 @@ import { act, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM, wait } from '#test-utils';
 import { spy } from 'sinon';
 import { afterEach } from 'vitest';
-import { Menubar } from '@base-ui/react/menubar';
-import { Menu } from '@base-ui/react/menu';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { Menubar } from '@tale-ui/react/menubar';
+import { Menu } from '@tale-ui/react/menu';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
 
 describe('<Menubar />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
   });
 
   const { render } = createRenderer();

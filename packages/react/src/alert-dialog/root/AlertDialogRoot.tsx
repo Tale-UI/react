@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useRefWithInit } from '@base-ui/utils/useRefWithInit';
+import { useRefWithInit } from '@tale-ui/utils/useRefWithInit';
 import { useDialogRoot } from '../../dialog/root/useDialogRoot';
 import { DialogRootContext, useDialogRootContext } from '../../dialog/root/DialogRootContext';
-import { BaseUIChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { TaleUIChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { DialogStore } from '../../dialog/store/DialogStore';
 import { DialogHandle } from '../../dialog/store/DialogHandle';
 import type { DialogRoot } from '../../dialog/root/DialogRoot';
@@ -12,7 +12,7 @@ import type { DialogRoot } from '../../dialog/root/DialogRoot';
  * Groups all parts of the alert dialog.
  * Doesn’t render its own HTML element.
  *
- * Documentation: [Base UI Alert Dialog](https://base-ui.com/react/components/alert-dialog)
+ * Documentation: [Tale UI Alert Dialog](https://base-ui.com/react/components/alert-dialog)
  */
 export function AlertDialogRoot<Payload>(props: AlertDialogRoot.Props<Payload>) {
   const {
@@ -101,7 +101,7 @@ export type AlertDialogRootActions = DialogRoot.Actions;
 
 export type AlertDialogRootChangeEventReason = DialogRoot.ChangeEventReason;
 export type AlertDialogRootChangeEventDetails =
-  BaseUIChangeEventDetails<AlertDialogRoot.ChangeEventReason> & {
+  TaleUIChangeEventDetails<AlertDialogRoot.ChangeEventReason> & {
     preventUnmountOnClose(): void;
   };
 

@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useBaseUiId } from '../../utils/useBaseUiId';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { useControlled } from '@tale-ui/utils/useControlled';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useTaleUiId } from '../../utils/useTaleUiId';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { useAnimationsFinished } from '../../utils/useAnimationsFinished';
 import { useTransitionStatus, TransitionStatus } from '../../utils/useTransitionStatus';
@@ -38,7 +38,7 @@ export function useCollapsibleRoot(
     width: undefined,
   });
 
-  const defaultPanelId = useBaseUiId();
+  const defaultPanelId = useTaleUiId();
   const [panelIdState, setPanelIdState] = React.useState<string | undefined>();
   const panelId = panelIdState ?? defaultPanelId;
 

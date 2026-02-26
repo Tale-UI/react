@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { useToastPositionerContext } from '../positioner/ToastPositionerContext';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import type { Side, Align } from '../../utils/useAnchorPositioning';
 import { useRenderElement } from '../../utils/useRenderElement';
 
@@ -9,7 +9,7 @@ import { useRenderElement } from '../../utils/useRenderElement';
  * Displays an element positioned against the toast anchor.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+ * Documentation: [Tale UI Toast](https://base-ui.com/react/components/toast)
  */
 export const ToastArrow = React.forwardRef(function ToastArrow(
   componentProps: ToastArrow.Props,
@@ -40,7 +40,7 @@ export interface ToastArrowState {
   uncentered: boolean;
 }
 
-export interface ToastArrowProps extends BaseUIComponentProps<'div', ToastArrow.State> {}
+export interface ToastArrowProps extends TaleUIComponentProps<'div', ToastArrow.State> {}
 
 export namespace ToastArrow {
   export type State = ToastArrowState;

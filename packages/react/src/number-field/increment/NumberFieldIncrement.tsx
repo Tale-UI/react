@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../utils/types';
+import type { TaleUIComponentProps, NativeButtonProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useButton } from '../../use-button';
 import { useNumberFieldRootContext } from '../root/NumberFieldRootContext';
@@ -12,7 +12,7 @@ import { stateAttributesMapping } from '../utils/stateAttributesMapping';
  * A stepper button that increases the field value when clicked.
  * Renders an `<button>` element.
  *
- * Documentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)
+ * Documentation: [Tale UI Number Field](https://base-ui.com/react/components/number-field)
  */
 export const NumberFieldIncrement = React.forwardRef(function NumberFieldIncrement(
   componentProps: NumberFieldIncrement.Props,
@@ -104,7 +104,7 @@ export const NumberFieldIncrement = React.forwardRef(function NumberFieldIncreme
 export interface NumberFieldIncrementState extends NumberFieldRoot.State {}
 
 export interface NumberFieldIncrementProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', NumberFieldIncrement.State> {}
+  extends NativeButtonProps, TaleUIComponentProps<'button', NumberFieldIncrement.State> {}
 
 export namespace NumberFieldIncrement {
   export type State = NumberFieldIncrementState;

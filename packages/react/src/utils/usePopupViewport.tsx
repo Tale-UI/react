@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import { inertValue } from '@base-ui/utils/inertValue';
-import { useAnimationFrame } from '@base-ui/utils/useAnimationFrame';
-import { usePreviousValue } from '@base-ui/utils/usePreviousValue';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import type { ReactStore } from '@base-ui/utils/store';
+import { inertValue } from '@tale-ui/utils/inertValue';
+import { useAnimationFrame } from '@tale-ui/utils/useAnimationFrame';
+import { usePreviousValue } from '@tale-ui/utils/usePreviousValue';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import type { ReactStore } from '@tale-ui/utils/store';
 import { useAnimationsFinished } from './useAnimationsFinished';
 import { usePopupAutoResize } from './usePopupAutoResize';
 import { Dimensions } from '../floating-ui-react/types';

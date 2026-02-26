@@ -1,4 +1,4 @@
-import { Progress } from '@base-ui/react/progress';
+import { Progress } from '@tale-ui/react/progress';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Progress.Track />', () => {

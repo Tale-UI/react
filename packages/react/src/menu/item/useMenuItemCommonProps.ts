@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { isMac } from '@base-ui/utils/detectBrowser';
+import { isMac } from '@tale-ui/utils/detectBrowser';
 import { HTMLProps } from '../../utils/types';
 import { MenuStore } from '../store/MenuStore';
 import { REASONS } from '../../utils/reasons';

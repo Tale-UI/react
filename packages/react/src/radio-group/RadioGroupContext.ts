@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
 import type { UseFieldValidationReturnValue } from '../field/root/useFieldValidation';
-import type { BaseUIChangeEventDetails } from '../utils/createBaseUIEventDetails';
-import type { BaseUIEventReasons } from '../utils/reasons';
+import type { TaleUIChangeEventDetails } from '../utils/createTaleUIEventDetails';
+import type { TaleUIEventReasons } from '../utils/reasons';
 
 export interface RadioGroupContext<Value> {
   disabled: boolean | undefined;
@@ -12,11 +12,11 @@ export interface RadioGroupContext<Value> {
   checkedValue: Value | undefined;
   setCheckedValue: (
     value: Value,
-    eventDetails: BaseUIChangeEventDetails<BaseUIEventReasons['none']>,
+    eventDetails: TaleUIChangeEventDetails<TaleUIEventReasons['none']>,
   ) => void;
   onValueChange: (
     value: Value,
-    eventDetails: BaseUIChangeEventDetails<BaseUIEventReasons['none']>,
+    eventDetails: TaleUIChangeEventDetails<TaleUIEventReasons['none']>,
   ) => void;
   touched: boolean;
   setTouched: React.Dispatch<React.SetStateAction<boolean>>;

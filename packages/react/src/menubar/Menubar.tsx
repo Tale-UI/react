@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { useScrollLock } from '@base-ui/utils/useScrollLock';
+import { useScrollLock } from '@tale-ui/utils/useScrollLock';
 import {
   FloatingNode,
   FloatingTree,
@@ -8,11 +8,11 @@ import {
   useFloatingTree,
 } from '../floating-ui-react';
 import { type MenuRoot } from '../menu/root/MenuRoot';
-import { BaseUIComponentProps } from '../utils/types';
+import { TaleUIComponentProps } from '../utils/types';
 import { MenubarContext, useMenubarContext } from './MenubarContext';
 import { useOpenInteractionType } from '../utils/useOpenInteractionType';
 import { CompositeRoot } from '../composite/root/CompositeRoot';
-import { useBaseUiId } from '../utils/useBaseUiId';
+import { useTaleUiId } from '../utils/useTaleUiId';
 import { MenuOpenEventDetails } from '../menu/utils/types';
 import { StateAttributesMapping } from '../utils/getStateAttributesProps';
 
@@ -27,7 +27,7 @@ const menubarStateAttributesMapping: StateAttributesMapping<Menubar.State> = {
 /**
  * The container for menus.
  *
- * Documentation: [Base UI Menubar](https://base-ui.com/react/components/menubar)
+ * Documentation: [Tale UI Menubar](https://base-ui.com/react/components/menubar)
  */
 export const Menubar = React.forwardRef(function Menubar(
   props: Menubar.Props,
@@ -61,7 +61,7 @@ export const Menubar = React.forwardRef(function Menubar(
 
   useScrollLock(modal && hasSubmenuOpen && openMethod !== 'touch', contentElement);
 
-  const id = useBaseUiId(idProp);
+  const id = useTaleUiId(idProp);
 
   const state: Menubar.State = {
     orientation,
@@ -153,7 +153,7 @@ export interface MenubarState {
   hasSubmenuOpen: boolean;
 }
 
-export interface MenubarProps extends BaseUIComponentProps<'div', Menubar.State> {
+export interface MenubarProps extends TaleUIComponentProps<'div', Menubar.State> {
   /**
    * Whether the menubar is modal.
    * @default true

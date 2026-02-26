@@ -103,7 +103,7 @@ export function useDrawerRootContext(optional?: boolean) {
 
   if (optional === false && drawerRootContext === undefined) {
     throw new Error(
-      'Base UI: DrawerRootContext is missing. Drawer parts must be placed within <Drawer.Root>.',
+      'Tale UI: DrawerRootContext is missing. Drawer parts must be placed within <Drawer.Root>.',
     );
   }
 

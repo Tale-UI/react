@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { stopEvent } from '../../floating-ui-react/utils';
 import { useNumberFieldRootContext } from '../root/NumberFieldRootContext';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useFieldRootContext } from '../../field/root/FieldRootContext';
 import { fieldValidityMapping } from '../../field/utils/constants';
 import { useField } from '../../field/useField';
@@ -27,7 +27,7 @@ import { useRenderElement } from '../../utils/useRenderElement';
 import {
   createChangeEventDetails,
   createGenericEventDetails,
-} from '../../utils/createBaseUIEventDetails';
+} from '../../utils/createTaleUIEventDetails';
 import { formatNumber, formatNumberMaxPrecision } from '../../utils/formatNumber';
 import { useValueChanged } from '../../utils/useValueChanged';
 import { REASONS } from '../../utils/reasons';
@@ -51,7 +51,7 @@ const NAVIGATE_KEYS = new Set([
  * The native input control in the number field.
  * Renders an `<input>` element.
  *
- * Documentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)
+ * Documentation: [Tale UI Number Field](https://base-ui.com/react/components/number-field)
  */
 export const NumberFieldInput = React.forwardRef(function NumberFieldInput(
   componentProps: NumberFieldInput.Props,
@@ -428,7 +428,7 @@ export const NumberFieldInput = React.forwardRef(function NumberFieldInput(
 
 export interface NumberFieldInputState extends NumberFieldRoot.State {}
 
-export interface NumberFieldInputProps extends BaseUIComponentProps<
+export interface NumberFieldInputProps extends TaleUIComponentProps<
   'input',
   NumberFieldInput.State
 > {

@@ -9,17 +9,17 @@ import { defineConfig } from '@mui/internal-bundle-size-checker';
 
 const rootDir = path.resolve(import.meta.dirname, '../..');
 
-async function getBaseUiExports() {
+async function getTaleUiExports() {
   // Read the package.json to get exports
   const packageJsonPath = path.join(rootDir, 'packages/react/package.json');
   const packageJsonContent = await fs.readFile(packageJsonPath, 'utf8');
   const packageJson = JSON.parse(packageJsonContent);
 
-  // Get all export paths from @base-ui/react package.json
+  // Get all export paths from @tale-ui/react package.json
   const exports = packageJson.exports;
   const entrypoints = Object.keys(exports).map((exportKey) => {
-    // Convert from "./accordion" to "@base-ui/react/accordion"
-    const entrypoint = exportKey === '.' ? '@base-ui/react' : `@base-ui/react${exportKey.slice(1)}`;
+    // Convert from "./accordion" to "@tale-ui/react/accordion"
+    const entrypoint = exportKey === '.' ? '@tale-ui/react' : `@tale-ui/react${exportKey.slice(1)}`;
     return entrypoint;
   });
 
@@ -52,7 +52,7 @@ async function getUtilsExports() {
       }
       return true;
     })
-    .map(({ file }) => `@base-ui/utils/${file.replace(/\.(js|ts|tsx)$/, '')}`);
+    .map(({ file }) => `@tale-ui/utils/${file.replace(/\.(js|ts|tsx)$/, '')}`);
 
   return entrypoints;
 }
@@ -62,7 +62,7 @@ async function getUtilsExports() {
  */
 export default defineConfig(async () => {
   return {
-    entrypoints: [...(await getBaseUiExports()), ...(await getUtilsExports())],
+    entrypoints: [...(await getTaleUiExports()), ...(await getUtilsExports())],
     upload: !!process.env.CI,
     comment: true,
   };

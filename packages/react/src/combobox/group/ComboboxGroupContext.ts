@@ -19,7 +19,7 @@ export function useComboboxGroupContext() {
   const context = React.useContext(ComboboxGroupContext);
   if (context === undefined) {
     throw new Error(
-      'Base UI: ComboboxGroupContext is missing. ComboboxGroup parts must be placed within <Combobox.Group>.',
+      'Tale UI: ComboboxGroupContext is missing. ComboboxGroup parts must be placed within <Combobox.Group>.',
     );
   }
   return context;

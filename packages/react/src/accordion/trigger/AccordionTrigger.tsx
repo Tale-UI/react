@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { isElementDisabled } from '@base-ui/utils/isElementDisabled';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { isElementDisabled } from '@tale-ui/utils/isElementDisabled';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
 import { triggerOpenStateMapping } from '../../utils/collapsibleOpenStateMapping';
-import { BaseUIComponentProps, NativeButtonProps } from '../../utils/types';
+import { TaleUIComponentProps, NativeButtonProps } from '../../utils/types';
 import { useButton } from '../../use-button';
 import { useCollapsibleRootContext } from '../../collapsible/root/CollapsibleRootContext';
 import {
@@ -44,7 +44,7 @@ function getActiveTriggers(accordionItemRefs: { current: (HTMLElement | null)[] 
  * A button that opens and closes the corresponding panel.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordion)
+ * Documentation: [Tale UI Accordion](https://base-ui.com/react/components/accordion)
  */
 
 export const AccordionTrigger = React.forwardRef(function AccordionTrigger(
@@ -182,7 +182,7 @@ export const AccordionTrigger = React.forwardRef(function AccordionTrigger(
 });
 
 export interface AccordionTriggerProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', AccordionItem.State> {}
+  extends NativeButtonProps, TaleUIComponentProps<'button', AccordionItem.State> {}
 
 export namespace AccordionTrigger {
   export type Props = AccordionTriggerProps;

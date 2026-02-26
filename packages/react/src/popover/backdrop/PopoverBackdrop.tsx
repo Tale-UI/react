@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { type StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import { popupStateMapping as baseMapping } from '../../utils/popupStateMapping';
 import type { TransitionStatus } from '../../utils/useTransitionStatus';
@@ -18,7 +18,7 @@ const stateAttributesMapping: StateAttributesMapping<PopoverBackdrop.State> = {
  * An overlay displayed beneath the popover.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Tale UI Popover](https://base-ui.com/react/components/popover)
  */
 export const PopoverBackdrop = React.forwardRef(function PopoverBackdrop(
   props: PopoverBackdrop.Props,
@@ -67,7 +67,7 @@ export interface PopoverBackdropState {
   transitionStatus: TransitionStatus;
 }
 
-export interface PopoverBackdropProps extends BaseUIComponentProps<'div', PopoverBackdrop.State> {}
+export interface PopoverBackdropProps extends TaleUIComponentProps<'div', PopoverBackdrop.State> {}
 
 export namespace PopoverBackdrop {
   export type State = PopoverBackdropState;

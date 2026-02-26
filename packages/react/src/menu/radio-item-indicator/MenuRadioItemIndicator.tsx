@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useMenuRadioItemContext } from '../radio-item/MenuRadioItemContext';
 import { useRenderElement } from '../../utils/useRenderElement';
-import { BaseUIComponentProps } from '../../utils/types';
+import { TaleUIComponentProps } from '../../utils/types';
 import { itemMapping } from '../utils/stateAttributesMapping';
 import { TransitionStatus, useTransitionStatus } from '../../utils/useTransitionStatus';
 import { useOpenChangeComplete } from '../../utils/useOpenChangeComplete';
@@ -11,7 +11,7 @@ import { useOpenChangeComplete } from '../../utils/useOpenChangeComplete';
  * Indicates whether the radio item is selected.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Tale UI Menu](https://base-ui.com/react/components/menu)
  */
 export const MenuRadioItemIndicator = React.forwardRef(function MenuRadioItemIndicator(
   componentProps: MenuRadioItemIndicator.Props,
@@ -56,7 +56,7 @@ export const MenuRadioItemIndicator = React.forwardRef(function MenuRadioItemInd
   return element;
 });
 
-export interface MenuRadioItemIndicatorProps extends BaseUIComponentProps<
+export interface MenuRadioItemIndicatorProps extends TaleUIComponentProps<
   'span',
   MenuRadioItemIndicator.State
 > {

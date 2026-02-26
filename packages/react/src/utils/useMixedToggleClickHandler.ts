@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { BaseUIEvent } from './types';
+import { ownerDocument } from '@tale-ui/utils/owner';
+import { TaleUIEvent } from './types';
 import { EMPTY_OBJECT } from './constants';
 
 /**
@@ -32,10 +32,10 @@ export function useMixedToggleClickHandler(params: useMixedToggleClickHandler.Pa
           );
         }
       },
-      onClick: (event: BaseUIEvent<React.MouseEvent>) => {
+      onClick: (event: TaleUIEvent<React.MouseEvent>) => {
         if (ignoreClickRef.current) {
           ignoreClickRef.current = false;
-          event.preventBaseUIHandler();
+          event.preventTaleUIHandler();
         }
       },
     };

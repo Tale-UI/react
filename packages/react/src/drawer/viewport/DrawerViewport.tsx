@@ -2,8 +2,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { isElement } from '@floating-ui/utils/dom';
-import { ownerDocument, ownerWindow } from '@base-ui/utils/owner';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { ownerDocument, ownerWindow } from '@tale-ui/utils/owner';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
 import { DialogViewport } from '../../dialog/viewport/DialogViewport';
 import { mergeProps } from '../../merge-props';
@@ -16,12 +16,12 @@ import { DrawerPopupCssVars } from '../popup/DrawerPopupCssVars';
 import { DrawerPopupDataAttributes } from '../popup/DrawerPopupDataAttributes';
 import { DrawerBackdropCssVars } from '../backdrop/DrawerBackdropCssVars';
 import { REASONS } from '../../utils/reasons';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { contains } from '../../floating-ui-react/utils';
 import { DrawerViewportContext } from './DrawerViewportContext';
 import { TransitionStatusDataAttributes } from '../../utils/stateAttributesMapping';
 import { findScrollableTouchTarget, type ScrollAxis } from '../../utils/scrollable';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import type { TransitionStatus } from '../../utils/useTransitionStatus';
 
 const MIN_SWIPE_THRESHOLD = 10;
@@ -40,7 +40,7 @@ const MAX_SWIPE_RELEASE_SCALAR = 1;
  * A positioning container for the drawer popup that can be made scrollable.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Tale UI Drawer](https://base-ui.com/react/components/drawer)
  */
 export const DrawerViewport = React.forwardRef(function DrawerViewport(
   props: DrawerViewport.Props,
@@ -1055,7 +1055,7 @@ export interface DrawerViewportState {
   nestedDialogOpen: boolean;
 }
 
-export interface DrawerViewportProps extends BaseUIComponentProps<'div', DrawerViewport.State> {}
+export interface DrawerViewportProps extends TaleUIComponentProps<'div', DrawerViewport.State> {}
 
 export namespace DrawerViewport {
   export type Props = DrawerViewportProps;

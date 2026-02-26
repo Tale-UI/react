@@ -1,4 +1,4 @@
-import { Popover } from '@base-ui/react/popover';
+import { Popover } from '@tale-ui/react/popover';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { expect } from 'chai';
 import {

@@ -48,7 +48,7 @@ export function useSelectRootContext() {
   const context = React.useContext(SelectRootContext);
   if (context === null) {
     throw new Error(
-      'Base UI: SelectRootContext is missing. Select parts must be placed within <Select.Root>.',
+      'Tale UI: SelectRootContext is missing. Select parts must be placed within <Select.Root>.',
     );
   }
   return context;
@@ -58,7 +58,7 @@ export function useSelectFloatingContext() {
   const context = React.useContext(SelectFloatingContext);
   if (context === null) {
     throw new Error(
-      'Base UI: SelectFloatingContext is missing. Select parts must be placed within <Select.Root>.',
+      'Tale UI: SelectFloatingContext is missing. Select parts must be placed within <Select.Root>.',
     );
   }
   return context;

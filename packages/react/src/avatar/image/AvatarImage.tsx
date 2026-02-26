@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { BaseUIComponentProps } from '../../utils/types';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { TaleUIComponentProps } from '../../utils/types';
 import type { StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useAvatarRootContext } from '../root/AvatarRootContext';
@@ -22,7 +22,7 @@ const stateAttributesMapping: StateAttributesMapping<AvatarImage.State> = {
  * The image to be displayed in the avatar.
  * Renders an `<img>` element.
  *
- * Documentation: [Base UI Avatar](https://base-ui.com/react/components/avatar)
+ * Documentation: [Tale UI Avatar](https://base-ui.com/react/components/avatar)
  */
 export const AvatarImage = React.forwardRef(function AvatarImage(
   componentProps: AvatarImage.Props,
@@ -93,7 +93,7 @@ export interface AvatarImageState extends AvatarRoot.State {
   transitionStatus: TransitionStatus;
 }
 
-export interface AvatarImageProps extends BaseUIComponentProps<'img', AvatarImage.State> {
+export interface AvatarImageProps extends TaleUIComponentProps<'img', AvatarImage.State> {
   /**
    * Callback fired when the loading status changes.
    */

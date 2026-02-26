@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { createRenderer, isJSDOM } from '#test-utils';
-import { PreviewCard } from '@base-ui/react/preview-card';
+import { PreviewCard } from '@tale-ui/react/preview-card';
 import { screen, waitFor, randomStringValue, act, flushMicrotasks } from '@mui/internal-test-utils';
 
 describe('<PreviewCard.Root />', () => {
   beforeEach(async () => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
   });
 
   const { render } = createRenderer();
@@ -719,7 +719,7 @@ describe('<PreviewCard.Root />', () => {
     });
 
     it('should not have inline scale style after switching triggers', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
       const testPreviewCard = PreviewCard.createHandle<number>();
 

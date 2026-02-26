@@ -1,7 +1,7 @@
-import { ReactStore, createSelector, createSelectorMemoized } from '@base-ui/utils/store';
-import { generateId } from '@base-ui/utils/generateId';
-import { ownerDocument } from '@base-ui/utils/owner';
-import { Timeout } from '@base-ui/utils/useTimeout';
+import { ReactStore, createSelector, createSelectorMemoized } from '@tale-ui/utils/store';
+import { generateId } from '@tale-ui/utils/generateId';
+import { ownerDocument } from '@tale-ui/utils/owner';
+import { Timeout } from '@tale-ui/utils/useTimeout';
 import {
   ToastManagerAddOptions,
   ToastManagerPromiseOptions,

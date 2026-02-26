@@ -2,9 +2,9 @@ import * as React from 'react';
 import { expect } from 'chai';
 import { spy } from 'sinon';
 import { act, screen, fireEvent } from '@mui/internal-test-utils';
-import { NumberField as NumberFieldBase } from '@base-ui/react/number-field';
-import { Field } from '@base-ui/react/field';
-import { Form } from '@base-ui/react/form';
+import { NumberField as NumberFieldBase } from '@tale-ui/react/number-field';
+import { Field } from '@tale-ui/react/field';
+import { Form } from '@tale-ui/react/form';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { REASONS } from '../../utils/reasons';
 

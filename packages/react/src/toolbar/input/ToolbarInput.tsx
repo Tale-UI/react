@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 import { useFocusableWhenDisabled } from '../../utils/useFocusableWhenDisabled';
 import { ARROW_LEFT, ARROW_RIGHT, stopEvent } from '../../composite/composite';
 import type { ToolbarRoot } from '../root/ToolbarRoot';
@@ -12,7 +12,7 @@ import { CompositeItem } from '../../composite/item/CompositeItem';
  * A native input element that integrates with Toolbar keyboard navigation.
  * Renders an `<input>` element.
  *
- * Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
+ * Documentation: [Tale UI Toolbar](https://base-ui.com/react/components/toolbar)
  */
 export const ToolbarInput = React.forwardRef(function ToolbarInput(
   componentProps: ToolbarInput.Props,
@@ -83,7 +83,7 @@ export interface ToolbarInputState extends ToolbarRoot.State {
   focusable: boolean;
 }
 
-export interface ToolbarInputProps extends BaseUIComponentProps<'input', ToolbarInput.State> {
+export interface ToolbarInputProps extends TaleUIComponentProps<'input', ToolbarInput.State> {
   /**
    * When `true` the item is disabled.
    * @default false

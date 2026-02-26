@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { createRenderer, isJSDOM } from '#test-utils';
 import { act, screen, waitFor } from '@mui/internal-test-utils';
-import { Popover } from '@base-ui/react/popover';
+import { Popover } from '@tale-ui/react/popover';
 
 describe('<Popover.Root />', () => {
   beforeEach(() => {
-    globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+    globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
   });
 
   const { render } = createRenderer();
@@ -605,7 +605,7 @@ describe('<Popover.Root />', () => {
     });
 
     it('should not have inline scale style after switching triggers', async () => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
 
       const testPopover = Popover.createHandle<number>();
 

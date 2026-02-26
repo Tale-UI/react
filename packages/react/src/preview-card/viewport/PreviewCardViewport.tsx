@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { usePreviewCardRootContext } from '../root/PreviewCardContext';
 import { usePreviewCardPositionerContext } from '../positioner/PreviewCardPositionerContext';
-import { BaseUIComponentProps } from '../../utils/types';
+import { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import { PreviewCardViewportCssVars } from './PreviewCardViewportCssVars';
@@ -23,7 +23,7 @@ const stateAttributesMapping: StateAttributesMapping<PreviewCardViewport.State> 
  * and switching between them is animated.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)
+ * Documentation: [Tale UI Preview Card](https://base-ui.com/react/components/preview-card)
  */
 export const PreviewCardViewport = React.forwardRef(function PreviewCardViewport(
   componentProps: PreviewCardViewport.Props,
@@ -57,7 +57,7 @@ export const PreviewCardViewport = React.forwardRef(function PreviewCardViewport
 });
 
 export namespace PreviewCardViewport {
-  export interface Props extends BaseUIComponentProps<'div', State> {
+  export interface Props extends TaleUIComponentProps<'div', State> {
     /**
      * The content to render inside the transition container.
      */

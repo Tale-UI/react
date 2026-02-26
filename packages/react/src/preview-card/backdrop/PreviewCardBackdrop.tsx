@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { usePreviewCardRootContext } from '../root/PreviewCardContext';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { type StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import { popupStateMapping as baseMapping } from '../../utils/popupStateMapping';
 import type { TransitionStatus } from '../../utils/useTransitionStatus';
@@ -17,7 +17,7 @@ const stateAttributesMapping: StateAttributesMapping<PreviewCardBackdrop.State> 
  * An overlay displayed beneath the popup.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)
+ * Documentation: [Tale UI Preview Card](https://base-ui.com/react/components/preview-card)
  */
 export const PreviewCardBackdrop = React.forwardRef(function PreviewCardBackdrop(
   componentProps: PreviewCardBackdrop.Props,
@@ -64,7 +64,7 @@ export interface PreviewCardBackdropState {
   transitionStatus: TransitionStatus;
 }
 
-export interface PreviewCardBackdropProps extends BaseUIComponentProps<
+export interface PreviewCardBackdropProps extends TaleUIComponentProps<
   'div',
   PreviewCardBackdrop.State
 > {}

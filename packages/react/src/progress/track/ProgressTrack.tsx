@@ -4,13 +4,13 @@ import { useRenderElement } from '../../utils/useRenderElement';
 import { useProgressRootContext } from '../root/ProgressRootContext';
 import { progressStateAttributesMapping } from '../root/stateAttributesMapping';
 import type { ProgressRoot } from '../root/ProgressRoot';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 
 /**
  * Contains the progress bar indicator.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Progress](https://base-ui.com/react/components/progress)
+ * Documentation: [Tale UI Progress](https://base-ui.com/react/components/progress)
  */
 export const ProgressTrack = React.forwardRef(function ProgressTrack(
   componentProps: ProgressTrack.Props,
@@ -30,7 +30,7 @@ export const ProgressTrack = React.forwardRef(function ProgressTrack(
   return element;
 });
 
-export interface ProgressTrackProps extends BaseUIComponentProps<'div', ProgressRoot.State> {}
+export interface ProgressTrackProps extends TaleUIComponentProps<'div', ProgressRoot.State> {}
 
 export namespace ProgressTrack {
   export type Props = ProgressTrackProps;

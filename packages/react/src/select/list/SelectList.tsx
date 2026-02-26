@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useStore } from '@base-ui/utils/store';
-import type { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useStore } from '@tale-ui/utils/store';
+import type { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 import { useSelectRootContext } from '../root/SelectRootContext';
 import { useSelectPositionerContext } from '../positioner/SelectPositionerContext';
 import { useRenderElement } from '../../utils/useRenderElement';
@@ -14,7 +14,7 @@ import { selectors } from '../store';
  * A container for the select items.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Tale UI Select](https://base-ui.com/react/components/select)
  */
 export const SelectList = React.forwardRef(function SelectList(
   componentProps: SelectList.Props,
@@ -54,7 +54,7 @@ export const SelectList = React.forwardRef(function SelectList(
   });
 });
 
-export interface SelectListProps extends BaseUIComponentProps<'div', SelectList.State> {}
+export interface SelectListProps extends TaleUIComponentProps<'div', SelectList.State> {}
 
 export interface SelectListState {}
 

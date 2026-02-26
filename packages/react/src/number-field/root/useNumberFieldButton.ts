@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { Timeout } from '@base-ui/utils/useTimeout';
+import type { Timeout } from '@tale-ui/utils/useTimeout';
 import {
   DEFAULT_STEP,
   MAX_POINTER_MOVES_AFTER_TOUCH,
@@ -11,7 +11,7 @@ import { parseNumber } from '../utils/parse';
 import {
   createChangeEventDetails,
   createGenericEventDetails,
-} from '../../utils/createBaseUIEventDetails';
+} from '../../utils/createTaleUIEventDetails';
 import type {
   EventWithOptionalKeyState,
   Direction,

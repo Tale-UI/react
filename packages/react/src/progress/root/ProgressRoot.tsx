@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
+import { useValueAsRef } from '@tale-ui/utils/useValueAsRef';
 import { formatNumberValue } from '../../utils/formatNumber';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { ProgressRootContext } from './ProgressRootContext';
 import { progressStateAttributesMapping } from './stateAttributesMapping';
-import { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 
 function getDefaultAriaValueText(formattedValue: string | null, value: number | null) {
   if (value == null) {
@@ -19,7 +19,7 @@ function getDefaultAriaValueText(formattedValue: string | null, value: number | 
  * Groups all parts of the progress bar and provides the task completion status to screen readers.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Progress](https://base-ui.com/react/components/progress)
+ * Documentation: [Tale UI Progress](https://base-ui.com/react/components/progress)
  */
 export const ProgressRoot = React.forwardRef(function ProgressRoot(
   componentProps: ProgressRoot.Props,
@@ -89,7 +89,7 @@ export interface ProgressRootState {
   status: ProgressStatus;
 }
 
-export interface ProgressRootProps extends BaseUIComponentProps<'div', ProgressRoot.State> {
+export interface ProgressRootProps extends TaleUIComponentProps<'div', ProgressRoot.State> {
   /**
    * A string value that provides a user-friendly name for `aria-valuenow`, the current value of the meter.
    */

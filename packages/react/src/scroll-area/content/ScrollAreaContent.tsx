@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import type { BaseUIComponentProps } from '../../utils/types';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useScrollAreaViewportContext } from '../viewport/ScrollAreaViewportContext';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useScrollAreaRootContext } from '../root/ScrollAreaRootContext';
@@ -12,7 +12,7 @@ import type { ScrollAreaRoot } from '../root/ScrollAreaRoot';
  * A container for the content of the scroll area.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)
+ * Documentation: [Tale UI Scroll Area](https://base-ui.com/react/components/scroll-area)
  */
 export const ScrollAreaContent = React.forwardRef(function ScrollAreaContent(
   componentProps: ScrollAreaContent.Props,
@@ -70,7 +70,7 @@ export const ScrollAreaContent = React.forwardRef(function ScrollAreaContent(
 
 export interface ScrollAreaContentState extends ScrollAreaRoot.State {}
 
-export interface ScrollAreaContentProps extends BaseUIComponentProps<
+export interface ScrollAreaContentProps extends TaleUIComponentProps<
   'div',
   ScrollAreaContent.State
 > {}

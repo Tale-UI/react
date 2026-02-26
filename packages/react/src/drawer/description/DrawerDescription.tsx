@@ -1,17 +1,17 @@
 'use client';
 import type * as React from 'react';
 import { DialogDescription } from '../../dialog/description/DialogDescription';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 
 /**
  * A paragraph with additional information about the drawer.
  * Renders a `<p>` element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Tale UI Drawer](https://base-ui.com/react/components/drawer)
  */
 export const DrawerDescription = DialogDescription as DrawerDescription;
 
-export interface DrawerDescriptionProps extends BaseUIComponentProps<
+export interface DrawerDescriptionProps extends TaleUIComponentProps<
   'p',
   DrawerDescription.State
 > {}

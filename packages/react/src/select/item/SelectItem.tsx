@@ -1,21 +1,21 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
-import { isMouseWithinBounds } from '@base-ui/utils/isMouseWithinBounds';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { useStore } from '@base-ui/utils/store';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useValueAsRef } from '@tale-ui/utils/useValueAsRef';
+import { isMouseWithinBounds } from '@tale-ui/utils/isMouseWithinBounds';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
+import { useStore } from '@tale-ui/utils/store';
 import { useSelectRootContext } from '../root/SelectRootContext';
 import {
   useCompositeListItem,
   IndexGuessBehavior,
 } from '../../composite/list/useCompositeListItem';
-import type { BaseUIComponentProps, HTMLProps, NonNativeButtonProps } from '../../utils/types';
+import type { TaleUIComponentProps, HTMLProps, NonNativeButtonProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { SelectItemContext } from './SelectItemContext';
 import { selectors } from '../store';
 import { useButton } from '../../use-button';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { compareItemEquality, removeItem } from '../../utils/itemEquality';
 
@@ -23,7 +23,7 @@ import { compareItemEquality, removeItem } from '../../utils/itemEquality';
  * An individual option in the select popup.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Tale UI Select](https://base-ui.com/react/components/select)
  */
 export const SelectItem = React.memo(
   React.forwardRef(function SelectItem(
@@ -274,7 +274,7 @@ export interface SelectItemState {
 }
 
 export interface SelectItemProps
-  extends NonNativeButtonProps, Omit<BaseUIComponentProps<'div', SelectItem.State>, 'id'> {
+  extends NonNativeButtonProps, Omit<TaleUIComponentProps<'div', SelectItem.State>, 'id'> {
   children?: React.ReactNode;
   /**
    * A unique value that identifies this select item.

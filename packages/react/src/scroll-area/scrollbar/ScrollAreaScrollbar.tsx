@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import type { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 import { useScrollAreaRootContext } from '../root/ScrollAreaRootContext';
 import { ScrollAreaScrollbarContext } from './ScrollAreaScrollbarContext';
 import { useRenderElement } from '../../utils/useRenderElement';
@@ -15,7 +15,7 @@ import type { ScrollAreaRoot } from '../root/ScrollAreaRoot';
  * A vertical or horizontal scrollbar for the scroll area.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)
+ * Documentation: [Tale UI Scroll Area](https://base-ui.com/react/components/scroll-area)
  */
 export const ScrollAreaScrollbar = React.forwardRef(function ScrollAreaScrollbar(
   componentProps: ScrollAreaScrollbar.Props,
@@ -237,7 +237,7 @@ export interface ScrollAreaScrollbarState extends ScrollAreaRoot.State {
   orientation: 'vertical' | 'horizontal';
 }
 
-export interface ScrollAreaScrollbarProps extends BaseUIComponentProps<
+export interface ScrollAreaScrollbarProps extends TaleUIComponentProps<
   'div',
   ScrollAreaScrollbar.State
 > {

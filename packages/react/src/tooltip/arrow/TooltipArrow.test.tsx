@@ -1,4 +1,4 @@
-import { Tooltip } from '@base-ui/react/tooltip';
+import { Tooltip } from '@tale-ui/react/tooltip';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Tooltip.Arrow />', () => {

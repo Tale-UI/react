@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../utils/types';
+import type { TaleUIComponentProps, NativeButtonProps } from '../../utils/types';
 import { useToastRootContext } from '../root/ToastRootContext';
 import { useToastProviderContext } from '../provider/ToastProviderContext';
 import { useButton } from '../../use-button/useButton';
@@ -10,7 +10,7 @@ import { useRenderElement } from '../../utils/useRenderElement';
  * Closes the toast when clicked.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+ * Documentation: [Tale UI Toast](https://base-ui.com/react/components/toast)
  */
 export const ToastClose = React.forwardRef(function ToastClose(
   componentProps: ToastClose.Props,
@@ -65,7 +65,7 @@ export interface ToastCloseState {
 }
 
 export interface ToastCloseProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', ToastClose.State> {}
+  extends NativeButtonProps, TaleUIComponentProps<'button', ToastClose.State> {}
 
 export namespace ToastClose {
   export type State = ToastCloseState;

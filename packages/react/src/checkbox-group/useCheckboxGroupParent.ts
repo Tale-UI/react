@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useBaseUiId } from '../utils/useBaseUiId';
-import type { BaseUIChangeEventDetails } from '../utils/createBaseUIEventDetails';
-import type { BaseUIEventReasons } from '../utils/reasons';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useTaleUiId } from '../utils/useTaleUiId';
+import type { TaleUIChangeEventDetails } from '../utils/createTaleUIEventDetails';
+import type { TaleUIEventReasons } from '../utils/reasons';
 
 const EMPTY: string[] = [];
 
@@ -17,7 +17,7 @@ export function useCheckboxGroupParent(
 
   const [status, setStatus] = React.useState<'on' | 'off' | 'mixed'>('mixed');
 
-  const id = useBaseUiId();
+  const id = useTaleUiId();
   const checked = value.length === allValues.length;
   const indeterminate = value.length !== allValues.length && value.length > 0;
 
@@ -110,7 +110,7 @@ export interface UseCheckboxGroupParentParameters {
   onValueChange?:
     | ((
         value: string[],
-        eventDetails: BaseUIChangeEventDetails<BaseUIEventReasons['none']>,
+        eventDetails: TaleUIChangeEventDetails<TaleUIEventReasons['none']>,
       ) => void)
     | undefined;
 }
@@ -126,14 +126,14 @@ export interface UseCheckboxGroupParentReturnValue {
     'aria-controls': string;
     onCheckedChange: (
       checked: boolean,
-      eventDetails: BaseUIChangeEventDetails<BaseUIEventReasons['none']>,
+      eventDetails: TaleUIChangeEventDetails<TaleUIEventReasons['none']>,
     ) => void;
   };
   getChildProps: (value: string) => {
     checked: boolean;
     onCheckedChange: (
       checked: boolean,
-      eventDetails: BaseUIChangeEventDetails<BaseUIEventReasons['none']>,
+      eventDetails: TaleUIChangeEventDetails<TaleUIEventReasons['none']>,
     ) => void;
   };
 }

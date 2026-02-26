@@ -4,7 +4,7 @@ import type {
   VirtualElement,
 } from '@floating-ui/react-dom';
 import type * as React from 'react';
-import type { BaseUIChangeEventDetails } from '../utils/createBaseUIEventDetails';
+import type { TaleUIChangeEventDetails } from '../utils/createTaleUIEventDetails';
 
 import type { ExtendedUserProps } from './hooks/useInteractions';
 import type { FloatingTreeStore } from './components/FloatingTreeStore';
@@ -130,7 +130,7 @@ export type FloatingContext = Omit<
   'refs' | 'elements'
 > & {
   open: boolean;
-  onOpenChange(open: boolean, eventDetails: BaseUIChangeEventDetails<string>): void;
+  onOpenChange(open: boolean, eventDetails: TaleUIChangeEventDetails<string>): void;
   events: FloatingEvents;
   dataRef: React.RefObject<ContextData>;
   nodeId: string | undefined;
@@ -197,7 +197,7 @@ export interface UseFloatingOptions extends Omit<UsePositionOptions, 'elements'>
    * An event callback that is invoked when the floating element is opened or
    * closed.
    */
-  onOpenChange?(open: boolean, eventDetails: BaseUIChangeEventDetails<string>): void;
+  onOpenChange?(open: boolean, eventDetails: TaleUIChangeEventDetails<string>): void;
   /**
    * Unique node id when using `FloatingTree`.
    */

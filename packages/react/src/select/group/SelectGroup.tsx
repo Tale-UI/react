@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { SelectGroupContext } from './SelectGroupContext';
 import { useRenderElement } from '../../utils/useRenderElement';
 
@@ -8,7 +8,7 @@ import { useRenderElement } from '../../utils/useRenderElement';
  * Groups related select items with the corresponding label.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Tale UI Select](https://base-ui.com/react/components/select)
  */
 export const SelectGroup = React.forwardRef(function SelectGroup(
   componentProps: SelectGroup.Props,
@@ -41,7 +41,7 @@ export const SelectGroup = React.forwardRef(function SelectGroup(
 });
 
 export interface SelectGroupState {}
-export interface SelectGroupProps extends BaseUIComponentProps<'div', SelectGroup.State> {}
+export interface SelectGroupProps extends TaleUIComponentProps<'div', SelectGroup.State> {}
 
 export namespace SelectGroup {
   export type State = SelectGroupState;

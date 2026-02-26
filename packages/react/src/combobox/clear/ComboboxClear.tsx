@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useStore } from '@base-ui/utils/store';
+import { useStore } from '@tale-ui/utils/store';
 import { useComboboxInputValueContext, useComboboxRootContext } from '../root/ComboboxRootContext';
-import type { BaseUIComponentProps, NativeButtonProps } from '../../utils/types';
+import type { TaleUIComponentProps, NativeButtonProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { selectors } from '../store';
 import { useButton } from '../../use-button';
@@ -11,7 +11,7 @@ import { TransitionStatus, useTransitionStatus } from '../../utils/useTransition
 import { transitionStatusMapping } from '../../utils/stateAttributesMapping';
 import { StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import { useOpenChangeComplete } from '../../utils/useOpenChangeComplete';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { triggerOpenStateMapping } from '../../utils/popupStateMapping';
 
@@ -153,7 +153,7 @@ export interface ComboboxClearState {
 }
 
 export interface ComboboxClearProps
-  extends NativeButtonProps, BaseUIComponentProps<'button', ComboboxClear.State> {
+  extends NativeButtonProps, TaleUIComponentProps<'button', ComboboxClear.State> {
   /**
    * Whether the component should ignore user interaction.
    * @default false

@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useRadioRootContext } from '../root/RadioRootContext';
 import { stateAttributesMapping } from '../utils/stateAttributesMapping';
@@ -11,7 +11,7 @@ import { type TransitionStatus, useTransitionStatus } from '../../utils/useTrans
  * Indicates whether the radio button is selected.
  * Renders a `<span>` element.
  *
- * Documentation: [Base UI Radio](https://base-ui.com/react/components/radio)
+ * Documentation: [Tale UI Radio](https://base-ui.com/react/components/radio)
  */
 export const RadioIndicator = React.forwardRef(function RadioIndicator(
   componentProps: RadioIndicator.Props,
@@ -58,7 +58,7 @@ export const RadioIndicator = React.forwardRef(function RadioIndicator(
   return element;
 });
 
-export interface RadioIndicatorProps extends BaseUIComponentProps<'span', RadioIndicator.State> {
+export interface RadioIndicatorProps extends TaleUIComponentProps<'span', RadioIndicator.State> {
   /**
    * Whether to keep the HTML element in the DOM when the radio button is inactive.
    * @default false

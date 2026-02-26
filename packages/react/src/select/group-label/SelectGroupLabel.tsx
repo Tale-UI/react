@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import type { BaseUIComponentProps } from '../../utils/types';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import type { TaleUIComponentProps } from '../../utils/types';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { useSelectGroupContext } from '../group/SelectGroupContext';
 import { useRenderElement } from '../../utils/useRenderElement';
 
@@ -10,7 +10,7 @@ import { useRenderElement } from '../../utils/useRenderElement';
  * An accessible label that is automatically associated with its parent group.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Tale UI Select](https://base-ui.com/react/components/select)
  */
 export const SelectGroupLabel = React.forwardRef(function SelectGroupLabel(
   componentProps: SelectGroupLabel.Props,
@@ -20,7 +20,7 @@ export const SelectGroupLabel = React.forwardRef(function SelectGroupLabel(
 
   const { setLabelId } = useSelectGroupContext();
 
-  const id = useBaseUiId(idProp);
+  const id = useTaleUiId(idProp);
 
   useIsoLayoutEffect(() => {
     setLabelId(id);
@@ -36,7 +36,7 @@ export const SelectGroupLabel = React.forwardRef(function SelectGroupLabel(
 
 export interface SelectGroupLabelState {}
 
-export interface SelectGroupLabelProps extends BaseUIComponentProps<
+export interface SelectGroupLabelProps extends TaleUIComponentProps<
   'div',
   SelectGroupLabel.State
 > {}

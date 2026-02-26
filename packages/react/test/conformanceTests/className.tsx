@@ -2,13 +2,13 @@ import * as React from 'react';
 import { expect } from 'chai';
 import type {
   ConformantComponentProps,
-  BaseUiConformanceTestsOptions,
+  TaleUiConformanceTestsOptions,
 } from '../describeConformance';
 import { throwMissingPropError } from './utils';
 
 export function testClassName(
   element: React.ReactElement<ConformantComponentProps>,
-  getOptions: () => BaseUiConformanceTestsOptions,
+  getOptions: () => TaleUiConformanceTestsOptions,
 ) {
   describe('prop: className', () => {
     const { render } = getOptions();

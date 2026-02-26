@@ -1,12 +1,12 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useTimeout } from '@base-ui/utils/useTimeout';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
 import { useDialogRootContext } from '../../dialog/root/DialogRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import type { StateAttributesMapping } from '../../utils/getStateAttributesProps';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import {
   getDisplacement,
@@ -18,7 +18,7 @@ import { DrawerPopupCssVars } from '../popup/DrawerPopupCssVars';
 import { DrawerPopupDataAttributes } from '../popup/DrawerPopupDataAttributes';
 import { DrawerBackdropCssVars } from '../backdrop/DrawerBackdropCssVars';
 import { useDrawerRootContext, type DrawerSwipeDirection } from '../root/DrawerRootContext';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { useTriggerRegistration } from '../../utils/popups';
 import { useDrawerProviderContext } from '../provider/DrawerProviderContext';
 import { CommonPopupDataAttributes } from '../../utils/popupStateMapping';
@@ -66,7 +66,7 @@ function resolveTouchAction(direction: DrawerSwipeDirection) {
  * An invisible area that listens for swipe gestures to open the drawer.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+ * Documentation: [Tale UI Drawer](https://base-ui.com/react/components/drawer)
  */
 export const DrawerSwipeArea = React.forwardRef(function DrawerSwipeArea(
   componentProps: DrawerSwipeArea.Props,
@@ -95,7 +95,7 @@ export const DrawerSwipeArea = React.forwardRef(function DrawerSwipeArea(
   const appliedSwipeStylesRef = React.useRef(false);
   const popupTransitionRef = React.useRef<string | null>(null);
 
-  const swipeAreaId = useBaseUiId(componentProps.id);
+  const swipeAreaId = useTaleUiId(componentProps.id);
   const registerTrigger = useTriggerRegistration(swipeAreaId, store);
 
   const open = store.useState('open');
@@ -435,7 +435,7 @@ export const DrawerSwipeArea = React.forwardRef(function DrawerSwipeArea(
   });
 });
 
-export interface DrawerSwipeAreaProps extends BaseUIComponentProps<'div', DrawerSwipeArea.State> {
+export interface DrawerSwipeAreaProps extends TaleUIComponentProps<'div', DrawerSwipeArea.State> {
   /**
    * Whether the swipe area is disabled.
    * @default false

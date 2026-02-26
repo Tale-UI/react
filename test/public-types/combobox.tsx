@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from '@tale-ui/react/combobox';
 
 export type ComboboxProps<
   Value = string,

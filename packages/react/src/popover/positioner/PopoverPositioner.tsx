@@ -1,12 +1,12 @@
 'use client';
 import * as React from 'react';
-import { inertValue } from '@base-ui/utils/inertValue';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { inertValue } from '@tale-ui/utils/inertValue';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
 import { FloatingNode, useFloatingNodeId } from '../../floating-ui-react';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
 import { PopoverPositionerContext } from './PopoverPositionerContext';
 import { useAnchorPositioning, type Side, type Align } from '../../utils/useAnchorPositioning';
-import type { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import type { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import { usePopoverPortalContext } from '../portal/PopoverPortalContext';
 import { InternalBackdrop } from '../../utils/InternalBackdrop';
@@ -21,7 +21,7 @@ import { getDisabledMountTransitionStyles } from '../../utils/getDisabledMountTr
  * Positions the popover against the trigger.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Tale UI Popover](https://base-ui.com/react/components/popover)
  */
 export const PopoverPositioner = React.forwardRef(function PopoverPositioner(
   componentProps: PopoverPositioner.Props,
@@ -193,7 +193,7 @@ export interface PopoverPositionerState {
 export interface PopoverPositionerProps
   extends
     useAnchorPositioning.SharedParameters,
-    BaseUIComponentProps<'div', PopoverPositioner.State> {}
+    TaleUIComponentProps<'div', PopoverPositioner.State> {}
 
 export namespace PopoverPositioner {
   export type State = PopoverPositionerState;

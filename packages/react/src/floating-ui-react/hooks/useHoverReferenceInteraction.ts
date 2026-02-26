@@ -2,12 +2,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { isElement } from '@floating-ui/utils/dom';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { ownerDocument } from '@base-ui/utils/owner';
+import { useValueAsRef } from '@tale-ui/utils/useValueAsRef';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { ownerDocument } from '@tale-ui/utils/owner';
 import type { FloatingContext, FloatingRootContext } from '../types';
 import { contains, isMouseLikePointerType, isTargetInsideEnabledTrigger } from '../utils';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import type { UseHoverProps } from './useHover';
 import { getDelay } from './useHover';

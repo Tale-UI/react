@@ -1,4 +1,4 @@
-import { Menu } from '@base-ui/react/menu';
+import { Menu } from '@tale-ui/react/menu';
 import { Link } from 'react-router';
 
 export default function ReactRouterLinkItemNavigation() {

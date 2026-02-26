@@ -10,7 +10,7 @@ export function useToastManager<Data extends object = any>(): UseToastManagerRet
   const store = React.useContext(ToastContext);
 
   if (!store) {
-    throw new Error('Base UI: useToastManager must be used within <Toast.Provider>.');
+    throw new Error('Tale UI: useToastManager must be used within <Toast.Provider>.');
   }
 
   const toasts = store.useState('toasts');

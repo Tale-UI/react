@@ -21,7 +21,7 @@ const OneLevelImportMessage = [
 
 const NO_RESTRICTED_IMPORTS_PATTERNS_DEEPLY_NESTED = [
   {
-    group: ['@base-ui/react/*/*'],
+    group: ['@tale-ui/react/*/*'],
     message: OneLevelImportMessage,
   },
 ];
@@ -50,7 +50,7 @@ export default defineConfig(
     },
   },
   {
-    name: 'Base UI overrides',
+    name: 'Tale UI overrides',
     files: [`**/*${EXTENSION_TS}`],
     settings: {
       'import/resolver': {

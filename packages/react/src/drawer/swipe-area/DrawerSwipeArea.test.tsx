@@ -1,4 +1,4 @@
-import * as DrawerModule from '@base-ui/react/drawer';
+import * as DrawerModule from '@tale-ui/react/drawer';
 import { describe, expect, it } from 'vitest';
 
 describe('<Drawer.SwipeArea />', () => {
@@ -6,7 +6,7 @@ describe('<Drawer.SwipeArea />', () => {
     expect('SwipeArea' in DrawerModule.DrawerPreview).toBe(false);
   });
 
-  it('is not exported from @base-ui/react/drawer', () => {
+  it('is not exported from @tale-ui/react/drawer', () => {
     expect('DrawerSwipeArea' in DrawerModule).toBe(false);
   });
 });

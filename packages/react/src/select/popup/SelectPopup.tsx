@@ -1,17 +1,17 @@
 'use client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { isWebKit } from '@base-ui/utils/detectBrowser';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { ownerDocument, ownerWindow } from '@base-ui/utils/owner';
-import { isMouseWithinBounds } from '@base-ui/utils/isMouseWithinBounds';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useStore } from '@base-ui/utils/store';
-import { useAnimationFrame } from '@base-ui/utils/useAnimationFrame';
-import type { InteractionType } from '@base-ui/utils/useEnhancedClickHandler';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
+import { isWebKit } from '@tale-ui/utils/detectBrowser';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { ownerDocument, ownerWindow } from '@tale-ui/utils/owner';
+import { isMouseWithinBounds } from '@tale-ui/utils/isMouseWithinBounds';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useStore } from '@tale-ui/utils/store';
+import { useAnimationFrame } from '@tale-ui/utils/useAnimationFrame';
+import type { InteractionType } from '@tale-ui/utils/useEnhancedClickHandler';
 import { FloatingFocusManager } from '../../floating-ui-react';
-import type { BaseUIComponentProps, HTMLProps } from '../../utils/types';
+import type { TaleUIComponentProps, HTMLProps } from '../../utils/types';
 import { useSelectFloatingContext, useSelectRootContext } from '../root/SelectRootContext';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import type { Side, Align } from '../../utils/useAnchorPositioning';
@@ -24,7 +24,7 @@ import { useOpenChangeComplete } from '../../utils/useOpenChangeComplete';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { selectors } from '../store';
 import { clearStyles, LIST_FUNCTIONAL_STYLES } from './utils';
-import { createChangeEventDetails } from '../../utils/createBaseUIEventDetails';
+import { createChangeEventDetails } from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 import { useToolbarRootContext } from '../../toolbar/root/ToolbarRootContext';
 import { COMPOSITE_KEYS } from '../../composite/composite';
@@ -43,7 +43,7 @@ const stateAttributesMapping: StateAttributesMapping<SelectPopup.State> = {
  * A container for the select list.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ * Documentation: [Tale UI Select](https://base-ui.com/react/components/select)
  */
 export const SelectPopup = React.forwardRef(function SelectPopup(
   componentProps: SelectPopup.Props,
@@ -529,7 +529,7 @@ export const SelectPopup = React.forwardRef(function SelectPopup(
   );
 });
 
-export interface SelectPopupProps extends BaseUIComponentProps<'div', SelectPopup.State> {
+export interface SelectPopupProps extends TaleUIComponentProps<'div', SelectPopup.State> {
   children?: React.ReactNode;
   /**
    * Determines the element to focus when the select popup is closed.

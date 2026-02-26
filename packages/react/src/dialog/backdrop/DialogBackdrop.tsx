@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useDialogRootContext } from '../root/DialogRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { type TransitionStatus } from '../../utils/useTransitionStatus';
-import { type BaseUIComponentProps } from '../../utils/types';
+import { type TaleUIComponentProps } from '../../utils/types';
 import { type StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import { popupStateMapping as baseMapping } from '../../utils/popupStateMapping';
 import { transitionStatusMapping } from '../../utils/stateAttributesMapping';
@@ -17,7 +17,7 @@ const stateAttributesMapping: StateAttributesMapping<DialogBackdrop.State> = {
  * An overlay displayed beneath the popup.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+ * Documentation: [Tale UI Dialog](https://base-ui.com/react/components/dialog)
  */
 export const DialogBackdrop = React.forwardRef(function DialogBackdrop(
   componentProps: DialogBackdrop.Props,
@@ -55,7 +55,7 @@ export const DialogBackdrop = React.forwardRef(function DialogBackdrop(
   });
 });
 
-export interface DialogBackdropProps extends BaseUIComponentProps<'div', DialogBackdrop.State> {
+export interface DialogBackdropProps extends TaleUIComponentProps<'div', DialogBackdrop.State> {
   /**
    * Whether the backdrop is forced to render even when nested.
    * @default false

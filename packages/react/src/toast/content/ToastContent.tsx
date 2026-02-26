@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import type { BaseUIComponentProps } from '../../utils/types';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { useToastRootContext } from '../root/ToastRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
 
@@ -9,7 +9,7 @@ import { useRenderElement } from '../../utils/useRenderElement';
  * A container for the contents of a toast.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+ * Documentation: [Tale UI Toast](https://base-ui.com/react/components/toast)
  */
 export const ToastContent = React.forwardRef(function ToastContent(
   componentProps: ToastContent.Props,
@@ -72,7 +72,7 @@ export interface ToastContentState {
   behind: boolean;
 }
 
-export interface ToastContentProps extends BaseUIComponentProps<'div', ToastContent.State> {}
+export interface ToastContentProps extends TaleUIComponentProps<'div', ToastContent.State> {}
 
 export namespace ToastContent {
   export type State = ToastContentState;

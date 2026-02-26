@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
 import { AriaCombobox } from '../../combobox/root/AriaCombobox';
 import { useCoreFilter } from '../../combobox/root/utils/useFilter';
 import { stringifyAsLabel } from '../../utils/resolveValueLabel';
@@ -10,7 +10,7 @@ import { REASONS } from '../../utils/reasons';
  * Groups all parts of the autocomplete.
  * Doesn't render its own HTML element.
  *
- * Documentation: [Base UI Autocomplete](https://base-ui.com/react/components/autocomplete)
+ * Documentation: [Tale UI Autocomplete](https://base-ui.com/react/components/autocomplete)
  */
 export function AutocompleteRoot<Items extends readonly { items: readonly any[] }[]>(
   props: Omit<AutocompleteRoot.Props<Items[number]['items'][number]>, 'items'> & {

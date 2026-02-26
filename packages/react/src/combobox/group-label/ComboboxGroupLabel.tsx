@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { BaseUIComponentProps } from '../../utils/types';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { TaleUIComponentProps } from '../../utils/types';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { useComboboxGroupContext } from '../group/ComboboxGroupContext';
 import { useRenderElement } from '../../utils/useRenderElement';
 
@@ -18,7 +18,7 @@ export const ComboboxGroupLabel = React.forwardRef(function ComboboxGroupLabel(
 
   const { setLabelId } = useComboboxGroupContext();
 
-  const id = useBaseUiId(idProp);
+  const id = useTaleUiId(idProp);
 
   useIsoLayoutEffect(() => {
     setLabelId(id);
@@ -37,7 +37,7 @@ export const ComboboxGroupLabel = React.forwardRef(function ComboboxGroupLabel(
 
 export interface ComboboxGroupLabelState {}
 
-export interface ComboboxGroupLabelProps extends BaseUIComponentProps<
+export interface ComboboxGroupLabelProps extends TaleUIComponentProps<
   'div',
   ComboboxGroupLabel.State
 > {}

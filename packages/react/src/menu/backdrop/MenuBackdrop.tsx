@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useMenuRootContext } from '../root/MenuRootContext';
 import { useRenderElement } from '../../utils/useRenderElement';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { type StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import { popupStateMapping as baseMapping } from '../../utils/popupStateMapping';
 import type { TransitionStatus } from '../../utils/useTransitionStatus';
@@ -19,7 +19,7 @@ const stateAttributesMapping: StateAttributesMapping<MenuBackdrop.State> = {
  * An overlay displayed beneath the menu popup.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ * Documentation: [Tale UI Menu](https://base-ui.com/react/components/menu)
  */
 export const MenuBackdrop = React.forwardRef(function MenuBackdrop(
   componentProps: MenuBackdrop.Props,
@@ -69,7 +69,7 @@ export interface MenuBackdropState {
   transitionStatus: TransitionStatus;
 }
 
-export interface MenuBackdropProps extends BaseUIComponentProps<'div', MenuBackdrop.State> {}
+export interface MenuBackdropProps extends TaleUIComponentProps<'div', MenuBackdrop.State> {}
 
 export namespace MenuBackdrop {
   export type State = MenuBackdropState;

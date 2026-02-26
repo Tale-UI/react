@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useNavigationMenuPositionerContext } from '../positioner/NavigationMenuPositionerContext';
 import { useNavigationMenuRootContext } from '../root/NavigationMenuRootContext';
 import type { Align, Side } from '../../utils/useAnchorPositioning';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { popupStateMapping } from '../../utils/popupStateMapping';
 import { useRenderElement } from '../../utils/useRenderElement';
 
@@ -11,7 +11,7 @@ import { useRenderElement } from '../../utils/useRenderElement';
  * Displays an element pointing toward the navigation menu's current anchor.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ * Documentation: [Tale UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
  */
 export const NavigationMenuArrow = React.forwardRef(function NavigationMenuArrow(
   componentProps: NavigationMenuArrow.Props,
@@ -50,7 +50,7 @@ export interface NavigationMenuArrowState {
   uncentered: boolean;
 }
 
-export interface NavigationMenuArrowProps extends BaseUIComponentProps<
+export interface NavigationMenuArrowProps extends TaleUIComponentProps<
   'div',
   NavigationMenuArrow.State
 > {}

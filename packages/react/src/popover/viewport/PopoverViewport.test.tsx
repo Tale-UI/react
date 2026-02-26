@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Popover } from '@base-ui/react/popover';
+import { Popover } from '@tale-ui/react/popover';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { expect } from 'chai';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
@@ -95,11 +95,11 @@ describe('<Popover.Viewport />', () => {
 
   describe.skipIf(isJSDOM)('morphing containers with multiple triggers and payloads', () => {
     beforeEach(() => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = false;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = false;
     });
 
     afterEach(() => {
-      globalThis.BASE_UI_ANIMATIONS_DISABLED = true;
+      globalThis.TALE_UI_ANIMATIONS_DISABLED = true;
     });
 
     it('should create morphing containers during transitions', async () => {

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Field } from '@base-ui/react/field';
-import { Select } from '@base-ui/react/select';
+import { Field } from '@tale-ui/react/field';
+import { Select } from '@tale-ui/react/select';
 
 const items = [
   { label: 'select', value: null },

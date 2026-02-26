@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { Separator } from '../../separator';
 import { useToolbarRootContext } from '../root/ToolbarRootContext';
 import type { ToolbarRoot } from '../root/ToolbarRoot';
@@ -8,7 +8,7 @@ import type { ToolbarRoot } from '../root/ToolbarRoot';
  * A separator element accessible to screen readers.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
+ * Documentation: [Tale UI Toolbar](https://base-ui.com/react/components/toolbar)
  */
 export const ToolbarSeparator = React.forwardRef(function ToolbarSeparator(
   props: ToolbarSeparator.Props,
@@ -27,7 +27,7 @@ export const ToolbarSeparator = React.forwardRef(function ToolbarSeparator(
 });
 
 export interface ToolbarSeparatorProps
-  extends BaseUIComponentProps<'div', Separator.State>, Separator.Props {}
+  extends TaleUIComponentProps<'div', Separator.State>, Separator.Props {}
 
 export namespace ToolbarSeparator {
   export type Props = ToolbarSeparatorProps;

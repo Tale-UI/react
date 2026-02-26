@@ -1,21 +1,21 @@
 'use client';
 import * as React from 'react';
-import { useControlled } from '@base-ui/utils/useControlled';
-import { useStableCallback } from '@base-ui/utils/useStableCallback';
-import { useTimeout } from '@base-ui/utils/useTimeout';
-import { useInterval } from '@base-ui/utils/useInterval';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
-import { useValueAsRef } from '@base-ui/utils/useValueAsRef';
-import { useForcedRerendering } from '@base-ui/utils/useForcedRerendering';
-import { useMergedRefs } from '@base-ui/utils/useMergedRefs';
-import { visuallyHidden, visuallyHiddenInput } from '@base-ui/utils/visuallyHidden';
-import { ownerDocument, ownerWindow } from '@base-ui/utils/owner';
-import { isIOS } from '@base-ui/utils/detectBrowser';
+import { useControlled } from '@tale-ui/utils/useControlled';
+import { useStableCallback } from '@tale-ui/utils/useStableCallback';
+import { useTimeout } from '@tale-ui/utils/useTimeout';
+import { useInterval } from '@tale-ui/utils/useInterval';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
+import { useValueAsRef } from '@tale-ui/utils/useValueAsRef';
+import { useForcedRerendering } from '@tale-ui/utils/useForcedRerendering';
+import { useMergedRefs } from '@tale-ui/utils/useMergedRefs';
+import { visuallyHidden, visuallyHiddenInput } from '@tale-ui/utils/visuallyHidden';
+import { ownerDocument, ownerWindow } from '@tale-ui/utils/owner';
+import { isIOS } from '@tale-ui/utils/detectBrowser';
 import { InputMode, NumberFieldRootContext } from './NumberFieldRootContext';
 import { useFieldRootContext } from '../../field/root/FieldRootContext';
 import type { FieldRoot } from '../../field/root/FieldRoot';
 import { useLabelableId } from '../../labelable-provider/useLabelableId';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { stateAttributesMapping } from '../utils/stateAttributesMapping';
 import { useRenderElement } from '../../utils/useRenderElement';
 import {
@@ -35,17 +35,17 @@ import type { ChangeEventCustomProperties, IncrementValueParameters } from '../u
 import {
   createChangeEventDetails,
   createGenericEventDetails,
-  type BaseUIChangeEventDetails,
-  type BaseUIGenericEventDetails,
+  type TaleUIChangeEventDetails,
+  type TaleUIGenericEventDetails,
   type ReasonToEvent,
-} from '../../utils/createBaseUIEventDetails';
+} from '../../utils/createTaleUIEventDetails';
 import { REASONS } from '../../utils/reasons';
 
 /**
  * Groups all parts of the number field and manages its state.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)
+ * Documentation: [Tale UI Number Field](https://base-ui.com/react/components/number-field)
  */
 export const NumberFieldRoot = React.forwardRef(function NumberFieldRoot(
   componentProps: NumberFieldRoot.Props,
@@ -588,7 +588,7 @@ export const NumberFieldRoot = React.forwardRef(function NumberFieldRoot(
 });
 
 export interface NumberFieldRootProps extends Omit<
-  BaseUIComponentProps<'div', NumberFieldRootState>,
+  TaleUIComponentProps<'div', NumberFieldRootState>,
   'onChange'
 > {
   /**
@@ -751,7 +751,7 @@ export type NumberFieldRootChangeEventReason =
   | typeof REASONS.wheel
   | typeof REASONS.scrub
   | typeof REASONS.none;
-export type NumberFieldRootChangeEventDetails = BaseUIChangeEventDetails<
+export type NumberFieldRootChangeEventDetails = TaleUIChangeEventDetails<
   NumberFieldRootChangeEventReason,
   ChangeEventCustomProperties
 >;
@@ -766,7 +766,7 @@ export type NumberFieldRootCommitEventReason =
   | typeof REASONS.scrub
   | typeof REASONS.none;
 export type NumberFieldRootCommitEventDetails =
-  BaseUIGenericEventDetails<NumberFieldRoot.CommitEventReason>;
+  TaleUIGenericEventDetails<NumberFieldRoot.CommitEventReason>;
 
 function getControlledInputValue(
   value: number | null,

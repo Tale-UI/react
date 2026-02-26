@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { inertValue } from '@base-ui/utils/inertValue';
+import { inertValue } from '@tale-ui/utils/inertValue';
 import { FloatingPortal } from '../../floating-ui-react';
 import { useDialogRootContext } from '../root/DialogRootContext';
 import { DialogPortalContext } from './DialogPortalContext';
@@ -11,7 +11,7 @@ import { InternalBackdrop } from '../../utils/InternalBackdrop';
  * By default, the portal element is appended to `<body>`.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+ * Documentation: [Tale UI Dialog](https://base-ui.com/react/components/dialog)
  */
 export const DialogPortal = React.forwardRef(function DialogPortal(
   props: DialogPortal.Props,

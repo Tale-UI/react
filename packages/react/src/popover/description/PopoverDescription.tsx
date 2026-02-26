@@ -1,16 +1,16 @@
 'use client';
 import * as React from 'react';
-import { useIsoLayoutEffect } from '@base-ui/utils/useIsoLayoutEffect';
+import { useIsoLayoutEffect } from '@tale-ui/utils/useIsoLayoutEffect';
 import { usePopoverRootContext } from '../root/PopoverRootContext';
-import type { BaseUIComponentProps } from '../../utils/types';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import type { TaleUIComponentProps } from '../../utils/types';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { useRenderElement } from '../../utils/useRenderElement';
 
 /**
  * A paragraph with additional information about the popover.
  * Renders a `<p>` element.
  *
- * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ * Documentation: [Tale UI Popover](https://base-ui.com/react/components/popover)
  */
 export const PopoverDescription = React.forwardRef(function PopoverDescription(
   componentProps: PopoverDescription.Props,
@@ -20,7 +20,7 @@ export const PopoverDescription = React.forwardRef(function PopoverDescription(
 
   const { store } = usePopoverRootContext();
 
-  const id = useBaseUiId(elementProps.id);
+  const id = useTaleUiId(elementProps.id);
 
   useIsoLayoutEffect(() => {
     store.set('descriptionElementId', id);
@@ -39,7 +39,7 @@ export const PopoverDescription = React.forwardRef(function PopoverDescription(
 
 export interface PopoverDescriptionState {}
 
-export interface PopoverDescriptionProps extends BaseUIComponentProps<
+export interface PopoverDescriptionProps extends TaleUIComponentProps<
   'p',
   PopoverDescription.State
 > {}

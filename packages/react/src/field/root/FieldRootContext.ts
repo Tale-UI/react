@@ -80,7 +80,7 @@ export function useFieldRootContext(optional = true) {
 
   if (context.setValidityData === NOOP && !optional) {
     throw new Error(
-      'Base UI: FieldRootContext is missing. Field parts must be placed within <Field.Root>.',
+      'Tale UI: FieldRootContext is missing. Field parts must be placed within <Field.Root>.',
     );
   }
 

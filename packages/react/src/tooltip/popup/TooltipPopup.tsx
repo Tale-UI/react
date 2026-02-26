@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useTooltipRootContext } from '../root/TooltipRootContext';
 import { useTooltipPositionerContext } from '../positioner/TooltipPositionerContext';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import type { Align, Side } from '../../utils/useAnchorPositioning';
 import type { StateAttributesMapping } from '../../utils/getStateAttributesProps';
 import { popupStateMapping as baseMapping } from '../../utils/popupStateMapping';
@@ -22,7 +22,7 @@ const stateAttributesMapping: StateAttributesMapping<TooltipPopup.State> = {
  * A container for the tooltip contents.
  * Renders a `<div>` element.
  *
- * Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+ * Documentation: [Tale UI Tooltip](https://base-ui.com/react/components/tooltip)
  */
 export const TooltipPopup = React.forwardRef(function TooltipPopup(
   componentProps: TooltipPopup.Props,
@@ -86,7 +86,7 @@ export interface TooltipPopupState {
   transitionStatus: TransitionStatus;
 }
 
-export interface TooltipPopupProps extends BaseUIComponentProps<'div', TooltipPopup.State> {}
+export interface TooltipPopupProps extends TaleUIComponentProps<'div', TooltipPopup.State> {}
 
 export namespace TooltipPopup {
   export type State = TooltipPopupState;

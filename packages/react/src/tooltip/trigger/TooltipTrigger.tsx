@@ -1,12 +1,12 @@
 'use client';
 import * as React from 'react';
-import { fastComponentRef } from '@base-ui/utils/fastHooks';
+import { fastComponentRef } from '@tale-ui/utils/fastHooks';
 import { useTooltipRootContext } from '../root/TooltipRootContext';
-import type { BaseUIComponentProps } from '../../utils/types';
+import type { TaleUIComponentProps } from '../../utils/types';
 import { triggerOpenStateMapping } from '../../utils/popupStateMapping';
 import { useRenderElement } from '../../utils/useRenderElement';
 import { useTriggerDataForwarding } from '../../utils/popups';
-import { useBaseUiId } from '../../utils/useBaseUiId';
+import { useTaleUiId } from '../../utils/useTaleUiId';
 import { TooltipHandle } from '../store/TooltipHandle';
 import { useTooltipProviderContext } from '../provider/TooltipProviderContext';
 import {
@@ -23,7 +23,7 @@ import { OPEN_DELAY } from '../utils/constants';
  * An element to attach the tooltip to.
  * Renders a `<button>` element.
  *
- * Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+ * Documentation: [Tale UI Tooltip](https://base-ui.com/react/components/tooltip)
  */
 export const TooltipTrigger = fastComponentRef(function TooltipTrigger(
   componentProps: TooltipTrigger.Props,
@@ -45,11 +45,11 @@ export const TooltipTrigger = fastComponentRef(function TooltipTrigger(
   const store = handle?.store ?? rootContext;
   if (!store) {
     throw new Error(
-      'Base UI: <Tooltip.Trigger> must be either used within a <Tooltip.Root> component or provided with a handle.',
+      'Tale UI: <Tooltip.Trigger> must be either used within a <Tooltip.Root> component or provided with a handle.',
     );
   }
 
-  const thisTriggerId = useBaseUiId(idProp);
+  const thisTriggerId = useTaleUiId(idProp);
   const isTriggerActive = store.useState('isTriggerActive', thisTriggerId);
   const isOpenedByThisTrigger = store.useState('isOpenedByTrigger', thisTriggerId);
   const floatingRootContext = store.useState('floatingRootContext');
@@ -156,7 +156,7 @@ export interface TooltipTriggerState {
   open: boolean;
 }
 
-export interface TooltipTriggerProps<Payload = unknown> extends BaseUIComponentProps<
+export interface TooltipTriggerProps<Payload = unknown> extends TaleUIComponentProps<
   'button',
   TooltipTrigger.State
 > {
